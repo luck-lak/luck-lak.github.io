@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fast LLM Inference with Cerebras learning record by Aokun Lei.">
+    <title>Fast LLM Inference with Cerebras | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 13</p>
+            <h1>Fast LLM Inference with Cerebras</h1>
+            <div class="record-content">
+<p>网站：Fast LLM Inference with Cerebras - DeepLearning.AI</p>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>总体</h3>
+<p>对我来说这个课程讲了很多新的内容，而不是单纯教怎么调API，因为Cerebras主要是在硬件方面来加速，课程中关于底层硬件的架构对于我们理解推理过程也是非常有帮助的。</p>
+<p>In detail:</p>
+<p>Examine how inference speeds have evolved across hardware generations, then run fast inference to experience how it transforms application design.</p>
+<p>Compare how GPUs, TPUs, and Cerebras&#x27; Wafer-Scale Engine handle the memory-to-compute bottleneck, and why keeping weights on-chip minimizes data movement.</p>
+<p>Rethink how you design applications around fast inference, calling the model directly instead of engineering around slow responses.</p>
+<p>Build a real-time personalization use case that adapts a webpage to users as they interact with it.</p>
+<p>Assemble a real-time, multi-tool workflow that runs live analysis of market signals in one fast response.</p>
+<p>Adopt concrete habits for multi-agent coding with Codex, validating between tasks to catch issues early and ship cleaner code.</p>
+<h3>课程架构大致是这样</h3>
+<p>LLM的发展，from intelligence to inference speed</p>
+<p>用实际调用展示在WSE上跑推理能多快</p>
+<p>深入较底层，怎么实现的快，GPU vs TPU vs WSE，关键在于让权重和计算单元离得更近</p>
+<p>推理加速对于工程范式的影响</p>
+<p>展示了一些实际应用例子</p>
+<p>讲解了一些当推理速度变快时，应该有的一些habit</p>
+<h3>因为干货比较多，分章节记录</h3>
+<h3>第一节</h3>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/05.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/06.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/07.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/08.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/09.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>第二节</h3>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/10.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/11.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>第三节</h3>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/12.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/13.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/14.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/15.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/16.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/17.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/18.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/19.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/20.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/21.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>第四节：Engineering shift</p>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/22.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/23.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/24.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>然后是一些搭的Agent，展示推理快的情况下什么application成为可能（跳过）</p>
+<p>第五节：Habit when speed is fast</p>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/25.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/26.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/27.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/28.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/29.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/30.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/31.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/32.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/33.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/34.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/35.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/36.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/13-fast-llm-inference-with-cerebras/37.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>感想：感觉如果每几天就能上到一个这种很新的课真是一件美事啊，就感觉有人帮你梳理这个行业进展给你一些insight（终）</p>
+<p>（继续集邮）</p>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="12-building-code-agents-with-hugging-face-smolagents.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="14-fast-efficient-llm-inference-with-vllm.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

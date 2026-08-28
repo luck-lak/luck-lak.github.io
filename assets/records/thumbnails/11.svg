@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Paper cover: Agent Skill Evaluation and Evolution">
+  <rect width="640" height="360" fill="#241f4e"/>
+  <text x="48" y="80" fill="#b3ace6" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">PAPER READING</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">Agent Skill Evaluation</text>
+  <text x="48" y="200" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">&amp; Evolution</text>
+  <text x="48" y="242" fill="#b3ace6" font-family="Arial, Helvetica, sans-serif" font-size="17">Frameworks · Benchmarks</text>
+  <rect x="370" y="296" width="54" height="10" rx="5" fill="#6c63d2"/>
+  <rect x="370" y="314" width="80" height="10" rx="5" fill="#4b44a8"/>
+  <circle cx="508" cy="268" r="54" fill="none" stroke="#4b44a8" stroke-width="12" opacity="0.55"/>
+  <circle cx="508" cy="268" r="54" fill="none" stroke="#9f97ff" stroke-width="12" stroke-linecap="round" stroke-dasharray="255 339" transform="rotate(115 508 268)"/>
+  <path d="M486 268l15 15 30-32" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

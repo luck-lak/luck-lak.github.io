@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Long-Term Agentic Memory with LangGraph learning record by Aokun Lei.">
+    <title>Long-Term Agentic Memory with LangGraph | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 02</p>
+            <h1>Long-Term Agentic Memory with LangGraph</h1>
+            <div class="record-content">
+<figure class="record-figure"><img src="../assets/records/02-long-term-agentic-memory-with-langgraph/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>网站：DeepLearning.AI - Learning Platform</p>
+<h3>收获</h3>
+<p>这一次是用LangGraph搭了一个email_Agent，用来对邮件进行分类（ignore / notify / respond）</p>
+<p>核心主题是让这个Agent具有memery,课程教学中具体包含三重memery：</p>
+<p>1.Semantic memory</p>
+<p>2.Episodic memory</p>
+<figure class="record-figure"><img src="../assets/records/02-long-term-agentic-memory-with-langgraph/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>3.Procedural memory</p>
+<p>感觉加上这些功能是一个自然的功能延申，在学习这些的过程中，更多地是熟悉了LangGraph的一些运用和Python的一些语法</p>
+<p>评价：从第一个课程到这个课程的衔接还是比较自然的，不断用LangGraph搭不同Agent的过程也是挺有趣的</p>
+<p>不足：主要还是通过运行演示代码来理解，但是自己还没有在本地跑过LangGraph，因此有很多具体流程还是不清楚，一些坑自己踩了才会对于模糊的地方有自己的理解</p>
+<p>(似乎我之后上的一些课会更前置一些，但是在LLM的辅助下，顺序也不是大问题了，不懂的东西LLM基本都能给出解答，也希望我这种有点倒序的学法可以让我后续学习的时候，能感觉一些迷惑被拨云见日了)</p>
+<p>(6/28回顾，基本差不多忘了......简单说一下就是semantic memery是存在store里的，Agent调用工具来写入/读取，episodic memory是通过examples的形式放在prompt里，让Agent知道自己之前做的行为，然后procedural memory，用轨迹加提示词优化器来优化prompt，但是其实这里的memory更新的过程除了第一个语义记忆，其他都是要人为干涉的，所以还不是很automated)</p>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="01-ai-agents-in-langgraph.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="03-building-toward-computer-use-with-anthropic.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

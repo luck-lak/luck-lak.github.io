@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transformers in Practice learning record by Aokun Lei.">
+    <title>Transformers in Practice | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 08</p>
+            <h1>Transformers in Practice</h1>
+            <div class="record-content">
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>网站：Transformers in Practice - DeepLearning.AI</p>
+<p>大概花了三四天（maybe）搞完这门课，收获还是挺多的，从不同视角又了解了很多东西，让我对于这个领域的了解更丰富了，具体课程总结之后再写吧，现在要累死了，我感觉我这学的强度还是太高了，该休息一下了</p>
+<p>同时这门课有一些小lab，还是挺有帮助的，问就是建立直觉，因为我真不期待这些有点老的东西还能被原搬不动地用上，但是我觉得了解了这些技术演进脉络对于后续学习更前沿的知识/实践会有帮助（也可以梳理之前的知识），而且我觉得这种认真投入学习的过程中也会培养一些通用的能力</p>
+<h3>总结</h3>
+<p>这门课程分为三个章节，</p>
+<p>第一章节(Obeserved Behavior)，主要是把LLM当作黑箱，从这一视角建立对于LLM的直觉，核心主线（记住这个对于学习第二章很有帮助，更好把握定位）是LLM的next token pretiction的Autoregressive过程：</p>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>第二章（LLM internals and attention）深入怎么实现的next token pretiction，这里更加底层，从输入token，到transformer层，以及里面的multi attention head等组件，最后到输出probobilitities，这里关于attention机制我原来是几乎根本不了解，而这门课，特别是其中的可视化部分，让我建立了很好的直觉。</p>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/05.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/06.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>第三章也包含很多有意思的话题：主题是Scaling and Deploying，主要是探讨一些LLM进入生产规模是会遇到的一些问题和方法，</p>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/07.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>从模型权重内存太大 —&gt; quantization, 以及原来每次都要算Q，K, V三个矩阵太慢，引入KV cash,再把视角聚焦到GPU内部，频繁访存一方面慢，另一方面增加了额外内存开销，引入了flash attention，最后又提出了Speculative decoding，一种无损提速方法，相应的数学也非常美丽</p>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/08.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/09.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Quantization gains</p>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/10.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>KV cash</p>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/11.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/12.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>（注：KV cash是在推理阶段/部署阶段使用，而不是训练阶段，因为KV cash要求Q,K,V的权重矩阵不变）</p>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/13.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/08-transformers-in-practice/14.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>总结</p>
+<p>(其实不开pro看这门课收获也很大了，因为pro只是可以做几个lab，但是根据我的体验，都不是精华)</p>
+<p>———————————————————————————————————</p>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="07-reinforcement-fine-tuning-llms-with-grpo.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="09-agent-skills-with-anthropic.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

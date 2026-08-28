@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Post-training of LLMs learning record by Aokun Lei.">
+    <title>Post-training of LLMs | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 06</p>
+            <h1>Post-training of LLMs</h1>
+            <div class="record-content">
+<figure class="record-figure"><img src="../assets/records/06-post-training-of-llms/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>网站：DeepLearning.AI - Learning Platform</p>
+<p>总体来说：这份课程还是很有价值的，特别是对于初学者而言，我们一贯只是了解各种可能用到的算法的大致原理，但基本没看过一个真正的训练流程是怎么样的。本教程中虽然很多训练仍然是用超小模型，有时甚至训练只是作为流程展示的一部分，而没有非常深入，但对于想要更好地了解这些东西的人来说，也已经非常有帮助了。此外，本课程关于很多原理/常识的讲解也是非常易于理解且富有深度，很多slide我都截屏下来感觉非常有帮助，能够把一个方面说得很清楚</p>
+<p>具体来说：主要学习了三种后训练的方法，SFT , DPO（direct preference optimization）, online RL（PPO and GRPO（两种算法在一节课提了，演示主要是演示GRPO）），关于PPO的很多原理这里我得到了很好的理解，但是对于PPO和GRPO的具体优化流程（掉包内部的细节）我还是有很多不了解的，原理公式也没有自己完全推导，主要是总览能够接受</p>
+<figure class="record-figure"><img src="../assets/records/06-post-training-of-llms/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>对全课的一个总结</p>
+<figure class="record-figure"><img src="../assets/records/06-post-training-of-llms/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>结尾富有深度的比较</p>
+<figure class="record-figure"><img src="../assets/records/06-post-training-of-llms/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Online RL 包括PPO的Policy Model优化目标公式 但是对于Critic的优化我还不是很懂</p>
+<p>图片太多了，最后我收集到一个文件夹重新组织了</p>
+<p>地址:&quot;C:\Users\29169\Desktop\Interesting sources\Post-training of LLMs Slides.pdf&quot;</p>
+<p>总结：很希望自己有机会能亲手训模型，我现在的笔记本其实也有GPU，但似乎显存不够（我现在对于这个空间还不是很有概念），CPU训似乎又很慢</p>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="05-pretraining-llms.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="07-reinforcement-fine-tuning-llms-with-grpo.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

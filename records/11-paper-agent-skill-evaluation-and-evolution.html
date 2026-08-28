@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agent Skill Evaluation and Evolution — paper notes by Aokun Lei.">
+    <title>Agent Skill Evaluation and Evolution | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 11</p>
+            <h1>Agent Skill Evaluation and Evolution: Frameworks and Benchmarks</h1>
+            <div class="record-content">
+<p>Agent Skill Evaluation and Evolution: Frameworks and Benchmarks</p>
+<p>主要是最近在做skillopt这方面的工作，但是又感觉创新点不够，所以就想对这个领域了解多一点</p>
+<p>但是这篇论文我感觉我吸收得有限，因为它很大篇幅都是列举它分的类有什么论文工作/方法/benchmark，然后没有看过那些工作并且对这个领域了解有限的我也只能建立一个笼统见过的认知，真正我要记录的可能还是本论文中与我领域比较相关的总结和方向吧</p>
+<h3>先捋一下这篇论文的结构</h3>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>然后我得到启发的主要是关于skill evolution的那部分，和关于skill saftey之类的作者提出的一些我能感觉可能和我工作挂钩的</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>关于skill evolution:</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Excution Feedback:</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/05.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/06.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>(上面似乎很有理，但是在skillopt这个场景，可以说是全自动的的，似乎用不上)</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/07.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>一个很有启发的发现：本段内容</h3>
+<p>把“失败诊断”和“修正生成”分开做，比直接改原始轨迹效果更好；但无论如何，反馈本身的价值受限于测试环境的多样性，这是设计技能评估时必须心中有数的一个硬约束。</p>
+<p>这其实我们可以直接用，因为现在就是根据轨迹直接生成修改意见，我们可以做的是，先让LLM生成失败诊断，然后生成修正生成，一个很好的切入点！</p>
+<p>Trajectory Distillation</p>
+<p>主要是一些具体的工作，但是这些工作可以看到与skillopt也有共通点，比如</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/08.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>而这个组装成patch的思想其实后面是有总结出来了的</p>
+<p>Compression and Augumentation</p>
+<p>我感觉主要是关于技能库的相关方面，包括对技能合并等，似乎和我们目前方向不是很相关</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/09.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Reinforcement Learning（这部分还需要深入一下）</p>
+<p>这个方向其实和我们目前方向和符合，但是我没很看懂，关于一个D2Skill的工作还挺有趣的</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/10.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/11.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>然后就是关于benchmark的一些工作</p>
+<p>这里跳过</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/12.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>然后是第五部分Reflection and Future Directions</p>
+<p>前半部分主要在讲关于多模态技能的相关方面，与我们当前领域关系不大</p>
+<h3>后半部分有一些启发</h3>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/13.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/14.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>第一点就是前面说的有merge设计，第二点及后面的内容我还没理解</p>
+<p>—————————————————————————————————-</p>
+<h3>关于skill safety</h3>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/15.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/16.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>然后是其他的一些关于技能库，全流程（不要让分析和进化/生成流程分离）等的反思，对我们工作没什么帮助</p>
+<figure class="record-figure"><img src="../assets/records/11-paper-agent-skill-evaluation-and-evolution/17.jpg" alt="Course screenshot" loading="lazy"></figure>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="10-paper-trustworthy-llm-agents.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="12-building-code-agents-with-hugging-face-smolagents.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

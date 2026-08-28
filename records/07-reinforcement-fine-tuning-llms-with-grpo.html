@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reinforcement Fine-Tuning LLMs with GRPO learning record by Aokun Lei.">
+    <title>Reinforcement Fine-Tuning LLMs with GRPO | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 07</p>
+            <h1>Reinforcement Fine-Tuning LLMs with GRPO</h1>
+            <div class="record-content">
+<figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>网站：DeepLearning.AI - Learning Platform</p>
+<h3>总体</h3>
+<p>我必须说，这节课的收获超出了我的预期。这门课刚开始上起来的时候意思倒不是很够，主要是介绍一些关于RFT的笼统知识（也许强化了我的instinct），然后是关于RL结合Wordle这门游戏的一些铺垫，包括不同的奖励函数设计（比如binary reward，partial credit reward，还有LLM-as-a-judge）。</p>
+<p>关于LLM-as-a-judge，提出了一个较为有趣的方法，就是先让LLM根据原文transcript生成quiz，再让LLM用待训模型生成的summary来做题从而得到得分，但是这种方法存在reward hacking的风险，因为把原文（不概括一点）直接发给LLM做题得到的奖励会很高，所以为了防止这种情况，在奖励函数中又添加了summary长度惩罚的机制。</p>
+<p>最后就是最精彩的部分，让我非常沉浸！！！就是课程中关于GRPO对损失函数（或者说是奖励函数）的手写代码，通过看这些代码，加上结合训练流程，让我对那个公式有了更深的理解，也让我对这方面产生了更强烈的兴趣，话说回来，我最好之后自己总结一下这个公式，包括组成部分，KL散度等</p>
+<figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>（本课一个主线）</p>
+<figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/05.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>(GRPO算法公式)</p>
+<p>（公式有四个主要部分，然后第二张图是在代码中使用的一个技巧）</p>
+<p>（这是损失函数的公式所在网页：DeepLearning.AI - Learning Platform，作者在教的时候是逐步加功能的，所以很清晰，值得回顾，特别是每个token算概率那里，很好地补了常识！）</p>
+<h3>主要流程</h3>
+<p>Create reference and policy models</p>
+<p>Calculating the policy loss ratio</p>
+<p>Adding clipping to the policy loss</p>
+<p>Adding KL Divergence to the loss</p>
+<p>（advantage在原流程中没有写出求得流程，而是直接使用，但相关原理还是很好理解的）</p>
+<p>———————————————————————————</p>
+<p>（KL散度直观理解）</p>
+<figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/06.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>—————————————————————————————</p>
+<p>总结：一个很好的课，主要帮我补了很多理论知识和实践知识</p>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="06-post-training-of-llms.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="08-transformers-in-practice.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

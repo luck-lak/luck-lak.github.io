@@ -43,6 +43,24 @@ header h1{
     padding: 16px 0;
 }
 
+.site-title {
+    margin-left: 30px;
+    padding: 16px 0;
+
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-title:visited {
+    color: black;
+}
+
+.site-title:hover {
+    color: gray;
+}
+
 nav {
     display: flex;
     gap: 30px;
@@ -60,6 +78,11 @@ nav a:visited {
 
 nav a:hover {
     color: gray;
+}
+
+nav a.active {
+    color: gray;
+    font-weight: 600;
 }
 
 .theme-button {
@@ -146,6 +169,185 @@ nav a:hover {
     color: black;
 }
 
+/* Learning records index and detail pages */
+.records-index-page,
+.record-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 24px 64px;
+    text-align: left;
+}
+
+.records-index-page section {
+    padding: 0;
+}
+
+.records-intro {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.records-intro h1 {
+    margin: 0 0 12px;
+}
+
+.records-platform {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 8px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.records-intro p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 16px;
+
+    border: 1px solid black;
+    border-radius: 6px;
+
+    color: black;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    background-color: #f2f2f2;
+}
+
+.record-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.record-card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    color: black;
+    text-decoration: none;
+
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.record-card:hover {
+    border-color: #8a8a8a;
+    transform: translateY(-2px);
+}
+
+.record-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+.record-card-text {
+    padding: 14px 16px 18px;
+}
+
+.record-card-number {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.record-card h2 {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.record-page {
+    max-width: 840px;
+}
+
+.record-article {
+    max-width: 760px;
+}
+
+.record-kicker {
+    margin: 0 0 8px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.record-article h1 {
+    margin: 0 0 28px;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.record-content {
+    line-height: 1.75;
+}
+
+.record-content p {
+    margin: 0 0 14px;
+}
+
+.record-content h3 {
+    margin: 30px 0 12px;
+    font-size: 20px;
+}
+
+.record-figure {
+    margin: 24px 0;
+}
+
+.record-figure img {
+    display: block;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    height: auto;
+
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+}
+
+.record-pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    margin-top: 52px;
+    padding-top: 20px;
+    border-top: 1px solid #d0d0d0;
+}
+
+.record-pagination-link {
+    color: black;
+    text-decoration: none;
+}
+
+.record-pagination-link:hover {
+    text-decoration: underline;
+}
+
 /* Dark mode overrides */
 body.dark-mode {
     background-color: #1f1f1f; /* 接近黑色但不刺眼的背景 */
@@ -170,6 +372,57 @@ body.dark-mode #learning-records a{
     color: orange
 }
 
+body.dark-mode .site-title,
+body.dark-mode .site-title:visited {
+    color: white;
+}
+
+body.dark-mode .site-title:hover,
+body.dark-mode nav a.active {
+    color: lightgray;
+}
+
+body.dark-mode .download-link {
+    border-color: white;
+    color: white;
+}
+
+body.dark-mode .download-link:hover {
+    background-color: #333333;
+}
+
+body.dark-mode .record-card {
+    background-color: #1f1f1f;
+    border-color: #555555;
+    color: white;
+}
+
+body.dark-mode .record-card:hover {
+    border-color: #888888;
+}
+
+body.dark-mode .record-card-number,
+body.dark-mode .record-kicker,
+body.dark-mode .records-platform {
+    color: #aaaaaa;
+}
+
+body.dark-mode .records-platform {
+    border-color: #555555;
+}
+
+body.dark-mode .record-figure img {
+    border-color: #555555;
+}
+
+body.dark-mode .record-pagination {
+    border-top-color: #555555;
+}
+
+body.dark-mode .record-pagination-link {
+    color: white;
+}
+
 body.dark-mode .project-card a{
     color: white;
 }
@@ -192,6 +445,24 @@ body.dark-mode nav a:hover {
 
 /* Responsive layout: tablet and mobile */
 @media (max-width: 768px) {
+    .records-index-page,
+    .record-page {
+        padding: 170px 16px 48px;
+    }
+
+    .record-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .record-article h1 {
+        font-size: 28px;
+    }
+
+    .record-pagination {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     #about-me {
         padding-right: 15%;
         min-height: auto;

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fast &amp; Efficient LLM Inference with vLLM learning record by Aokun Lei.">
+    <title>Fast &amp; Efficient LLM Inference with vLLM | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 14</p>
+            <h1>Fast &amp; Efficient LLM Inference with vLLM</h1>
+            <div class="record-content">
+<p>网站：Fast &amp; Efficient LLM Inference with vLLM - DeepLearning.AI</p>
+<h3>总体感受</h3>
+<p>这节课有点太夯了</p>
+<p>对于上了Transformer in practice的人，我都会推荐它上这节课，</p>
+<p>一方面他补充了很多信息，既是印证也同时是补充，提供了很多确实很好的观点和细节</p>
+<p>第二这节课感觉视角更加从high level上，同时也补充了很多技术</p>
+<h3>同时有一张图还可以很好地把LLM的学习串起来</h3>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>（关于model的三个baseline感觉很清晰）</p>
+<p>In detail, you&#x27;ll:</p>
+<p>Understand why efficient LLM deployment matters, what happens during inference, what the KV cache is, and how the GPU memory hierarchy shapes performance.</p>
+<p>Explore LLM optimization fundamentals and how compression techniques like weight and activation quantization enhance a model’s throughput and latency while preserving accuracy.</p>
+<p>Use LLM Compressor to quantize a full-precision model, compare its size before and after, and use perplexity to measure whether the compressed model still performs well.</p>
+<p>Learn the three core techniques behind modern LLM serving: continuous batching to keep the GPU busy, PagedAttention to manage the KV cache without waste, and prefix caching to skip recomputation when requests share content.</p>
+<p>Connect to a vLLM inference server, send requests through the OpenAI-compatible API, and watch vLLM’s memory management techniques working live in the metrics.</p>
+<p>Benchmark your deployment under load with GuideLLM and evaluate model quality with lm-eval.</p>
+<h3>课程主要从两个方面推进</h3>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>内容其实是相当多的，一个流程是这样</p>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>简单过一些关键slides</h3>
+<p>关于KV cache大小的直观感受（其实有公式可以算）</p>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>一个贯穿课程的trade-off</h3>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/05.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>更直观的请求过程</h3>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/06.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>关于KV cache的一些从其他角度的理解和复习</h3>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/07.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/08.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>GPU Memory Hierarchy:</p>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/09.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/10.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Quantization:</p>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/11.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/12.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/13.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/14.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/15.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/16.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/17.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/18.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/19.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/20.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Batching:</p>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/21.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/22.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/23.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/24.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>PagedAttention:</p>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/25.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/26.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/27.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>然后还讲了prefix-caching,但没什么新的</p>
+<p>VLLM:</p>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/28.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/29.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>总结</h3>
+<figure class="record-figure"><img src="../assets/records/14-fast-efficient-llm-inference-with-vllm/30.jpg" alt="Course screenshot" loading="lazy"></figure>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="13-fast-llm-inference-with-cerebras.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="15-how-diffusion-models-work.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

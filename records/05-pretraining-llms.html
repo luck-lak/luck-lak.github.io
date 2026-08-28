@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pretraining LLMs learning record by Aokun Lei.">
+    <title>Pretraining LLMs | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 05</p>
+            <h1>Pretraining LLMs</h1>
+            <div class="record-content">
+<figure class="record-figure"><img src="../assets/records/05-pretraining-llms/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>网站：Pretraining LLMs - DeepLearning.AI</p>
+<p>收获：（直接把学习时的记录搬过来了，然后简单修改了一下，偷懒了）</p>
+<p>（关于这门课让我对transformer架构开始有点兴趣）LLMs 预训练确实挺有意思的啊，我感觉要是想学transformer架构就应该从应用入手，数学这种东西得感兴趣了再去了解会更好。</p>
+<p>（本门课具体收获）</p>
+<p>1.了解了关于预训练的重要性（或者说在一些情形下预训练有用）</p>
+<p>2.看了数据怎么准备（Data Preparation），包括从Hugging face上直接用已有的数据集，还有自己爬取github上的代码，最后合并。还有一个很关键的过程，数据清洗（Data Cleaning）</p>
+<figure class="record-figure"><img src="../assets/records/05-pretraining-llms/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>3.</p>
+<p>看了怎么把数据打包(Data Packaging)，让数据能够直接用来训练，包括把数据分块（可以实现多机器或多卡同时训练），把text转成token ID，然后先序列化（concatenate），再转正特定的形状（有一个小细节，会丢弃对于当前形状不整除的一部分，比如32尺寸，33个token，就会丢掉1个），最后转成能直接输入的model训练的数据。</p>
+<p>4.</p>
+<p>关于模型权重初始化也挺有意思的，其实主要讲的就是模型权重初始化，在这一步之前是模型配置，这个到比较简单（可以掉包，用已经配好的架构），</p>
+<h3>说了如下初始化方法</h3>
+<p>1.随机初始化</p>
+<p>2.用已有的预训练权重</p>
+<p>3.Downscaling from a general pretrained model(去掉已有预训练好的模型的一些层)</p>
+<p>4.Depth Upscaling from a general pretrained model（用已有预训练模型，复用已有层来搭更多的层次）</p>
+<p>5.</p>
+<p>接着了解了模型的具体训练，因为这里涉及太多框架性的东西，所以主要还是理解流程，而流程是比较好理解的，类似加载模型，加载数据集，配置训练参数，开始训练，监督损失等</p>
+<figure class="record-figure"><img src="../assets/records/05-pretraining-llms/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>（但是接口还是很恶心的）</p>
+<p>6.</p>
+<p>最后了解了关于LLM model的Evaluation，提了一些常用的benchmark(不知道几年前的视频了)，示例跑了一个benchmark，</p>
+<p>Eg:（虽然这里还是用了别的测评框架）</p>
+<p>!lm_eval --model hf \</p>
+<p>--model_args pretrained=./models/TinySolar-248m-4k \</p>
+<p>--tasks truthfulqa_mc2 \</p>
+<p>--device cpu \</p>
+<p>--limit 5</p>
+<figure class="record-figure"><img src="../assets/records/05-pretraining-llms/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>结语：开心！有完成了一门课的学习，虽然依旧是short courses，但是依旧花了我不少时间（喜欢上short courses，喜欢有code examples）</p>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="04-evaluating-ai-agents.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="06-post-training-of-llms.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

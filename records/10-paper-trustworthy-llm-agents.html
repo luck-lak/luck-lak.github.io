@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mind the Gap to Trustworthy LLM Agents — paper notes by Aokun Lei.">
+    <title>Mind the Gap to Trustworthy LLM Agents | Aokun Lei</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../index.html">Home</a>
+            <a href="../learning-records.html">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Learning Record 10</p>
+            <h1>Mind the Gap to Trustworthy LLM Agents: A Systematic Evaluation on Constraint Satisfaction for Real-World Travel Planning</h1>
+            <div class="record-content">
+<p>Mind the Gap to Trustworthy LLM Agents: A Systematic Evaluation on Constraint Satisfaction for Real-World Travel Planning</p>
+<p>今天读了一篇很好的综述论文，讲的是基于大模型的旅行规划，契机是我在为我的人工智能导论大作业选题，先看了一下一个bench—TravelPlanner的演示视频，关于这个主题有一些自己的看法，同时这个选题还附有一篇论文，刚开始我还觉得是老师它们做的方法，看到后面才发现是一篇综述文章，这其实也是我第一次读这种类型的文章，感觉体验非常好。整个文章讲得很清楚，可读性很高，对于我了解这个领域确实是起到了很好的引导作用。但是其实我现在还是不懂怎么做我的大作业，如果是要做出一篇论文，我感觉这任务量太大了。</p>
+<p>看的时间大概是上午11点左右到下午3点左右，可能也就看了三个小时左右，因为还睡了一下午觉。</p>
+<p>先来总结一下今天看的这篇文章，</p>
+<h3>开头的一个总览</h3>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/02.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>过一遍这篇论文</h3>
+<p>1.Related Work:</p>
+<h3>讲了三个关键领域</h3>
+<p>LLM-Agents ,</p>
+<p>Real-World LLM Planning Tasks ,</p>
+<p>Neuro-Symbolic AI</p>
+<p>2.Benchmarks</p>
+<p>From a constraint-satisfaction</p>
+<p>perspective on whether LLM agents meet user needs</p>
+<p>（主要从三个方面分析）</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/03.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>3.Method</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/04.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>主要分析三种方法</h3>
+<p>General-Purpose Agent:</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/05.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Multi-Agent System:</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/06.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Neuro-Symbolic Approach:</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/07.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/08.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>4.Experiments and Results</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/09.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/10.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>上面蓝色部分表明了当前benchmark的不足，缺乏时空限制，不能很好地测试现实世界的可用性</p>
+<h3>此外，作者在评估方法中还提到</h3>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/11.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>核心意思</h3>
+<p>现在的评估方法，只会看最终行程是不是“合理”（比如符合常识、满足硬性要求）。但作者认为，行程好不代表模型真的会规划，因为做好一个行程需要很多种不同的能力，比如会调用工具、能做多步推理、能协调不同活动、能应对突发变化等等。</p>
+<p>结论： 将来的评估应该把这些能力拆开，一个一个单独测，这样才能真正看出模型哪儿行哪儿不行，而不是只看最终结果好不好。</p>
+<p>（其实这种思想可以迁移到更多约束任务的情形，旅行规划只是一个很典型的任务）</p>
+<p>———————————————————————————————————————-</p>
+<p>作者还设计了更仔细的分析实验</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/12.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>主要分析</h3>
+<p>Constraint Extraction</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/13.jpg" alt="Course screenshot" loading="lazy"></figure>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/14.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Constraint-based Information Extraction</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/15.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>Eg:</p>
+<p>Specifically, for each query that includes a room type</p>
+<p>or house rule, we retrieve accommodations from all possible</p>
+<p>cities related to the query’s destination, and ask the model</p>
+<p>to select those that meet both requirements.</p>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/16.jpg" alt="Course screenshot" loading="lazy"></figure>
+<h3>此外，还的得到了其他结论</h3>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/17.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>—————————————————————————————————</p>
+<h3>结论</h3>
+<figure class="record-figure"><img src="../assets/records/10-paper-trustworthy-llm-agents/18.jpg" alt="Course screenshot" loading="lazy"></figure>
+<p>从frameworks(我的理解是那些method)，benchmark，到evaluation protocol(评估方法/关注点等)</p>
+<p>三个方面提出了建议</p>
+<p>——————————————————————————————————————————</p>
+<p>收获：这篇论文一方面让我感受到了综述论文的用处，另一方面对于Agent这个领域也增加了认识，相当于是针对一个特定的任务探讨了从发展到测评到方法，不仅让我对于大模型用于旅行规划这个主题有了一个认识，感觉也让我对于Agent研究/应用领域有了一个较为系统的认知</p>
+<p>—————————————————————————————————</p>
+<p>在这里记录一下我看的另一篇综述吧（bushi,怎么变成论文记录了）</p>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="09-agent-skills-with-anthropic.html">Previous</a>
+                <a class="record-pagination-link index" href="../learning-records.html">All records</a>
+                <a class="record-pagination-link next" href="11-paper-agent-skill-evaluation-and-evolution.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>
