@@ -14,7 +14,7 @@
         <a class="site-title" href="../index.html">AOKUN</a>
         <nav class="main-navigation">
             <a href="../index.html">Home</a>
-            <a href="../learning-records.html">Learning Records</a>
+            <a href="../learning-records.html" class="active">Learning Records</a>
         </nav>
         <button class="theme-button" type="button">🌙</button>
     </header>
@@ -25,7 +25,7 @@
             <h1>Reinforcement Fine-Tuning LLMs with GRPO</h1>
             <div class="record-content">
 <figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/01.jpg" alt="Course screenshot" loading="lazy"></figure>
-<p>网站：DeepLearning.AI - Learning Platform</p>
+<p>网站：<a href="https://learn.deeplearning.ai/courses/reinforcement-fine-tuning-llms-grpo/lesson/e5esw/reward-functions" target="_blank" rel="noopener noreferrer">Reinforcement Fine-Tuning LLMs with GRPO - DeepLearning.AI</a></p>
 <h3>总体</h3>
 <p>我必须说，这节课的收获超出了我的预期。这门课刚开始上起来的时候意思倒不是很够，主要是介绍一些关于RFT的笼统知识（也许强化了我的instinct），然后是关于RL结合Wordle这门游戏的一些铺垫，包括不同的奖励函数设计（比如binary reward，partial credit reward，还有LLM-as-a-judge）。</p>
 <p>关于LLM-as-a-judge，提出了一个较为有趣的方法，就是先让LLM根据原文transcript生成quiz，再让LLM用待训模型生成的summary来做题从而得到得分，但是这种方法存在reward hacking的风险，因为把原文（不概括一点）直接发给LLM做题得到的奖励会很高，所以为了防止这种情况，在奖励函数中又添加了summary长度惩罚的机制。</p>
@@ -37,7 +37,7 @@
 <figure class="record-figure"><img src="../assets/records/07-reinforcement-fine-tuning-llms-with-grpo/05.jpg" alt="Course screenshot" loading="lazy"></figure>
 <p>(GRPO算法公式)</p>
 <p>（公式有四个主要部分，然后第二张图是在代码中使用的一个技巧）</p>
-<p>（这是损失函数的公式所在网页：DeepLearning.AI - Learning Platform，作者在教的时候是逐步加功能的，所以很清晰，值得回顾，特别是每个token算概率那里，很好地补了常识！）</p>
+<p>（这是损失函数的公式所在网页：<a href="https://learn.deeplearning.ai/courses/reinforcement-fine-tuning-llms-grpo/lesson/aifo6/calculating-loss-in-grpo" target="_blank" rel="noopener noreferrer">DeepLearning.AI - Learning Platform</a>，作者在教的时候是逐步加功能的，所以很清晰，值得回顾，特别是每个token算概率那里，很好地补了常识！）</p>
 <h3>主要流程</h3>
 <p>Create reference and policy models</p>
 <p>Calculating the policy loss ratio</p>

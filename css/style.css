@@ -80,9 +80,8 @@ nav a:hover {
     color: gray;
 }
 
-nav a.active {
-    color: gray;
-    font-weight: 600;
+nav a:active {
+    color: black;
 }
 
 .theme-button {
@@ -307,6 +306,16 @@ nav a.active {
     margin: 0 0 14px;
 }
 
+.record-content a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.record-content a:hover {
+    color: #555555;
+}
+
 .record-content h3 {
     margin: 30px 0 12px;
     font-size: 20px;
@@ -378,7 +387,7 @@ body.dark-mode .site-title:visited {
 }
 
 body.dark-mode .site-title:hover,
-body.dark-mode nav a.active {
+body.dark-mode nav a:active {
     color: lightgray;
 }
 
@@ -413,6 +422,10 @@ body.dark-mode .records-platform {
 
 body.dark-mode .record-figure img {
     border-color: #555555;
+}
+
+body.dark-mode .record-content a:hover {
+    color: lightgray;
 }
 
 body.dark-mode .record-pagination {

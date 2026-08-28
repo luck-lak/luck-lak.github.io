@@ -74,6 +74,7 @@ splitting the navigation into sections such as `DeepLearning.AI` and
 
 > Agent note: when converting a new note from `学习探索记录.docx`, copy an
 > existing record as the template, preserve the user's wording and screenshot
-> order, use only plain HTML/CSS relative paths, and update pagination and the
-> navigation card. Do not regenerate or rewrite the whole DOCX unless the user
-> explicitly asks for that.
+> order, preserve any original hyperlinks (especially the course link on the
+> `网站：` line), use only plain HTML/CSS relative paths, and update pagination
+> and the navigation card. Do not regenerate or rewrite the whole DOCX unless
+> the user explicitly asks for that.
