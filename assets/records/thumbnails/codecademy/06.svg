@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Learn Node.js Fundamentals">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#b39df2" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 06</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Learn Node.js:</text>
+  <text x="48" y="196" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Fundamentals</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">runtime · modules · async · streams</text>
+  <path d="M520 246 l48 27 v54 l-48 27 -48 -27 v-54 z" stroke="#b39df2" stroke-width="3" fill="none"/>
+  <path d="M520 272 l26 15 v30 l-26 15 -26 -15 v-30 z" fill="#b39df2" opacity="0.45"/>
+</svg>

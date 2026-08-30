@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Fundamentals of Operating Systems">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#f2c14e" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 08</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Fundamentals of</text>
+  <text x="48" y="196" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Operating Systems</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">processes · scheduling · memory · filesystem</text>
+  <rect x="452" y="266" width="132" height="16" rx="8" fill="#f2c14e"/>
+  <rect x="452" y="290" width="88" height="16" rx="8" fill="#f2c14e" opacity="0.65"/>
+  <rect x="452" y="314" width="110" height="16" rx="8" fill="#f2c14e" opacity="0.4"/>
+  <g fill="none" stroke="#9fcfc0" stroke-width="2">
+    <rect x="596" y="266" width="14" height="16"/>
+    <rect x="596" y="290" width="14" height="16"/>
+    <rect x="596" y="314" width="14" height="16"/>
+  </g>
+</svg>

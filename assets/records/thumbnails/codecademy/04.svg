@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Building Interactive JavaScript Websites">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#f49ab5" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 04</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Building Interactive</text>
+  <text x="48" y="196" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">JavaScript Websites</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">script element · DOM · events</text>
+  <g stroke="#f49ab5" stroke-width="3" fill="none">
+    <path d="M480 330 L480 300 L556 300"/>
+    <path d="M480 300 L480 272 L520 272"/>
+  </g>
+  <circle cx="480" cy="330" r="9" fill="#f49ab5"/>
+  <circle cx="556" cy="300" r="9" fill="#f49ab5"/>
+  <circle cx="520" cy="272" r="9" fill="#f49ab5"/>
+  <path d="M588 312 l30 12 -13 5 -5 13 z" fill="#ffffff"/>
+</svg>

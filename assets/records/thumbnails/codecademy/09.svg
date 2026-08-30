@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Cloud Computing">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#74d6e8" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 09</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">Cloud Computing</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">deployment models · service layers</text>
+  <path d="M496 238 a26 26 0 0 1 2 -52 a34 34 0 0 1 66 -10 a24 24 0 0 1 14 62 z" stroke="#74d6e8" stroke-width="3" fill="none"/>
+  <rect x="470" y="284" width="140" height="14" rx="7" fill="#74d6e8"/>
+  <rect x="488" y="306" width="104" height="14" rx="7" fill="#74d6e8" opacity="0.65"/>
+  <rect x="506" y="328" width="68" height="14" rx="7" fill="#74d6e8" opacity="0.4"/>
+</svg>

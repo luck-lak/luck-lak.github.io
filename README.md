@@ -1,27 +1,22 @@
 # AOKUN's Portfolio Website
 
-## About
-
-This is the personal portfolio website of Aokun Lei.
-
-The website is currently built with simple HTML, CSS, and JavaScript.
+A simple personal portfolio site built with plain HTML, CSS, and JavaScript.
 
 ## Project Structure
 
-- `index.html` — Main webpage content
-- `learning-records.html` — Learning records navigation page
-- `records/` — One standalone page per course or paper note
-- `css/` — Website styles
-- `js/` — JavaScript and interactions
-- `assets/images/` — Personal images and favicon
-- `assets/records/` — Course screenshots (`<record-name>/01.jpg`) and navigation covers (`thumbnails/01.jpg`)
-- `学习探索记录.docx` — Original complete learning notebook
+| Path | Purpose |
+|---|---|
+| `index.html` | Home page |
+| `learning-records.html` | Learning records hub; intro statement, motivation and future direction, platform cards |
+| `learning/` | One list page per platform |
+| `records/` | One detail page per course or paper |
+| `css/style.css` | Site-wide and learning-record styles |
+| `js/main.js` | Small interactive behavior |
+| `tools/` | Note-to-page build scripts and small inspection helpers |
+| `assets/records/` | Record screenshots and navigation covers |
+| `学习探索记录.docx` | Complete DeepLearning.AI source notebook |
 
-## Future Updates / Maintenance
-
-The current structure is intentionally simple and easy to maintain.
-
-### Adding New Content
+## Adding New Content
 
 For small updates, such as adding a new section or changing text:
 
@@ -38,7 +33,7 @@ When adding a new section, keep the structure consistent:
 </section>
 ```
 
-### Updating Projects
+## Updating Projects
 
 Projects are kept in the `#projects` section of `index.html`. To add one, copy a
 `<article class="project-card">` block, then update the project name, GitHub link,
@@ -52,29 +47,90 @@ and one-sentence description. The card layout is already defined in
 </article>
 ```
 
-### Updating Learning Records
+## Learning Records
 
-The learning records are intentionally kept as plain HTML pages:
+The records are organized by platform:
 
-1. Create a folder for the detail-page images:
-   `assets/records/<record-name>/01.jpg`.
-2. Add a navigation cover:
-   `assets/records/thumbnails/<record-number>.jpg`.
-3. Copy one existing page in `records/`, then update its `<title>`,
-   description, kicker, `<h1>`, body content, and image paths.
-4. Update the previous/next links at the bottom of the affected record pages.
-5. Add a matching card to `learning-records.html`.
-6. Keep `学习探索记录.docx` unchanged as the complete archive unless it is
-   explicitly being updated.
+- `learning/deeplearning-ai.html` → `records/01…15-*.html`
+- `learning/codecademy.html` → `records/codecademy/*.html`
 
-The current collection is labeled as DeepLearning.AI. When adding Codecademy
-or another platform later, keep the collection label clear and consider
-splitting the navigation into sections such as `DeepLearning.AI` and
-`Codecademy`.
+Each detail page is generated from source notes. Do not edit generated HTML
+for normal content updates; edit the source note or build script and rebuild.
 
-> Agent note: when converting a new note from `学习探索记录.docx`, copy an
-> existing record as the template, preserve the user's wording and screenshot
-> order, preserve any original hyperlinks (especially the course link on the
-> `网站：` line), use only plain HTML/CSS relative paths, and update pagination
-> and the navigation card. Do not regenerate or rewrite the whole DOCX unless
-> the user explicitly asks for that.
+| Platform | Build script | Source | Covers |
+|---|---|---|---|
+| DeepLearning.AI | `tools/build_learning_records.py` | `学习探索记录.docx` | `assets/records/thumbnails/NN.jpg/svg` |
+| Codecademy | `tools/build_codecademy_records.py` | sibling `codecademy/` folder outside this repo | `assets/records/thumbnails/codecademy/NN.svg` |
+
+## Tools In Plain Words
+
+The build scripts are not part of the website itself. They convert source notes
+into the HTML pages under `records/`. You do not need to run them by hand; the
+assistant can update the matching script config, rebuild the pages, and check
+links when you say that a new record is ready.
+
+- Keep `build_learning_records.py` and `build_codecademy_records.py` while the
+  site uses generated record pages.
+- `inspect_docx.py` and `list_record_links.py` are one-off helpers for checking
+  DOCX content and links. They can be deleted when no longer needed, but it is
+  harmless to keep them.
+- Do not delete a build script unless you are intentionally moving that platform
+  back to hand-edited HTML.
+
+## Adding a Codecademy Record
+
+1. Put the new DOCX or Markdown file in the source `codecademy/` folder.
+2. Add one entry to `RECORDS` in `tools/build_codecademy_records.py`, giving it
+   a stable `title`, `slug`, and `kind`.
+3. Draw a matching SVG cover at
+   `assets/records/thumbnails/codecademy/NN.svg`.
+4. Run:
+
+   ```powershell
+   & '<python>python.exe' -X utf8 tools/build_codecademy_records.py
+   ```
+
+5. Check the new detail page, previous/next links, platform page, and hub count.
+6. Keep the original wording, screenshot order, and hyperlinks. Codecademy
+   pages should not display DOCX links.
+
+## Adding a New Platform
+
+Use the same pattern as the two existing platforms:
+
+1. Create `learning/<platform>.html` and `records/<platform>/`.
+2. Create `tools/build_<platform>_records.py`.
+3. Keep source files outside the site unless the user explicitly asks to
+   archive them in the repository.
+4. Put covers in `assets/records/thumbnails/<platform>/`.
+5. Add one platform card to `learning-records.html`.
+6. Update this README.
+
+## Adjusting Layout or Styles
+
+1. Make the change in `css/style.css`.
+2. If a structural change affects generated HTML, update the matching build
+   script and rebuild.
+3. Verify desktop, mobile, and dark mode.
+4. Keep generated pages consistent with the platform pages and hub.
+
+## Local Preview
+
+From the repository root:
+
+```powershell
+& '<python>python.exe' -m http.server 8000 --bind 127.0.0.1
+```
+
+Then open `http://127.0.0.1:8000/`.
+
+## Agent Notes
+
+When updating learning records:
+
+- Use the matching build script instead of hand-copying a whole page.
+- Preserve the user's wording, screenshot order, and links.
+- Keep the `learning-records.html` reading statement and platform cards intact.
+- Keep the DOCX archive unchanged unless the user explicitly asks to update it.
+- Update this README and the relevant build-script config when structure or
+  conventions change.

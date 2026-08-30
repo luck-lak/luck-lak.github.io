@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Intermediate CSS learning record by Aokun Lei.">
+    <title>Intermediate CSS | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#technical-journey">Technical Journey</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 03</p>
+            <h1>Intermediate CSS</h1>
+            
+            <nav class="record-toc"><p class="record-toc-title">On this page</p><ul><li><a href="#section-1">Notes</a></li><li><a href="#section-2">Chapter 1: Flexbox</a></li><li><a href="#section-3">Chapter 2: Grid</a></li><li><a href="#section-4">Chapter 3: Advanced Grid</a></li><li><a href="#section-5">Chapter 4: Transitions</a></li><li><a href="#section-6">Chapter 5</a></li><li><a href="#section-7">Chapter 6: Media queries</a></li><li><a href="#section-8">Chapter 7: Variables</a></li><li><a href="#section-9">Chapter 8: Functions</a></li></ul></nav>
+            <div class="record-content">
+<section class="record-section" id="section-1">
+<h2>Notes</h2>
+<p>As previously stated, flex containers have two axes: a main axis and a cross axis. By default, the main axis is horizontal and the cross axis is vertical.</p><p>The main axis is used to position flex items with the following properties:</p><ul><li>justify-content</li><li><a href="https://www.codecademy.com/resources/docs/css/flexbox/flex-wrap" target="_blank" rel="noopener noreferrer">flex-wrap</a></li><li><a href="https://www.codecademy.com/resources/docs/css/flexbox/flex-grow" target="_blank" rel="noopener noreferrer">flex-grow</a></li><li><a href="https://www.codecademy.com/resources/docs/css/flexbox/flex-shrink" target="_blank" rel="noopener noreferrer">flex-shrink</a></li></ul><p>The cross axis is used to position flex items with the following properties:</p><ul><li>align-items</li><li>align-content</li></ul>
+</section>
+<section class="record-section" id="section-2">
+<h2>Chapter 1: Flexbox</h2>
+<p>You should be proud of yourself! You have learned the most important properties of flexbox. Flexbox is an art and a science; you can use it to make laying out multiple elements a piece of cake. You know everything necessary to begin using it in your own projects.</p><p>• display: flex changes an element to a block-level container with flex items inside of it.</p><p>• display: inline-flex allows multiple flex containers to appear inline with each other.</p><p>• justify-content is used to space items along the main axis.</p><p>• align-items is used to space items along the cross axis.</p><p>• flex-grow is used to specify how much space (and in what proportions) flex items absorb along the main axis.</p><p>• flex-shrink is used to specify how much flex items shrink and in what proportions along the main axis.</p><p>• flex-basis is used to specify the initial size of an element styled with flex-grow and/or flex-shrink.</p><p>• flex is used to specify flex-grow, flex-shrink, and flex-basis in one declaration.</p><p>• flex-wrap specifies that elements should shift along the cross axis if the flex container is not large enough.</p><p>• align-content is used to space rows along the cross axis.</p><p>• flex-direction is used to specify the main and cross axes.</p><p>• flex-flow is used to specify flex-wrap and flex-direction in one declaration.</p><p>• Flex containers can be nested inside of each other by declaring display: flex or display: inline-flex for children of flex containers.</p><p>Let’s apply a few of the properties you’ve learned to arrange one section of the web page in the browser to the right!</p>
+</section>
+<section class="record-section" id="section-3">
+<h2>Chapter 2: Grid</h2>
+<p>At this point, we’ve covered a great deal of different ways to manipulate the grid and the items inside it to create interesting layouts.</p><p>• grid-template-columns defines the number and sizes of the columns of the grid.</p><p>• grid-template-rows defines the number and sizes of the rows of the grid.</p><p>• grid-template is a shorthand for defining both grid-template-columns and grid-template-rows in one line.</p><p>• row-gap puts blank space between the rows of the grid.</p><p>• column-gap puts blank space between the columns of the grid.</p><p>• gap is a shorthand for defining both row-gap and column-gap in one line.</p><p>• grid-row-start and grid-row-end make elements span certain rows of the grid.</p><p>• grid-column-start and grid-column-end make elements span certain columns of the grid.</p><p>• grid-area is a shorthand for grid-row-start, grid-column-start, grid-row-end, and grid-column-end, all in one line.</p><p>You have seen how to set up and fill in a grid and you now have one more CSS positioning technique to add to your toolkit! Let’s do some practice to solidify these skills.</p>
+</section>
+<section class="record-section" id="section-4">
+<h2>Chapter 3: Advanced Grid</h2>
+<p>Great work! You have learned many new properties to use when creating a layout using CSS Grid! Let’s review:</p><p>• grid-template-areas specifies grid named grid areas.</p><p>• Grid layouts are two-dimensional: they have a row, or inline, axis and a column, or block, axis.</p><p>• justify-items specifies how individual elements should spread across the row axis.</p><p>• justify-content specifies how groups of elements should spread across the row axis.</p><p>• justify-self specifies how a single element should position itself with respect to the row axis.</p><p>• align-items specifies how individual elements should spread across the column axis.</p><p>• align-content specifies how groups of elements should spread across the column axis.</p><p>• align-self specifies how a single element should position itself with respect to the column axis.</p><p>• grid-auto-rows specifies the height of rows added implicitly to the grid.</p><p>• grid-auto-columns specifies the width of columns added implicitly to the grid.</p><p>• grid-auto-flow specifies in which direction implicit elements should be created.</p><p>This is a great time to experiment with the code in the code editor and try any of the properties you want to practice more! When you’re ready, move on!</p>
+</section>
+<section class="record-section" id="section-5">
+<h2>Chapter 4: Transitions</h2>
+<p>CSS Transitions are a powerful tool for providing visual feedback to users. We’ve learned a lot about transitions, so let’s review:</p><h3>CSS Transitions have 4 components:</h3><p>• A property that will transition.</p><p>• The duration which describes how long the transition takes.</p><p>• The delay to pause before the transition will take place.</p><p>• The timing function that describes the transition’s acceleration.</p><p>A simple transition can be described with a property and a duration, which can be written like this:</p><p>transition-property: color;<br>transition-duration: 1s;</p><p>Many properties’ state changes can be transitioned, including color, background color, font size, width, and height. all is also a valid transition property that causes every changing property to transition.</p><p>The shorthand property transition can be used to describe all four components of a transition at once. By using the comma (,) operator, many transitions can be described in one CSS rule.</p><p>&lt;transition:  property duration timing-function delay &gt;</p><p>If you want to learn more about CSS Transitions, we recommend MDN’s Using CSS Transitions doc.</p><p>Good work, you now have the tools to make your web pages come to life!</p>
+</section>
+<section class="record-section" id="section-6">
+<h2>Chapter 5</h2>
+<p>（Responsive Design: Sizing Elements）</p><figure class="record-figure"><img src="../../assets/records/codecademy/intermediate-css/01.jpg" alt="Course screenshot" loading="lazy"></figure><p>Great work! You learned how to size elements on a website relative to other elements on the page.</p><h3>Let’s review what you learned:</h3><figure class="record-figure"><img src="../../assets/records/codecademy/intermediate-css/02.jpg" alt="Course screenshot" loading="lazy"></figure><ul><li>Content on a website can be sized relative to other elements on the page using relative measurements.</li><li>The unit of em sizes font relative to the font size of a parent element.</li><li>The unit of rem sizes font relative to the font size of a root element. That root element is the &lt;html&gt; element.</li><li>Percentages are commonly used to size box-model features, like the width, height, padding, or margin of an element.</li><li>When percentages are used to size width and height, child elements will be sized relative to the dimensions of their parent (remember that parent dimensions must first be set).</li><li>Percentages can be used to set padding and margin. Horizontal and vertical padding and margin are set relative to the width of a parent element.</li><li>The minimum and maximum width of elements can be set using min-width and max-width.</li><li>The minimum and maximum height of elements can be set using min-height and max-height.</li><li>When the height of an image or video is set, then its width can be set to auto so that the media scales proportionally. Reversing these two properties and values will also achieve the same result.</li><li>A background image of an HTML element will scale proportionally when its background-size property is set to cover.</li></ul><figure class="record-figure"><img src="../../assets/records/codecademy/intermediate-css/03.jpg" alt="Course screenshot" loading="lazy"></figure><p>Relative units of measurement are a first step towards incorporating responsive design in a website. When combined with more advanced responsive techniques, you can create a seamless user experience regardless of a device’s screen size.</p>
+</section>
+<section class="record-section" id="section-7">
+<h2>Chapter 6: Media queries</h2>
+<figure class="record-figure"><img src="../../assets/records/codecademy/intermediate-css/04.jpg" alt="Course screenshot" loading="lazy"></figure><p>Incredible work! You learned how to change the way a website appears on different screens with media queries and breakpoints</p><h3>Throughout this lesson, you learned:</h3><ul><li>When a website responds to the size of the screen it’s viewed on, it’s called a responsive website.</li><li>You can write media queries to help with different screen sizes.</li><li>Adding the viewport &lt;meta&gt; tag to our code allows us to control the width and scaling of the viewport so that it’s sized and scaled correctly on all devices.</li><li>Media queries require media features. Media features are the conditions that must be met to render the CSS within a media query.</li><li>Media features can detect many aspects of a user’s browser, including the screen’s width, height, resolution, orientation, and more.</li><li>The and operator requires multiple media features to be true at once.</li><li>A comma separated list of media features only requires one media feature to be true for the code within to be applied.</li><li>The best practice for identifying where media queries should be set is by resizing the browser to determine where the content naturally breaks. Natural breakpoints are found by resizing the browser.</li></ul><p>With your knowledge of media queries and CSS, you can make websites that look great on any device, from a small phone to a huge television. By making your websites responsive, you’ll make it possible for any of your users to have a great experience.</p><figure class="record-figure"><img src="../../assets/records/codecademy/intermediate-css/05.jpg" alt="Course screenshot" loading="lazy"></figure><p>———————————————————————————</p>
+</section>
+<section class="record-section" id="section-8">
+<h2>Chapter 7: Variables</h2>
+<p>In this lesson, we learned how to use CSS variables to make property values more legible and easily replaced. We also learned about the power of scoping, overriding variables, and fallback values. Finally, we practiced using variables with media queries to create a website with dynamic web themes.</p><p>• Variables mitigate the need to repeat property values and make CSS code easier to read.</p><p>• You can use variables in CSS to store values.</p><p>• Variable declaration must start with a double hyphen (--).</p><p>• Variables must be used as values for CSS properties.</p><p>• Variables must be used as an argument inside of the var() function.</p><p>• Variables are subject to both scope and inheritance.</p><p>• Globally scoped variables are defined inside the :root pseudo-class.</p><p>• Overriding a variable is done by redefining that variable’s value inside of the desired selector ruleset.</p><p>• Fallback values can be used to provide a backup value if the initial variable is invalid.</p><p>• Multiple fallback values can be provided by adding more values inside cascading var() functions.</p><p>• Responsively designed web pages can be created by combining variables with media queries.</p>
+</section>
+<section class="record-section" id="section-9">
+<h2>Chapter 8: Functions</h2>
+<p>In this lesson, we learned about how CSS functions can be used to set background images, perform mathematical calculations, and dynamically set values between minimum and maximum ranges. We also learned about property-specific functions used to set colors, create filters, and transform elements!</p><h3>Let’s review some of the main points covered in this lesson:</h3><p>• Functions are a type of CSS value that is inserted in place of a hardcoded value on a CSS property.</p><p>• The url() function is used to load resources into the stylesheet.</p><p>• You can use the calc() function to perform simple mathematical operations on elements.</p><p>• The min() function can be used to select the smallest value from a range of values and set that value on a property.</p><p>• The max() function can be used to select the largest value from a range of values and set that value on a property.</p><p>• You can use the clamp() function to ensure property value scales up and down while staying between an upper and lower bound.</p><p>• Color values that are fully opaque can be set using the rgb() and hsl() functions.</p><p>• Color values that need a varying level of alpha can be set using the rgba() and hsla() functions.</p><p>• You can use filter functions to change the appearance of input images and elements.</p><p>• The drop-shadow(), blur(), and brightness() functions each perform different kinds of element filtering.</p><p>• You can use transformation functions to manipulate image positioning, scale, rotation, and more.</p><p>• The scale(), rotate(), and translate() functions each allow for specific kinds of transformation.</p>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="learn-css.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+                <a class="record-pagination-link next" href="building-interactive-javascript-websites.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

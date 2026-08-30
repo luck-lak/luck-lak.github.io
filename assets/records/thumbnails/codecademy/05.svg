@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Introduction to Back-End Programming">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#8fd6a8" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 05</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Introduction to</text>
+  <text x="48" y="196" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Back-End Programming</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">servers · databases · APIs</text>
+  <rect x="436" y="282" width="58" height="40" rx="8" stroke="#8fd6a8" stroke-width="3" fill="none"/>
+  <rect x="546" y="282" width="58" height="40" rx="8" fill="#8fd6a8"/>
+  <path d="M498 296 h44 m0 0 l-8 -7 m8 7 l-8 7" stroke="#8fd6a8" stroke-width="3" fill="none"/>
+  <path d="M542 312 h-44 m0 0 l8 -7 m-8 7 l8 7" stroke="#9fcfc0" stroke-width="3" fill="none"/>
+</svg>

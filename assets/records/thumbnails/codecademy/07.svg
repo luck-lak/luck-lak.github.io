@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Learn Node.js Setting Up a Server">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#7fd8c3" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 07</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Learn Node.js:</text>
+  <text x="48" y="196" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Setting Up a Server</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">HTTP module · requests · responses</text>
+  <g fill="#7fd8c3">
+    <rect x="470" y="262" width="96" height="22" rx="6"/>
+    <rect x="470" y="292" width="96" height="22" rx="6"/>
+    <rect x="470" y="322" width="96" height="22" rx="6"/>
+  </g>
+  <circle cx="484" cy="273" r="4" fill="#123c33"/>
+  <circle cx="484" cy="303" r="4" fill="#123c33"/>
+  <circle cx="484" cy="333" r="4" fill="#123c33"/>
+  <path d="M452 306 h-40 m0 0 l9 -8 m-9 8 l9 8" stroke="#9fcfc0" stroke-width="3" fill="none"/>
+</svg>

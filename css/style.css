@@ -5,6 +5,11 @@ html {
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
     font-family: Inter, Arial, sans-serif;
     text-align: center;
 
@@ -13,7 +18,20 @@ body{
 }
 
 main {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+
     padding-top: 80px;
+}
+
+footer {
+    margin-top: auto;
+    padding: 24px 0;
+
+    font-size: 14px;
+    color: #666666;
 }
 
 section{
@@ -172,6 +190,7 @@ nav a:active {
 .records-index-page,
 .record-page {
     max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
     padding: 120px 24px 64px;
     text-align: left;
@@ -227,8 +246,8 @@ nav a:active {
 
 .record-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
 }
 
 .record-card {
@@ -277,11 +296,15 @@ nav a:active {
 }
 
 .record-page {
-    max-width: 840px;
+    max-width: 1080px;
 }
 
 .record-article {
-    max-width: 760px;
+    max-width: 1000px;
+}
+
+.record-article section {
+    padding: 0;
 }
 
 .record-kicker {
@@ -328,7 +351,7 @@ nav a:active {
 .record-figure img {
     display: block;
     width: 100%;
-    max-width: 620px;
+    max-width: 880px;
     margin: 0 auto;
     height: auto;
 
@@ -460,6 +483,7 @@ body.dark-mode nav a:hover {
 @media (max-width: 768px) {
     .records-index-page,
     .record-page {
+        max-width: 100%;
         padding: 170px 16px 48px;
     }
 
@@ -474,6 +498,7 @@ body.dark-mode nav a:hover {
     .record-pagination {
         flex-direction: column;
         align-items: flex-start;
+        padding: 20px 0 0;
     }
 
     #about-me {
@@ -489,6 +514,302 @@ body.dark-mode nav a:hover {
         max-width: 100%;
         margin-top: 24px;
     }
+}
+
+/* Learning records hub: platform cards */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.platform-card {
+    padding: 22px 24px;
+
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+
+    color: black;
+    text-decoration: none;
+    text-align: left;
+
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.platform-card:hover {
+    border-color: #8a8a8a;
+    transform: translateY(-2px);
+}
+
+.platform-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.platform-card-name {
+    margin: 0;
+    font-size: 20px;
+}
+
+.platform-card-count {
+    padding: 4px 8px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.platform-card p {
+    margin: 12px 0 0;
+
+    line-height: 1.6;
+    color: #555555;
+}
+
+.records-hub-note {
+    margin-top: 14px;
+
+    color: #555555;
+}
+
+.learning-purpose {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 720px;
+
+    margin-bottom: 42px;
+    text-align: left;
+}
+
+.learning-purpose h2 {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+}
+
+.learning-purpose p {
+    margin: 0;
+
+    line-height: 1.65;
+    color: #555555;
+}
+
+body.dark-mode .learning-purpose p {
+    color: #aaaaaa;
+}
+
+.platform-backlink {
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.platform-backlink a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.platform-backlink a:hover {
+    text-decoration: underline;
+}
+
+/* Record pages: source link, table of contents, sections, tables, code */
+.record-source {
+    margin: -14px 0 28px;
+}
+
+.record-source a {
+    color: #555555;
+}
+
+.record-toc {
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0 0 36px;
+    padding: 16px 20px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.record-toc-title {
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.record-toc ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    min-width: 0;
+}
+
+.record-toc a {
+    color: inherit;
+    text-decoration: none;
+
+    font-size: 15px;
+}
+
+.record-toc a:hover {
+    text-decoration: underline;
+}
+
+.record-section {
+    margin-bottom: 44px;
+}
+
+.record-section:last-child {
+    margin-bottom: 0;
+}
+
+.record-section h2 {
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #e4e4e4;
+
+    font-size: 24px;
+}
+
+.record-content table {
+    width: 100%;
+    margin: 20px 0;
+
+    border-collapse: collapse;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.record-content th,
+.record-content td {
+    padding: 8px 12px;
+
+    border: 1px solid #d0d0d0;
+
+    text-align: left;
+    vertical-align: top;
+}
+
+.record-content th {
+    background-color: #f5f5f5;
+}
+
+.record-content pre {
+    margin: 20px 0;
+    padding: 14px 16px;
+
+    background-color: #f6f8fa;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+
+    overflow-x: auto;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.record-content code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.record-content ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+
+    text-align: left;
+}
+
+.record-content li {
+    margin: 0 0 8px;
+}
+
+@media (max-width: 768px) {
+    .platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .record-content {
+        overflow-wrap: break-word;
+    }
+}
+
+/* Dark mode for the new components */
+body.dark-mode footer {
+    color: #aaaaaa;
+}
+
+body.dark-mode .platform-card {
+    background-color: #1f1f1f;
+    border-color: #555555;
+    color: white;
+}
+
+body.dark-mode .platform-card:hover {
+    border-color: #888888;
+}
+
+body.dark-mode .platform-card p {
+    color: #aaaaaa;
+}
+
+body.dark-mode .platform-card-count {
+    border-color: #555555;
+    color: #aaaaaa;
+}
+
+body.dark-mode .records-hub-note {
+    color: #aaaaaa;
+}
+
+body.dark-mode .platform-backlink a {
+    color: #aaaaaa;
+}
+
+body.dark-mode .record-toc {
+    border-color: #555555;
+}
+
+body.dark-mode .record-toc-title {
+    color: #aaaaaa;
+}
+
+body.dark-mode .record-section h2 {
+    border-bottom-color: #444444;
+}
+
+body.dark-mode .record-content th,
+body.dark-mode .record-content td {
+    border-color: #555555;
+}
+
+body.dark-mode .record-content th {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .record-content pre {
+    background-color: #2a2a2a;
+    border-color: #555555;
 }
 
 @media (max-width: 768px) {

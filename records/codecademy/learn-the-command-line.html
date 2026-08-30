@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the Command Line learning record by Aokun Lei.">
+    <title>Learn the Command Line | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#technical-journey">Technical Journey</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 11</p>
+            <h1>Learn the Command Line</h1>
+            <p class="record-source"><a href="https://www.codecademy.com/enrolled/courses/learn-the-command-line" target="_blank" rel="noopener noreferrer">Course page</a></p>
+            <nav class="record-toc"><p class="record-toc-title">On this page</p><ul><li><a href="#section-1">Notes</a></li><li><a href="#section-2">Chapter 1: Navigating the File System</a></li><li><a href="#section-3">Chapter 2: Viewing and Changing the File System</a></li><li><a href="#section-4">Chapter 3: Redirecting Input and Output</a></li><li><a href="#section-5">Chapter 4: Configuring the Environment</a></li></ul></nav>
+            <div class="record-content">
+<section class="record-section" id="section-1">
+<h2>Notes</h2>
+<p>惊人的遗忘率，刚学完我感觉自己就忘了很多，但我感觉忘是正常的，我学习的初衷就是了解，不是背诵，学习这门课我感觉是收获了很多，一是对于命令行的使用了解得更多，知道了更多常识（很多符号含义等）。然后关于像Windows,Linux以及各种命令行的区别与联系，不同环境的一些常识区别等等	</p><p>感觉很多难记的东西其实只要理解到它们是在用重定向，就好理解 / 记忆很多，比如 cat filename.txt &gt; filename2.txt，echo $PATH &gt; path.txt 等</p>
+</section>
+<section class="record-section" id="section-2">
+<h2>Chapter 1: Navigating the File System</h2>
+<p>Congratulations! You’ve learned five commands commonly used to navigate the filesystem from the command line. What can we generalize so far?</p><ul><li>The command line is a text interface for the computer’s operating system. To access the command line, we use the terminal.</li><li>A filesystem organizes a computer’s files and directories into a tree structure. It starts with the root directory. Each parent directory can contain more child directories and files.</li><li>From the command line, you can navigate through files and folders on your computer:</li><li>pwd outputs the name of the current working directory.</li><li>ls lists all files and directories in the working directory.</li><li>cd switches you into the directory you specify.</li><li>.. is used to represent the directory above when navigating.</li><li>mkdir creates a new directory in the working directory.</li><li>touch creates a new file inside the working directory.</li><li>You can use helper commands to make navigation easier:</li><li>clear clears the terminal</li><li>tab autocompletes the name of a file or directory</li><li>↑ and ↓ allow you to cycle through previous commands</li></ul>
+</section>
+<section class="record-section" id="section-3">
+<h2>Chapter 2: Viewing and Changing the File System</h2>
+<p>Congratulations! You learned how to use the command line to view and manipulate the filesystem. What can we generalize so far?</p><ul><li>Options modify the behavior of commands:</li><li>ls -a lists all contents of a directory, including hidden files and directories</li><li>ls -l lists all contents in long format</li><li>ls -t orders files and directories by the time they were last modified</li><li>Multiple options can be used together, like ls -alt</li><li>From the command line, you can also copy, move, and remove files and directories:</li><li>cp copies files</li><li>mv moves and renames files</li><li>rm removes files</li><li>rm -r removes directories</li><li>Wildcards are useful for selecting groups of files and directories</li></ul>
+</section>
+<section class="record-section" id="section-4">
+<h2>Chapter 3: Redirecting Input and Output</h2>
+<p>Congratulations! You learned how to use the command line to redirect standard input and standard output. What can we generalize so far?</p><ul><li>Redirection reroutes standard input, standard output, and standard error.</li><li>The common redirection commands are:</li><li>&gt; redirects standard output of a command to a file, overwriting previous content.</li><li>&gt;&gt; redirects standard output of a command to a file, appending new content to old content.</li><li>&lt; redirects standard input to a command.</li><li>| redirects standard output of a command to another command.</li><li>A number of other commands are powerful when combined with redirection commands:</li><li>sort: sorts lines of text alphabetically.</li><li>uniq: filters duplicate, adjacent lines of text.</li><li>grep: searches for a text pattern and outputs it.</li><li>sed : searches for a text pattern, modifies it, and outputs it.</li></ul>
+</section>
+<section class="record-section" id="section-5">
+<h2>Chapter 4: Configuring the Environment</h2>
+<p>Congratulations! You learned to use the <a href="https://www.codecademy.com/resources/docs/command-line/bash" target="_blank" rel="noopener noreferrer">bash</a> profile to configure the environment. What can we generalize so far?</p><ul><li>The environment refers to the preferences and settings of the current user.</li><li>The nano editor is a command line text editor used to configure the environment.</li><li>.bash_profile is where environment settings are stored. You can edit this file with nano.</li><li>Environment variables are variables that can be used across commands and programs and hold information about the environment.</li><li>export VARIABLE=&quot;Value&quot; sets and exports an environment variable.</li><li>USER is the name of the current user.</li><li>PS1 is the command prompt.</li><li>HOME is the home directory. It is usually not customized.</li><li>PATH returns a colon : separated list of file paths. It is customized in advanced cases.</li><li>env returns a list of <a href="https://www.codecademy.com/resources/docs/command-line/environment-variables" target="_blank" rel="noopener noreferrer">environment variables</a>. You can redirect the output, using grep to select the variable you want to see.</li></ul>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="git-team-collaboration.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+                
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

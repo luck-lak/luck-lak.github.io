@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Learn CSS">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#ffd166" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 02</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">Learn CSS</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">selectors · box model · color · typography</text>
+  <text x="430" y="330" fill="#ffd166" font-family="Consolas, 'Courier New', monospace" font-size="76" font-weight="700">{ }</text>
+  <circle cx="530" cy="306" r="13" fill="#ff8a5c"/>
+  <circle cx="562" cy="306" r="13" fill="#74d6e8"/>
+  <circle cx="594" cy="306" r="13" fill="#f49ab5"/>
+</svg>

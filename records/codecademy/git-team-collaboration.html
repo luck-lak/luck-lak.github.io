@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Git: Team Collaboration Cheat Sheet learning record by Aokun Lei.">
+    <title>Git: Team Collaboration Cheat Sheet | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#technical-journey">Technical Journey</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 10</p>
+            <h1>Git: Team Collaboration Cheat Sheet</h1>
+            
+            <nav class="record-toc"><p class="record-toc-title">On this page</p><ul><li><a href="#section-1">Notes</a></li><li><a href="#section-2">前置准备（仅首次）</a></li><li><a href="#section-3">9步流程</a></li><li><a href="#section-4">命令速查</a></li><li><a href="#section-5">核心概念</a></li><li><a href="#section-6">口诀</a></li></ul></nav>
+            <div class="record-content">
+<section class="record-section" id="section-1">
+<h2>Notes</h2>
+<p>Git 团队协作全流程（速查笔记）</p>
+</section>
+<section class="record-section" id="section-2">
+<h2>前置准备（仅首次）</h2>
+<pre><code>git clone &lt;仓库地址&gt;</code></pre>
+</section>
+<section class="record-section" id="section-3">
+<h2>9步流程</h2>
+<table class="record-table"><tr><th>步骤</th><th>目的</th><th>命令</th></tr><tr><td>① 明确需求</td><td>看 Issue/文档，确认要改什么</td><td>无（网页操作）</td></tr><tr><td>② 同步远程</td><td>查看队友有没有新提交</td><td>git fetch origin</td></tr><tr><td>③ 切分支</td><td>基于最新 dev 创建个人分支</td><td>git checkout dev → git pull origin dev → git checkout -b feature/xxx</td></tr><tr><td>④ 开发提交</td><td>本地多次存档</td><td>git add . + git commit -m &quot;信息&quot;（重复）</td></tr><tr><td>⑤ 推送远程</td><td>上传分支到 GitHub</td><td>git push origin feature/xxx</td></tr><tr><td>⑥ 发起 PR</td><td>申请合并到 dev</td><td>网页操作：base=dev，compare=feature/xxx</td></tr><tr><td>⑦ 修改代码</td><td>按 review 意见改，再推送</td><td>git add . + git commit -m &quot;fix: ...&quot; + git push origin feature/xxx（重复）</td></tr><tr><td>⑧ 合并 PR</td><td>审核通过，点 Merge 合入</td><td>网页点 Merge 按钮，合并后删远程分支</td></tr><tr><td>⑨ 关闭 Issue</td><td>自动关任务，记录变更</td><td>PR 描述写 Closes #编号</td></tr></table>
+</section>
+<section class="record-section" id="section-4">
+<h2>命令速查</h2>
+<pre><code>git fetch origin                              # 看远程更新
+git checkout dev &amp;&amp; git pull origin dev       # 更新本地 dev
+git checkout -b feature/xxx                   # 创建并切换新分支
+git add . &amp;&amp; git commit -m &quot;信息&quot;             # 提交
+git push origin feature/xxx                   # 推送到远程</code></pre>
+</section>
+<section class="record-section" id="section-5">
+<h2>核心概念</h2>
+<p>origin      远程仓库默认名</p><p>dev         开发主分支（团队基地）</p><p>feature/xxx 个人开发分支</p><p>fetch       只看远程更新，不合并不改动</p><p>pull        fetch + merge，拉取并合并</p><p>push        上传本地提交到远程</p><p>PR          请求合并代码（需审核）</p>
+</section>
+<section class="record-section" id="section-6">
+<h2>口诀</h2>
+<p>先看任务再同步，切出分支做改动 → 多次提交推送 PR，审完再改点合并 → 关掉任务记一笔</p>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="cloud-computing.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+                <a class="record-pagination-link next" href="learn-the-command-line.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

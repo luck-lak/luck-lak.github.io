@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cloud Computing learning record by Aokun Lei.">
+    <title>Cloud Computing | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#technical-journey">Technical Journey</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 09</p>
+            <h1>Cloud Computing</h1>
+            
+            
+            <div class="record-content">
+<section class="record-section" id="section-1">
+
+<figure class="record-figure"><img src="../../assets/records/codecademy/cloud-computing/01.jpg" alt="Course screenshot" loading="lazy"></figure><p>Cloud Computing = 用云厂商的服务器和计算资源，换来便宜、灵活和高可用，但会失去一部分控制权</p><table class="record-table"><tr><td>方面</td><td>核心内容</td></tr><tr><td>Cloud Computing 是什么</td><td>通过互联网，由云服务商提供计算服务，如存储、数据库、网络和计算资源。</td></tr><tr><td>Storage</td><td>用云端保存大量数据，并方便做备份。</td></tr><tr><td>Analytics</td><td>利用云端强大的计算能力处理和分析大量数据。</td></tr><tr><td>Infrastructure</td><td>公司不用自己买和维护大量服务器，改用云厂商的基础设施。</td></tr><tr><td>优势</td><td>成本低、维护少、扩缩容快、全球部署、高可用、容错能力强。</td></tr><tr><td>风险</td><td>控制权下降、数据交给云厂商、需要培训、可能有隐私和数据泄露风险。</td></tr></table><h3>Cloud Careers（云计算相关职业）</h3><table class="record-table"><tr><td>类别</td><td>核心内容</td></tr><tr><td>基础能力</td><td>了解云、会配置本地环境、懂常见云服务、基础权限与安全、会部署基本云资源。</td></tr><tr><td>通用岗位</td><td>Cloud Developer：用代码调用云服务；Cloud Administrator：配置和维护云服务；Cloud Architect：从整体上设计云系统。</td></tr><tr><td>专项岗位</td><td>SecOps：安全；FinOps：成本优化；DevOps / SRE：自动化、CI/CD、监控、可靠性。</td></tr></table><h3>Developer = 用云写功能<br>Administrator = 管云资源<br>Architect = 设计整个云系统<br>SecOps = 安全，FinOps = 钱，DevOps = 自动化和交付</h3><h3>Cloud Deployment Models</h3><p>核心是看两个问题：谁能访问云？组织对云有多少控制权</p><table class="record-table"><tr><td>模型</td><td>核心特点</td><td>优点</td><td>缺点</td></tr><tr><td>Public Cloud 公有云</td><td>多个客户共享云厂商基础设施</td><td>便宜、按量付费、易扩展、无需管硬件</td><td>控制少、依赖云厂商</td></tr><tr><td>Private Cloud 私有云</td><td>只供一个组织使用</td><td>安全、控制权高、可定制</td><td>贵、维护成本高</td></tr><tr><td>Community Cloud 社区云</td><td>一群需求相似的组织共享</td><td>比公有云更安全，可共同分担成本</td><td>多组织协调复杂</td></tr><tr><td>Hybrid Cloud 混合云</td><td>混合使用公有云、私有云等</td><td>不同服务选择最适合的模式</td><td>管理更复杂</td></tr><tr><td>Multicloud 多云</td><td>同时使用多个同类型云，如 AWS + GCP</td><td>可以利用不同厂商的价格和特色服务</td><td>团队需要掌握多个平台，复杂度增加</td></tr></table><p>SaaS / PaaS / IaaS 的区别，本质上是“云厂商替你管理到哪一层”</p><table class="record-table"><tr><td>类型</td><td>你拿到什么</td><td>你主要负责什么</td><td>特点</td></tr><tr><td>SaaS</td><td>现成软件</td><td>直接使用</td><td>最省事，控制最少</td></tr><tr><td>PaaS</td><td>开发/部署平台</td><td>写应用</td><td>省基础设施管理，但定制有限</td></tr><tr><td>IaaS</td><td>虚拟机、网络、存储等基础设施</td><td>自己配置和管理</td><td>最灵活，但最复杂</td></tr></table><h3>具体来说：</h3><ul><li>SaaS：直接用别人做好的软件，比如 Gmail、Google Docs、Dropbox。 </li><li>PaaS：你负责写应用，平台帮你处理服务器、扩缩容、部署等，比如 Google App Engine、Azure App Service。 </li><li>IaaS：云厂商给你计算、网络、存储资源，你自己管理更多底层配置，比如 AWS EC2、Azure Virtual Machines。</li></ul><p>Cloud Provider = 提供云基础设施和云服务的公司</p><p>三大云厂商</p><table class="record-table"><tr><td>云厂商</td><td>主要优势</td><td>主要缺点</td></tr><tr><td>AWS</td><td>市场最成熟、服务最多、免费层较强</td><td>价格复杂、容易 vendor lock-in</td></tr><tr><td>Azure</td><td>企业经验强、Office 365 等 SaaS 强、适合 Hybrid Cloud</td><td>学习/使用较复杂、支持体验一般</td></tr><tr><td>GCP</td><td>定价较简单、通常较便宜、Big Data / ML 强</td><td>服务数量较少、数据中心较少</td></tr></table>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="fundamentals-of-operating-systems.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+                <a class="record-pagination-link next" href="git-team-collaboration.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

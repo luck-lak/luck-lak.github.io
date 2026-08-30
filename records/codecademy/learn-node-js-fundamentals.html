@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn Node.js: Fundamentals learning record by Aokun Lei.">
+    <title>Learn Node.js: Fundamentals | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#technical-journey">Technical Journey</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 06</p>
+            <h1>Learn Node.js: Fundamentals</h1>
+            
+            <nav class="record-toc"><p class="record-toc-title">On this page</p><ul><li><a href="#section-1">Chapter 1: Introduction to Node.js</a></li><li><a href="#section-2">Chapter 2: Node.js Essentials</a></li></ul></nav>
+            <div class="record-content">
+<section class="record-section" id="section-1">
+<h2>Chapter 1: Introduction to Node.js</h2>
+<p>Awesome work! You’ve learned a lot about some fundamental Node.js concepts and <a href="https://www.codecademy.com/resources/docs/javascript/modules" target="_blank" rel="noopener noreferrer">modules</a>. Let’s take a moment to review what we learned:</p><ul><li>Node.js is a JavaScript runtime, an environment that allows us to execute our JavaScript code by converting it into something a computer can understand.</li><li>REPLs are processes that read, evaluate, print, and repeat (loop), and Node.js comes with its own REPL we can access in our terminal with the node command.</li><li>We run JavaScript programs with Node in the terminal by typing node followed by the absolute or relative path to the file (relative to the working directory in the terminal).</li><li>Code can be organized into separate files, or modules. Modules may be used in another file importing them with the require() function.</li><li>Core modules are built into the Node.js environment to efficiently perform common tasks.</li><li>The console module exports a global console object allowing the terminal to act as a debugging console, similar to the JavaScript console object provided by web browsers.</li><li>The process module is a global module that gives access to information about the Node.js runtime environment.</li><li>The os module provides <a href="https://www.codecademy.com/resources/docs/javascript/methods" target="_blank" rel="noopener noreferrer">methods</a> to retrieve information about the computer, operating system, and network interfaces.</li><li>The util module contains methods used to maintain and debug your code.</li></ul><p>You learned some of the key core modules built into Node.js, but as you know, there are many more. You can even create your own modules, as well as use third-party modules built by other developers. But don’t worry! A good thing to remember when learning Node is that it’s not necessary to memorize every module, method, or other specific aspects of the environment. The best way to get comfortable with Node is to practice making things with it. Your imagination is the limit! So keep going to learn how to download Node on your local machine.</p><p>Great work! We’re excited to see what you build!</p><p>util.promisify认知模型</p><figure class="record-figure"><img src="../../assets/records/codecademy/learn-node-js-fundamentals/01.jpg" alt="Course screenshot" loading="lazy"></figure><p>（刚开始的异步执行可以用类似setTimeOut()来弄）</p><p>四个记忆点</p><h3>① Callback</h3><p>callback(error, result)</p><p>查完以后叫我。</p><h3>② Error-first</h3><p>callback(null, result) // 成功</p><p>callback(error)        // 失败</p><p>第一个参数永远优先表示错误。</p><h3>③ Promisify</h3><p>const promiseFn = util.promisify(callbackFn);</p><p>把 callback 函数变成 Promise 函数。</p><h3>④ Async/Await</h3><p>try {</p><p>    const result = await promiseFn();</p><p>} catch (error) {</p><p>    // 处理错误</p><p>}</p><p>等待结果，成功拿数据，失败进 catch。</p><p>总而言之，用到可以再查，现在理解了就行</p><h3>What is Node?</h3><p>Node.js is a JavaScript runtime, which is an environment that executes JavaScript code. Web browsers also contain a JavaScript runtime environment. A “runtime” converts code written in a high-level, human-readable programming language (such as JavaScript) and compiles it down to code that the computer can execute. Node was created with the goal of building web servers and web applications in JavaScript, but it’s a powerful and flexible environment that can be used for building a wide range of applications.</p><h3>Fs Module:</h3><h3>① Callback</h3><p>const { readFile } = require(&#x27;fs&#x27;);</p><p>readFile(&#x27;./file.txt&#x27;, &#x27;utf-8&#x27;, (err, data) =&gt; {</p><p>  if (err) {</p><p>    console.log(err);</p><p>    return;</p><p>  }</p><p>  console.log(data);</p><p>});</p><p>异步 + callback</p><h3>② Promise</h3><p>const { readFile } = require(&#x27;fs/promises&#x27;);</p><p>readFile(&#x27;./file.txt&#x27;, &#x27;utf-8&#x27;)</p><p>  .then(data =&gt; {</p><p>    console.log(data);</p><p>  })</p><p>  .catch(err =&gt; {</p><p>    console.log(err);</p><p>  });</p><p>异步 + Promise</p><h3>③ Sync</h3><p>const { readFileSync } = require(&#x27;fs&#x27;);</p><p>try {</p><p>  const data = readFileSync(&#x27;./file.txt&#x27;, &#x27;utf-8&#x27;);</p><p>  console.log(data);</p><p>} catch (err) {</p><p>  console.log(err);</p><p>}</p><p>同步 + try/catch</p><h3>④ Promise + async/await</h3><h3>实际上还可以写成：</h3><p>const { readFile } = require(&#x27;fs/promises&#x27;);</p><p>async function main() {</p><p>  try {</p><p>    const data = await readFile(&#x27;./file.txt&#x27;, &#x27;utf-8&#x27;);</p><p>    console.log(data);</p><p>  } catch (err) {</p><p>    console.log(err);</p><p>  }</p><p>}</p><p>main();</p><p>异步 + Promise + async/await + try/catch</p><h3>Readable Streams</h3><p>Eg</p><p>const readline = require(&#x27;readline&#x27;);</p><p>const fs = require(&#x27;fs&#x27;);</p><p>const myInterface = readline.createInterface({</p><p>  input: fs.createReadStream(&quot;shoppingList.txt&quot;)</p><p>})</p><p>function printData(data){</p><p>  console.log(`Item: ${data}`)</p><p>} </p><p>myInterface.on(&#x27;line&#x27;, printData)</p>
+</section>
+<section class="record-section" id="section-2">
+<h2>Chapter 2: Node.js Essentials</h2>
+<p>Congratulations on making it to the end! Let’s take a moment to review the content covered in this lesson:</p><ul><li>Blocking code runs synchronously, and non-blocking code, such as timer <a href="https://www.codecademy.com/resources/docs/javascript/functions" target="_blank" rel="noopener noreferrer">functions</a>, runs asynchronously. Core <a href="https://www.codecademy.com/resources/docs/javascript/modules" target="_blank" rel="noopener noreferrer">modules</a> are provided to developers to perform common tasks efficiently. They are used by passing a string with the module’s name into a require() statement and storing the result in a variable.</li><li>We can create our own instances of the EventEmitter class, which provides an .on() method for subscribing to listen for named <a href="https://www.codecademy.com/resources/docs/javascript/events" target="_blank" rel="noopener noreferrer">events</a> and an .emit() method for emitting named events.</li><li>Node allows for both output, data/feedback to a user provided by the computer, and input, data/feedback to the computer provided by the user.</li><li>To handle <a href="https://www.codecademy.com/resources/docs/javascript/errors" target="_blank" rel="noopener noreferrer">errors</a> during asynchronous operations, many asynchronous APIs expect error-first callback functions. Many asynchronous APIs also have a version whose <a href="https://www.codecademy.com/resources/docs/javascript/methods" target="_blank" rel="noopener noreferrer">methods</a> return <a href="https://www.codecademy.com/resources/docs/javascript/promise" target="_blank" rel="noopener noreferrer">Promise</a> <a href="https://www.codecademy.com/resources/docs/javascript/objects" target="_blank" rel="noopener noreferrer">objects</a> instead.</li><li>The buffer module provides Buffer objects that represent a fixed amount of memory that cannot be resized.</li><li>The timer module provides functions that allow developers to execute <a href="https://www.codecademy.com/resources/docs/javascript/callbacks" target="_blank" rel="noopener noreferrer">callbacks</a> after a specified point in time in the future.</li><li>The Node fs core module is an API for interacting with the file system.</li><li>Streams allow us to read or write data piece by piece instead of all at once.</li></ul><h3>本章节内容：</h3><figure class="record-figure"><img src="../../assets/records/codecademy/learn-node-js-fundamentals/02.jpg" alt="Course screenshot" loading="lazy"></figure><figure class="record-figure"><img src="../../assets/records/codecademy/learn-node-js-fundamentals/03.jpg" alt="Course screenshot" loading="lazy"></figure><p>一个认知模型 Event Loop</p><figure class="record-figure"><img src="../../assets/records/codecademy/learn-node-js-fundamentals/04.jpg" alt="Course screenshot" loading="lazy"></figure><h3>可以这样认识：</h3><p>同步代码</p><p>    ↓</p><p>先全部执行</p><p>    ↓</p><p>Event Loop</p>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="introduction-to-back-end-programming.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+                <a class="record-pagination-link next" href="learn-node-js-setting-up-a-server.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

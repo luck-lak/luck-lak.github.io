@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building Interactive JavaScript Websites learning record by Aokun Lei.">
+    <title>Building Interactive JavaScript Websites | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#technical-journey">Technical Journey</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 04</p>
+            <h1>Building Interactive JavaScript Websites</h1>
+            
+            <nav class="record-toc"><p class="record-toc-title">On this page</p><ul><li><a href="#section-1">Chapter 1: The Script Element</a></li><li><a href="#section-2">Chapter 2: The Document Object Model</a></li><li><a href="#section-3">Chapter 3: JavaScript and DOM</a></li><li><a href="#section-4">Chapter 4</a></li></ul></nav>
+            <div class="record-content">
+<section class="record-section" id="section-1">
+<h2>Chapter 1: The Script Element</h2>
+<p>Let’s review.</p><ul><li>HTML creates the skeleton of a webpage, but JavaScript introduces interactivity</li><li>The &lt;script&gt; element has an opening and closing tag. You can embed JavaScript code inbetween the opening and closing &lt;script&gt; tags.</li><li>You link to external JavaScript files with the src attribute in the opening &lt;script&gt; tag.</li><li>By default, scripts are loaded and executed as soon as the HTML parser encounters them in the HTML file. However, the parser waits to load the entire script before proceeding to parse the rest of the page elements.</li><li>The defer attribute ensures that the entire HTML file has been parsed before the script is executed.</li><li>The async attribute will allow the HTML parser to continue parsing as the script is being downloaded, but will execute immediately after it has been downloaded.</li></ul><p>The old convention was to put scripts right before the &lt;/body&gt; tag to prevent the script from blocking the rest of the HTML content. Now, the convention is to put the script tag in the &lt;head&gt; element and to use the defer and async attributes.</p><p>The Document Object Model, abbreviated DOM, is a powerful tree-like structure that allows programmers to conceptualize hierarchy and access the elements on a web page.</p><p>The DOM is one of the better-named acronyms in the field of Web Development. In fact, a useful way to understand what DOM does is by breaking down the acronym but out of order:</p><ul><li>The DOM is a logical tree-like Model that organizes a web page’s HTML Document as an Object.</li></ul><figure class="record-figure"><img src="../../assets/records/codecademy/building-interactive-javascript-websites/01.jpg" alt="Course screenshot" loading="lazy"></figure>
+</section>
+<section class="record-section" id="section-2">
+<h2>Chapter 2: The Document Object Model</h2>
+<p>Congratulations on completing our introduction to the Document Object Model, or DOM, as a structure!</p><h3>Let’s review what you’ve learned so far:</h3><ul><li>The DOM is a structural model of a web page that allows for scripting languages to access that page.</li><li>The system of organization in the DOM mimics the nesting structure of an HTML document.</li><li>Elements nested within another are referred to as the children of that element. The element they are nested within is called the parent element of those elements.</li><li>The DOM also allows access to the attributes of an HTML element such as style, id, etc.</li></ul><p>With this understanding, you can begin to leverage the power of scripting languages to create, update, and maintain web pages!</p>
+</section>
+<section class="record-section" id="section-3">
+<h2>Chapter 3: JavaScript and DOM</h2>
+<p>In this lesson, you manipulated a webpage structure by leveraging the Document Object Model (DOM) interface in JavaScript.</p><h3>Let’s review what we learned:</h3><p>• The document keyword grants access to the root of the DOM in JavaScript.</p><p>• The DOM Interface allows you to select a specific element with CSS selectors by using the .querySelector() method.</p><p>• You can access an element directly by its ID with the .getElementById() method which returns a single element.</p><p>• You can access an array of elements with the .getElementsByClassName() and .getElementsByTagName() methods, then call a single element by referencing its placement in the array.</p><p>• The .innerHTML and .style properties allow you to modify an element by changing its contents or style respectively.</p><p>• You can create, append, and remove elements by using the .createElement(), .appendChild(), and .removeChild() methods respectively.</p><p>• The .onclick property can add interactivity to a DOM element based on a click event.</p><p>• The .children property returns a list of an element’s children and the .parentNode property returns the element’s closest connected node in the direction towards the root.</p>
+</section>
+<section class="record-section" id="section-4">
+<h2>Chapter 4</h2>
+<p>（DOM Events with JavaScript）</p><p>Congrats, you completed the lesson! Now you’ve learned about JavaScript events and you can leverage these events on the DOM to create interactivity with event handlers.</p><h3>Let’s review what you’ve learned:</h3><p>• You can register events to DOM elements using the addEventListener() method.</p><p>• The addEventListener() method takes two arguments: an event type and an event handler function.</p><p>• When an event is triggered on the event target, the registered event handler function executes.</p><p>• Event handler functions can also be registered as values of onevent properties of their event target.</p><p>• Event object properties like .target, .type, and .timeStamp are used to provide information about the event.</p><p>• The addEventListener() method can be used to add multiple event handler functions to a single event.</p><p>• The removeEventListener() method stops specific event handlers from “listening” for specific events firing.</p>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="intermediate-css.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+                <a class="record-pagination-link next" href="introduction-to-back-end-programming.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

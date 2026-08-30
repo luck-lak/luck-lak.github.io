@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Codecademy cover: Intermediate CSS">
+  <rect width="640" height="360" fill="#123c33"/>
+  <text x="48" y="80" fill="#6ec1ff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="4">CODECADEMY · RECORD 03</text>
+  <text x="48" y="150" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">Intermediate CSS</text>
+  <text x="48" y="242" fill="#9fcfc0" font-family="Arial, Helvetica, sans-serif" font-size="17">flexbox · grid · transitions · variables</text>
+  <g stroke="#6ec1ff" stroke-width="3" fill="none">
+    <rect x="446" y="262" width="52" height="34" rx="6"/>
+    <rect x="510" y="262" width="52" height="34" rx="6" fill="#6ec1ff"/>
+    <rect x="574" y="262" width="52" height="34" rx="6"/>
+    <rect x="446" y="308" width="52" height="34" rx="6"/>
+    <rect x="510" y="308" width="52" height="34" rx="6"/>
+    <rect x="574" y="308" width="52" height="34" rx="6"/>
+  </g>
+</svg>
