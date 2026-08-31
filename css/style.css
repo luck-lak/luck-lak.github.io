@@ -889,3 +889,351 @@ body.dark-mode .record-content pre {
         padding-top: 155px;
     }
 }
+
+/* Platform preface on the Codecademy records page */
+.platform-preface {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.platform-preface h2 {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+}
+
+.platform-preface p {
+    margin: 0 0 14px;
+
+    line-height: 1.7;
+}
+
+.platform-preface p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== Blog (Jekyll) ===== */
+/* Blog list page and post pages are built by Jekyll (_posts/, _layouts/, blog/).
+   Keep all blog styles in this section so they are easy to find and modify. */
+
+.blog-page,
+.post-page {
+    box-sizing: border-box;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 120px 24px 64px;
+    text-align: left;
+}
+
+/* Reset the wide section padding used by the one-page portfolio */
+.blog-page section {
+    padding: 0;
+}
+
+.blog-intro {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.blog-kicker,
+.blog-item-date,
+.post-kicker {
+    margin: 0 0 8px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.blog-intro h1 {
+    margin: 0 0 12px;
+}
+
+.blog-intro p {
+    margin: 0;
+
+    line-height: 1.7;
+}
+
+.blog-list {
+    max-width: 720px;
+}
+
+.blog-item {
+    margin-bottom: 34px;
+}
+
+.blog-item:last-child {
+    margin-bottom: 0;
+}
+
+.blog-item-title {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.blog-item-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.blog-item-title a:visited {
+    color: black;
+}
+
+.blog-item-title a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+.blog-item-description {
+    margin: 0;
+
+    line-height: 1.65;
+    color: #555555;
+}
+
+/* Single post page */
+.post-article {
+    max-width: 720px;
+}
+
+.post-header {
+    margin-bottom: 34px;
+}
+
+.post-title {
+    margin: 0;
+
+    font-size: 34px;
+    line-height: 1.25;
+}
+
+.post-content {
+    font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+    line-height: 1.8;
+
+    overflow-wrap: break-word;
+}
+
+.post-content p {
+    margin: 0 0 16px;
+}
+
+.post-content h2 {
+    margin: 34px 0 14px;
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #e4e4e4;
+
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.post-content h3 {
+    margin: 28px 0 12px;
+
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.post-content h4 {
+    margin: 24px 0 10px;
+
+    font-size: 17px;
+}
+
+.post-content a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.post-content a:hover {
+    color: #555555;
+}
+
+.post-content ul,
+.post-content ol {
+    margin: 0 0 16px;
+    padding-left: 24px;
+}
+
+.post-content li {
+    margin: 0 0 8px;
+}
+
+.post-content blockquote {
+    margin: 20px 0;
+    padding: 4px 18px;
+
+    border-left: 3px solid #d0d0d0;
+
+    color: #555555;
+}
+
+.post-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 24px auto;
+
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+}
+
+.post-content code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.92em;
+}
+
+.post-content pre {
+    margin: 20px 0;
+    padding: 14px 16px;
+
+    background-color: #f6f8fa;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+
+    overflow-x: auto;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.post-content pre code {
+    font-size: inherit;
+}
+
+.post-content table {
+    width: 100%;
+    margin: 20px 0;
+
+    border-collapse: collapse;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.post-content th,
+.post-content td {
+    padding: 8px 12px;
+
+    border: 1px solid #d0d0d0;
+
+    text-align: left;
+    vertical-align: top;
+}
+
+.post-content th {
+    background-color: #f5f5f5;
+}
+
+.post-content hr {
+    margin: 32px 0;
+
+    border: none;
+    border-top: 1px solid #d0d0d0;
+}
+
+.post-backlink {
+    margin-top: 52px;
+    padding-top: 20px;
+
+    border-top: 1px solid #d0d0d0;
+
+    font-size: 14px;
+}
+
+.post-backlink a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.post-backlink a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode for blog pages */
+body.dark-mode .blog-kicker,
+body.dark-mode .blog-item-date,
+body.dark-mode .post-kicker {
+    color: #aaaaaa;
+}
+
+body.dark-mode .blog-item-title a,
+body.dark-mode .blog-item-title a:visited {
+    color: white;
+}
+
+body.dark-mode .blog-item-title a:hover {
+    color: lightgray;
+}
+
+body.dark-mode .blog-item-description {
+    color: #aaaaaa;
+}
+
+body.dark-mode .post-content a:hover {
+    color: lightgray;
+}
+
+body.dark-mode .post-content h2 {
+    border-bottom-color: #444444;
+}
+
+body.dark-mode .post-content blockquote {
+    border-left-color: #555555;
+    color: #aaaaaa;
+}
+
+body.dark-mode .post-content img {
+    border-color: #555555;
+}
+
+body.dark-mode .post-content th,
+body.dark-mode .post-content td {
+    border-color: #555555;
+}
+
+body.dark-mode .post-content th {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .post-content pre {
+    background-color: #2a2a2a;
+    border-color: #555555;
+}
+
+body.dark-mode .post-content hr {
+    border-top-color: #444444;
+}
+
+body.dark-mode .post-backlink {
+    border-top-color: #555555;
+}
+
+body.dark-mode .post-backlink a {
+    color: #aaaaaa;
+}
+
+@media (max-width: 768px) {
+    .blog-page,
+    .post-page {
+        max-width: 100%;
+        padding: 170px 16px 48px;
+    }
+
+    .blog-item-title {
+        font-size: 19px;
+    }
+
+    .post-title {
+        font-size: 28px;
+    }
+}

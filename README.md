@@ -134,3 +134,73 @@ When updating learning records:
 - Keep the DOCX archive unchanged unless the user explicitly asks to update it.
 - Update this README and the relevant build-script config when structure or
   conventions change.
+
+## Blog (Jekyll)
+
+The Blog section is built with Jekyll and hosted on GitHub Pages. It is fully
+separate from Learning Records: Blog is for standalone writing (project
+retrospectives, notes, ideas), while Learning Records remains the
+platform-based course map. Pages without Jekyll front matter (all pre-existing
+pages) pass through the build unchanged, so the rest of the site is not touched.
+
+### Blog file structure
+
+| Path | Purpose |
+|---|---|
+| `_config.yml` | Jekyll settings: permalink style (`/blog/:title/`) and build exclusions (`tools/`, README, DOCX archive) |
+| `_posts/` | All blog posts as Markdown files |
+| `_layouts/default.html` | Shared page shell for blog pages (header, nav, theme button, footer) |
+| `_layouts/post.html` | Layout for a single post (date, title, content, back link) |
+| `blog/index.html` | Blog list page; a Liquid loop renders posts newest first |
+| `assets/images/blog/` | Post images, one subfolder per post |
+| `css/style.css` | Blog styles live in the `/* ===== Blog (Jekyll) ===== */` section at the end of the file |
+| `index.html`, `learning-records.html`, `learning/*.html` | Navigation entry points linking to `/blog/` |
+
+### Build path
+
+1. You push Markdown and layout files to `main`.
+2. GitHub Pages runs Jekyll on their server; no local build is required.
+3. `_posts/*.md` become `/blog/<slug>/` pages and `blog/index.html` becomes `/blog/`.
+4. Build status is visible in the repository's Actions tab.
+
+### Adding a new post
+
+1. Create `_posts/YYYY-MM-DD-post-slug.md`. The filename date must be the
+   publish date (future dates stay hidden until that date), and the slug
+   becomes the URL: `/blog/post-slug/`.
+2. Start the file with this front matter, then write Markdown below it:
+
+```markdown
+---
+layout: post
+title: "文章标题"
+lang: zh
+date: 2026-08-31 12:00:00 +0800
+description: "列表页显示的一句话简介"
+---
+```
+
+3. Put images in `assets/images/blog/<post-slug>/` and reference them with
+   `/assets/images/blog/<post-slug>/image.png` (absolute path from site root).
+4. Commit and push to `main`. The live site updates in a minute or two.
+
+You can also add or edit posts directly on github.com: open the `_posts/`
+folder, use "Add file" → "Create new file" with the same naming rules, then
+commit to `main`.
+
+### Changing blog styles
+
+- List page styles: the `.blog-*` classes in the Blog section of `css/style.css`.
+- Post page styles: the `.post-*` classes in the same section.
+- Page structure (head, nav, footer): `_layouts/default.html`.
+- Post structure (date, title, content wrapper, back link): `_layouts/post.html`.
+- Dark mode rules for both pages sit in the same CSS section; look for
+  `body.dark-mode .blog-*` and `body.dark-mode .post-*`.
+
+### Blog notes
+
+- `description` is shown on the list page; without it, only the title and date show.
+- `lang` (`zh` or `en`) sets the post page's `<html lang>` value.
+- A midday time with `+0800` keeps the displayed date stable when GitHub builds in UTC.
+- Learning Records detail pages keep their minimal nav (Home + Learning Records)
+  by design; Blog is reachable from the hub pages.

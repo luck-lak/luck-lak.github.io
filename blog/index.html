@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog
+lang: en
+description: Aokun Lei's blog: project retrospectives, notes, and ideas in progress.
+---
+<section class="blog-intro">
+    <p class="blog-kicker">Writing</p>
+    <h1>Blog</h1>
+    <p>Standalone writing beyond the course map in Learning Records: project
+    retrospectives, things I figured out along the way, and ideas still taking
+    shape. Newest posts come first.</p>
+</section>
+
+<section class="blog-list">
+    {% for post in site.posts %}
+    <article class="blog-item">
+        <p class="blog-item-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+        <h2 class="blog-item-title"><a href="{{ post.url }}">{{ post.title | escape }}</a></h2>
+        {% if post.description %}
+        <p class="blog-item-description">{{ post.description }}</p>
+        {% endif %}
+    </article>
+    {% else %}
+    <p class="blog-item-description">No posts yet.</p>
+    {% endfor %}
+</section>
