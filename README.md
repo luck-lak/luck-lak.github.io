@@ -10,6 +10,7 @@ A simple personal portfolio site built with plain HTML, CSS, and JavaScript.
 | `learning-records.html` | Learning records hub; intro statement, motivation and future direction, platform cards |
 | `learning/` | One list page per platform |
 | `records/` | One detail page per course or paper |
+| `_posts/`, `_layouts/`, `_includes/`, `blog/` | Jekyll source for the Blog section |
 | `css/style.css` | Site-wide and learning-record styles |
 | `js/main.js` | Small interactive behavior |
 | `tools/` | Note-to-page build scripts and small inspection helpers |
@@ -151,7 +152,10 @@ pages) pass through the build unchanged, so the rest of the site is not touched.
 | `_posts/` | All blog posts as Markdown files |
 | `_layouts/default.html` | Shared page shell for blog pages (header, nav, theme button, footer) |
 | `_layouts/post.html` | Layout for a single post (date, title, content, back link) |
-| `blog/index.html` | Blog list page; a Liquid loop renders posts newest first |
+| `_includes/site-head.html` | Shared `<head>`: metadata, title, favicon, CSS, JavaScript, fonts |
+| `_includes/site-header.html` | Shared fixed navigation and theme button |
+| `_includes/site-footer.html` | Shared footer |
+| `blog/index.html` | Blog list page; carries the full site shell directly and renders posts newest first with Liquid |
 | `assets/images/blog/` | Post images, one subfolder per post |
 | `css/style.css` | Blog styles live in the `/* ===== Blog (Jekyll) ===== */` section at the end of the file |
 | `index.html`, `learning-records.html`, `learning/*.html` | Navigation entry points linking to `/blog/` |
@@ -193,6 +197,10 @@ commit to `main`.
 - List page styles: the `.blog-*` classes in the Blog section of `css/style.css`.
 - Post page styles: the `.post-*` classes in the same section.
 - Page structure (head, nav, footer): `_layouts/default.html`.
+- Shared head, nav, and footer markup: `_includes/site-head.html`,
+  `_includes/site-header.html`, and `_includes/site-footer.html`. The Blog list
+  page includes them directly because it intentionally uses `layout: null` in
+  this hybrid plain-HTML/Jekyll site.
 - Post structure (date, title, content wrapper, back link): `_layouts/post.html`.
 - Dark mode rules for both pages sit in the same CSS section; look for
   `body.dark-mode .blog-*` and `body.dark-mode .post-*`.
