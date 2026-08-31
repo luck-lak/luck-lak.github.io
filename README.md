@@ -184,6 +184,14 @@ description: "列表页显示的一句话简介"
 ---
 ```
 
+To show a cover image on the Blog list page, also add `cover` and an optional
+`cover_alt`:
+
+```yaml
+cover: "/assets/images/blog/post-slug/cover.jpg"
+cover_alt: "Cover image description"
+```
+
 3. Put images in `assets/images/blog/<post-slug>/` and reference them with
    `/assets/images/blog/<post-slug>/image.png` (absolute path from site root).
 4. Commit and push to `main`. The live site updates in a minute or two.
@@ -208,6 +216,8 @@ commit to `main`.
 ### Blog notes
 
 - `description` is shown on the list page; without it, only the title and date show.
+- `cover` is optional. If it is set, the Blog list card shows the image above
+  the date, title, and description. If not set, the card remains text-only.
 - `lang` (`zh` or `en`) sets the post page's `<html lang>` value.
 - A midday time with `+0800` keeps the displayed date stable when GitHub builds in UTC.
 - Learning Records detail pages keep their minimal nav (Home + Learning Records)

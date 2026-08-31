@@ -978,6 +978,29 @@ body.dark-mode .record-content pre {
     transform: translateY(-2px);
 }
 
+.blog-item-with-cover {
+    padding: 0;
+    overflow: hidden;
+}
+
+.blog-item-cover {
+    display: block;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.blog-item-cover img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+
+    background-color: white;
+}
+
+.blog-item-with-cover .blog-item-body {
+    padding: 20px 24px 24px;
+}
+
 .blog-item:last-child {
     margin-bottom: 0;
 }
@@ -1196,6 +1219,10 @@ body.dark-mode .blog-item {
 
 body.dark-mode .blog-item:hover {
     border-color: #888888;
+}
+
+body.dark-mode .blog-item-cover {
+    border-bottom-color: #555555;
 }
 
 body.dark-mode .blog-item-description {
