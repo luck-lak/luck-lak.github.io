@@ -31,3 +31,36 @@ themeButton.addEventListener("click", function () {
         localStorage.setItem("theme", "light");
     }
 });
+
+// 笔记中的代码块可直接复制；不支持 Clipboard API 时使用兼容方案。
+document.querySelectorAll(".code-copy-button").forEach(function (button) {
+    button.addEventListener("click", async function () {
+        const code = button.closest(".record-code-block").querySelector("code").textContent;
+
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(code);
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = code;
+                textArea.setAttribute("readonly", "");
+                textArea.style.position = "fixed";
+                textArea.style.opacity = "0";
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                textArea.remove();
+            }
+
+            button.textContent = "Copied";
+            window.setTimeout(function () {
+                button.textContent = "Copy";
+            }, 1600);
+        } catch (error) {
+            button.textContent = "Copy failed";
+            window.setTimeout(function () {
+                button.textContent = "Copy";
+            }, 1600);
+        }
+    });
+});

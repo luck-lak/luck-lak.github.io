@@ -22,8 +22,8 @@ THUMBNAILS_DIR = ROOT / "assets" / "records" / "thumbnails" / "codecademy"
 PLATFORM_PAGE = ROOT / "learning" / "codecademy.html"
 
 PLATFORM_INTRO = (
-    "Notes from Codecademy courses on web development and computer science "
-    "fundamentals, with chapter summaries, screenshots, and personal reflections."
+    "Notes from Codecademy courses on web development, systems, and data foundations, "
+    "with chapter summaries, code examples, screenshots, and personal reflections."
 )
 
 # 保留平台页原有的个人序言；重新生成页面时不会丢失。
@@ -38,9 +38,54 @@ PLATFORM_PREFACE = '''
         </section>
 '''
 
+BASH_BUILD_SCRIPT = '''#!/bin/bash
+
+echo "Welcome to the build script!"
+
+firstline=$(head -n 1 changelog.md)
+
+read -a splitfirstline <<< $firstline
+
+version=${splitfirstline[1]}
+
+echo "You are building version $version."
+
+echo "Is this the correct version?"
+echo "Enter 1 to continue, or 0 to exit."
+
+read versioncontinue
+
+if [ $versioncontinue -eq 1 ]
+then
+  echo "OK"
+
+  for filename in source/*
+  do
+    echo "Found file: $filename"
+
+    if [ $filename == "source/secretinfo.md" ]
+    then
+      echo "$filename is not being copied."
+    else
+      echo "$filename is being copied."
+      cp "$filename" build/
+    fi
+  done
+
+  cd build/
+
+  echo "Build version $version contains:"
+  ls
+
+  cd ..
+else
+  echo "Please come back when you are ready"
+fi'''
+
 # One entry per course. "kind" chooses how the document is split:
 #   chapters   - split on 第X章章节总结（Topic） markers
 #   flat       - one flowing section, headings and tables stay inline
+#   sectioned  - split on record-specific section markers
 #   cheatsheet - split on exact "cheat_headings" lines, render code and tables
 #   markdown   - split on "# " headings in a Markdown file
 RECORDS = [
@@ -112,11 +157,53 @@ RECORDS = [
         "slug": "learn-the-command-line",
         "kind": "chapters",
     },
+    {
+        "file": "Learn Bash Scripting.docx",
+        "title": "Learn Bash Scripting",
+        "slug": "learn-bash-scripting",
+        "kind": "sectioned",
+        "section_markers": {
+            "课程总结": "Course Summary",
+            "这个课程的第一节还挺有意思的，": "Notes and Takeaways",
+            "然后一个最后项目写的构建脚本：": "Final Project Build Script",
+            "附带解释：": "Annotated Build Script",
+        },
+        "code_images": {
+            1: {"label": "Bash", "language": "bash", "code": BASH_BUILD_SCRIPT},
+        },
+        "code_ranges": [
+            {
+                "start": "#!/bin/bash",
+                "to_end": True,
+                "after_section": "Annotated Build Script",
+                "label": "Bash · annotated",
+                "language": "bash",
+            },
+        ],
+    },
+    {
+        "file": "Analyse  Data with SQL.docx",
+        "title": "Analyze Data with SQL",
+        "slug": "analyze-data-with-sql",
+        "kind": "chapters",
+        "demote_heading_1": True,
+        "promote_headings": ["SQLite Summary", "SQL Window Functions Summary"],
+        "section_markers": {"问题自查清单：": "问题自查清单"},
+        "code_ranges": [
+            {"start": "CREATE TABLE celebs (", "end": ");", "label": "SQL", "language": "sql"},
+            {"start": "sqlite3 newdb.sqlite", "end": "sqlite3 newdb.sqlite", "label": "Shell", "language": "shell"},
+            {"start": "sqlite>", "end": "sqlite>", "label": "SQLite prompt", "language": "output"},
+            {"start": ".exit", "end": ".exit", "label": "SQLite", "language": "sql"},
+            {"start": "function() OVER (", "end": ")", "label": "SQL", "language": "sql"},
+            {"start": "AVG(salary) OVER (", "end": ")", "label": "SQL", "language": "sql"},
+            {"start": "RANK() OVER (", "end": ")", "label": "SQL", "language": "sql"},
+        ],
+    },
 ]
 
-CHAPTER_PATTERN = re.compile(r"^第([一二三四五六七八九十\d]+)章+章节总结(?:[（(](.+?)[)）])?\s*$")
+CHAPTER_PATTERN = re.compile(r"^第([一二三四五六七八九十\d]+)章+章节总结(?:[（(](.+?)[)）])?[:：]?\s*$")
 CHAPTER_NUMBERS = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
-SITE_LINK_PATTERN = re.compile(r"^网站[:：]")
+SITE_LINK_PATTERN = re.compile(r"^(?:课程网址|网站)[:：]")
 MD_LINK_PATTERN = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
 
@@ -141,6 +228,101 @@ def inline_html(paragraph: Paragraph) -> str:
         else:
             parts.append(escape(item.text))
     return "".join(parts).replace("\n", "<br>")
+
+
+def highlight_variables(text: str) -> str:
+    """Highlight shell variables inside a quoted string."""
+    pattern = re.compile(r"(\$\{[^}]+\}|\$[A-Za-z_][A-Za-z0-9_]*)")
+    parts = []
+    position = 0
+    for match in pattern.finditer(text):
+        parts.append(escape(text[position:match.start()]))
+        parts.append(f'<span class="syntax-variable">{escape(match.group(0))}</span>')
+        position = match.end()
+    parts.append(escape(text[position:]))
+    return "".join(parts)
+
+
+def highlight_bash_line(line: str) -> str:
+    stripped = line.lstrip()
+    if stripped.startswith("#!"):
+        prefix = escape(line[: len(line) - len(stripped)])
+        return prefix + f'<span class="syntax-shebang">{escape(stripped)}</span>'
+    if stripped.startswith("#"):
+        prefix = escape(line[: len(line) - len(stripped)])
+        return prefix + f'<span class="syntax-comment">{escape(stripped)}</span>'
+
+    token_pattern = re.compile(
+        r'("(?:\\.|[^"\\])*")'
+        r'|(\$\{[^}]+\}|\$[A-Za-z_][A-Za-z0-9_]*|\$\()'
+        r'|(<<<|==|-eq|-ne|-le|-lt|-ge|-gt)'
+        r'|\b(if|then|else|fi|for|in|do|done)\b'
+        r'|\b(echo|read|head|cp|cd|ls)\b'
+        r'|\b(\d+)\b'
+    )
+    parts = []
+    position = 0
+    for match in token_pattern.finditer(line):
+        parts.append(escape(line[position:match.start()]))
+        token = match.group(0)
+        if match.group(1):
+            parts.append(f'<span class="syntax-string">{highlight_variables(token)}</span>')
+        elif match.group(2):
+            parts.append(f'<span class="syntax-variable">{escape(token)}</span>')
+        elif match.group(3) or match.group(6):
+            parts.append(f'<span class="syntax-number">{escape(token)}</span>')
+        elif match.group(4):
+            parts.append(f'<span class="syntax-keyword">{escape(token)}</span>')
+        elif match.group(5):
+            parts.append(f'<span class="syntax-command">{escape(token)}</span>')
+        position = match.end()
+    parts.append(escape(line[position:]))
+    return "".join(parts)
+
+
+def highlight_sql_line(line: str) -> str:
+    token_pattern = re.compile(
+        r"('(?:''|[^'])*')"
+        r'|\b(CREATE|TABLE|SELECT|FROM|WHERE|INSERT|INTO|UPDATE|DELETE|ALTER|'
+        r'PARTITION|BY|ORDER|OVER|AS|DESC|ASC|INTEGER|TEXT|NULL)\b'
+        r'|\b(\d+(?:\.\d+)?)\b',
+        re.IGNORECASE,
+    )
+    parts = []
+    position = 0
+    for match in token_pattern.finditer(line):
+        parts.append(escape(line[position:match.start()]))
+        token = escape(match.group(0))
+        if match.group(1):
+            parts.append(f'<span class="syntax-string">{token}</span>')
+        elif match.group(2):
+            parts.append(f'<span class="syntax-keyword">{token}</span>')
+        else:
+            parts.append(f'<span class="syntax-number">{token}</span>')
+        position = match.end()
+    parts.append(escape(line[position:]))
+    return "".join(parts)
+
+
+def highlight_code(code: str, language: str) -> str:
+    if language == "bash":
+        return "\n".join(highlight_bash_line(line) for line in code.splitlines())
+    if language == "sql":
+        return "\n".join(highlight_sql_line(line) for line in code.splitlines())
+    return escape(code)
+
+
+def code_block_html(code: str, label: str, language: str) -> str:
+    highlighted = highlight_code(code, language)
+    return (
+        '<div class="record-code-block">'
+        '<div class="record-code-header">'
+        f'<span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> {escape(label)}</span>'
+        '<button class="code-copy-button" type="button">Copy</button>'
+        '</div>'
+        f'<pre><code class="language-{escape(language, quote=True)}">{highlighted}</code></pre>'
+        '</div>'
+    )
 
 
 def paragraph_text(paragraph: Paragraph) -> str:
@@ -177,9 +359,19 @@ def save_image(image_part, output_path: Path) -> None:
         image.save(output_path, "JPEG", quality=82, optimize=True, progressive=True)
 
 
-def save_images(paragraph: Paragraph, record_dir: Path, counter: list[int], html: list[str]) -> None:
+def save_images(paragraph: Paragraph, record: dict, record_dir: Path, counter: list[int], html: list[str]) -> None:
     for image_id in paragraph._p.xpath(".//a:blip/@r:embed"):
         counter[0] += 1
+        replacement = record.get("code_images", {}).get(counter[0])
+        if replacement:
+            html.append(
+                code_block_html(
+                    replacement["code"],
+                    replacement.get("label", "Code"),
+                    replacement.get("language", "text"),
+                )
+            )
+            continue
         image_name = f"{counter[0]:02d}.jpg"
         save_image(paragraph.part.related_parts[image_id], record_dir / image_name)
         html.append(
@@ -210,6 +402,11 @@ def build_docx_sections(record: dict, record_dir: Path) -> tuple[list[dict], str
     image_counter = [0]
     source_url: str | None = None
     cheat = {"mode": None, "rows": [], "lines": []}
+    code_capture: dict | None = None
+    code_lines: list[str] = []
+    code_starts: dict[str, list[dict]] = {}
+    for item in record.get("code_ranges", []):
+        code_starts.setdefault(item["start"], []).append(item)
     list_buffer: list[str] = []
     main_started = False
     normalized_title = re.sub(r"\s+", " ", record["title"]).casefold()
@@ -245,6 +442,25 @@ def build_docx_sections(record: dict, record_dir: Path) -> tuple[list[dict], str
             current_section()["html"].append(f"<ul>{items}</ul>")
             list_buffer.clear()
 
+    def flush_code() -> None:
+        nonlocal code_capture, code_lines
+        if code_capture is not None:
+            compact_lines = []
+            for line in code_lines:
+                if not line and compact_lines and not compact_lines[-1]:
+                    continue
+                compact_lines.append(line)
+            code = "\n".join(compact_lines).strip("\n")
+            current_section()["html"].append(
+                code_block_html(
+                    code,
+                    code_capture.get("label", "Code"),
+                    code_capture.get("language", "text"),
+                )
+            )
+        code_capture = None
+        code_lines = []
+
     def add_text(block: Paragraph, text: str, style: str) -> None:
         nonlocal source_url, main_started
         normalized_text = re.sub(r"\s+", " ", text).casefold()
@@ -256,6 +472,14 @@ def build_docx_sections(record: dict, record_dir: Path) -> tuple[list[dict], str
                 source_url = extract_source_url(block)
             return  # the course link moves to the page header
 
+        section_title = record.get("section_markers", {}).get(text)
+        if section_title is not None:
+            flush_cheat()
+            flush_list()
+            main_started = True
+            used["section"] = start_section(sections, section_title)
+            return
+
         if kind == "chapters":
             chapter = chapter_heading(text)
             if chapter is not None:
@@ -265,6 +489,13 @@ def build_docx_sections(record: dict, record_dir: Path) -> tuple[list[dict], str
                 title = f"Chapter {chapter[0]}: {chapter[1]}" if chapter[1] else f"Chapter {chapter[0]}"
                 used["section"] = start_section(sections, title)
                 return
+
+        if style == "Heading 1" and text in record.get("promote_headings", []):
+            flush_cheat()
+            flush_list()
+            main_started = True
+            used["section"] = start_section(sections, text)
+            return
 
         if kind == "cheatsheet":
             if text in record.get("cheat_headings", []):
@@ -291,9 +522,9 @@ def build_docx_sections(record: dict, record_dir: Path) -> tuple[list[dict], str
         if style == "List Paragraph":
             list_buffer.append(inline_html(block))
             return
-        if style == "Heading 1":
+        if style == "Heading 1" and not record.get("demote_heading_1"):
             section["html"].append(f"<h2>{inline_html(block)}</h2>")
-        elif style in {"Heading 2", "Heading 3"}:
+        elif style in {"Heading 1", "Heading 2", "Heading 3"}:
             section["html"].append(f"<h3>{inline_html(block)}</h3>")
         elif is_label_line(text):
             section["html"].append(f"<h3>{inline_html(block)}</h3>")
@@ -302,12 +533,40 @@ def build_docx_sections(record: dict, record_dir: Path) -> tuple[list[dict], str
 
     for block in iter_blocks(document):
         if isinstance(block, Table):
+            flush_code()
             flush_cheat()
             flush_list()
             current_section()["html"].append(table_html(block))
             continue
 
         text = paragraph_text(block)
+
+        if code_capture is not None:
+            code_lines.append(block.text.rstrip())
+            if not code_capture.get("to_end") and text == code_capture.get("end"):
+                flush_code()
+            continue
+
+        range_config = next(
+            (
+                item
+                for item in code_starts.get(text, [])
+                if not item.get("after_section")
+                or (
+                    used["section"] is not None
+                    and used["section"]["title"] == item["after_section"]
+                )
+            ),
+            None,
+        )
+        if range_config is not None:
+            flush_cheat()
+            flush_list()
+            code_capture = range_config
+            code_lines = [block.text.rstrip()]
+            if not range_config.get("to_end") and text == range_config.get("end"):
+                flush_code()
+            continue
 
         if text and SITE_LINK_PATTERN.match(text) and not sections and source_url is None:
             source_url = extract_source_url(block)
@@ -316,11 +575,14 @@ def build_docx_sections(record: dict, record_dir: Path) -> tuple[list[dict], str
 
         if block.style.name != "List Paragraph":
             flush_list()
-        section = current_section()
-        save_images(block, record_dir, image_counter, section["html"])
+        image_ids = block._p.xpath(".//a:blip/@r:embed")
+        if image_ids:
+            section = current_section()
+            save_images(block, record, record_dir, image_counter, section["html"])
         if text:
             add_text(block, text, block.style.name)
 
+    flush_code()
     flush_cheat()
     flush_list()
     sections = [section for section in sections if section["html"]]
@@ -439,12 +701,19 @@ def page_header(relative_root: str, active: str = "Learning Records") -> str:
 
 
 def render_record_page(record: dict, number: int, previous: dict | None, next_record: dict | None, sections: list[dict], source_url: str | None) -> str:
-    previous_link = ""
-    next_link = ""
+    pagination_links = []
     if previous:
-        previous_link = f'<a class="record-pagination-link previous" href="{previous["slug"]}.html">Previous</a>'
+        pagination_links.append(
+            f'<a class="record-pagination-link previous" href="{previous["slug"]}.html">Previous</a>'
+        )
+    pagination_links.append(
+        '<a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>'
+    )
     if next_record:
-        next_link = f'<a class="record-pagination-link next" href="{next_record["slug"]}.html">Next</a>'
+        pagination_links.append(
+            f'<a class="record-pagination-link next" href="{next_record["slug"]}.html">Next</a>'
+        )
+    pagination_html = "\n".join(f"                {link}" for link in pagination_links)
     source_html = ""
     if source_url:
         url = escape(source_url, quote=True)
@@ -474,9 +743,7 @@ def render_record_page(record: dict, number: int, previous: dict | None, next_re
 {render_sections(sections)}
             </div>
             <nav class="record-pagination">
-                {previous_link}
-                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
-                {next_link}
+{pagination_html}
             </nav>
         </article>
     </main>
@@ -507,7 +774,7 @@ def render_platform_page(records: list[dict]) -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aokun Lei's Codecademy learning records: web development and computer science course notes.">
+    <meta name="description" content="Aokun Lei's Codecademy learning records: web development, systems, and data course notes.">
     <title>Codecademy Records | Aokun Lei</title>
     <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
@@ -524,7 +791,7 @@ def render_platform_page(records: list[dict]) -> str:
             <p class="platform-backlink"><a href="../learning-records.html">← All learning records</a></p>
         </section>
 
-        {PLATFORM_PREFACE}
+{PLATFORM_PREFACE}
 
         <section class="record-grid">
             {"".join(cards)}

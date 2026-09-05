@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn Bash Scripting learning record by Aokun Lei.">
+    <title>Learn Bash Scripting | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#current-focus">Current Focus</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+            <a href="../../blog/">Blog</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 12</p>
+            <h1>Learn Bash Scripting</h1>
+            <p class="record-source"><a href="https://www.codecademy.com/courses/bash-scripting/lessons/learn-bash-scripting/exercises/introduction" target="_blank" rel="noopener noreferrer">Course page</a></p>
+            <nav class="record-toc"><p class="record-toc-title">On this page</p><ul><li><a href="#section-1">Notes</a></li><li><a href="#section-2">Course Summary</a></li><li><a href="#section-3">Notes and Takeaways</a></li><li><a href="#section-4">Final Project Build Script</a></li><li><a href="#section-5">Annotated Build Script</a></li></ul></nav>
+            <div class="record-content">
+<section class="record-section" id="section-1">
+<h2>Notes</h2>
+<p>Cheatsheet:<a href="https://www.codecademy.com/learn/bash-scripting/modules/bash-scripting/cheatsheet" target="_blank" rel="noopener noreferrer">Learn Bash Scripting: Bash Scripting Cheatsheet | Codecademy</a></p>
+</section>
+<section class="record-section" id="section-2">
+<h2>Course Summary</h2>
+<p>Take a minute to review what you’ve learned about <a href="https://www.codecademy.com/resources/docs/command-line/bash" target="_blank" rel="noopener noreferrer">bash</a> scripting.</p><ul><li>Any command that can be run in the <a href="https://www.codecademy.com/resources/docs/command-line/terminal" target="_blank" rel="noopener noreferrer">terminal</a> can be run in a bash script.</li><li>Variables are assigned using an equals sign with no space (greeting=&quot;hello&quot;).</li><li>Variables are accessed using a dollar sign (echo $greeting).</li><li>Conditionals use if, then, else, fi syntax.</li><li>Three types of loops can be used: for, while, and until.</li><li>Bash scripts use a unique set of comparison operators:</li><li>Equal: -eq</li><li>Not equal: -ne</li><li>Less than or equal: -le</li><li>Less than: -lt</li><li>Greater than or equal: -ge</li><li>Greater than: -gt</li><li>Is null: -z</li><li>Input arguments can be passed to a bash script after the script name, separated by spaces (myScript.sh “hello” “how are you”).</li><li>Input can be requested from the script user with the read keyword.</li><li>Aliases can be created in the .bashrc or .bash_profile using the alias keyword.</li></ul>
+</section>
+<section class="record-section" id="section-3">
+<h2>Notes and Takeaways</h2>
+<h3>主要是在讲一个一般流程：</h3><p>① 写 Bash 脚本</p><p>        ↓</p><p>   script.sh</p><p>② 第一行写</p><p>   #!/bin/bash</p><p>③ 给它执行权限</p><p>   chmod +x script.sh</p><p>④ 把脚本放到</p><p>   ~/bin/</p><p>⑤ 在 ~/.bashrc 中加入</p><p>   PATH=~/bin:$PATH</p><p>⑥ 重新打开终端</p><h3>⑦ 以后可以直接：</h3><p>   script.sh</p><p>总体下来，这节课还是挺有意思的，只需要花很短的时间，可以了解一些常见的技术，属于是计算机常识。</p><p>我认为在AI 时代这些基本了解，可以让我们在理解AI做了什么的时候更容易，也可以更好地知道怎么使唤AI 做使用这个技术的事情</p>
+</section>
+<section class="record-section" id="section-4">
+<h2>Final Project Build Script</h2>
+<div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> Bash</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-bash"><span class="syntax-shebang">#!/bin/bash</span>
+
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;Welcome to the build script!&quot;</span>
+
+firstline=<span class="syntax-variable">$(</span><span class="syntax-command">head</span> -n <span class="syntax-number">1</span> changelog.md)
+
+<span class="syntax-command">read</span> -a splitfirstline <span class="syntax-number">&lt;&lt;&lt;</span> <span class="syntax-variable">$firstline</span>
+
+version=<span class="syntax-variable">${splitfirstline[1]}</span>
+
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;You are building version <span class="syntax-variable">$version</span>.&quot;</span>
+
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;Is this the correct version?&quot;</span>
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;Enter 1 to continue, or 0 to exit.&quot;</span>
+
+<span class="syntax-command">read</span> versioncontinue
+
+<span class="syntax-keyword">if</span> [ <span class="syntax-variable">$versioncontinue</span> <span class="syntax-number">-eq</span> <span class="syntax-number">1</span> ]
+<span class="syntax-keyword">then</span>
+  <span class="syntax-command">echo</span> <span class="syntax-string">&quot;OK&quot;</span>
+
+  <span class="syntax-keyword">for</span> filename <span class="syntax-keyword">in</span> source/*
+  <span class="syntax-keyword">do</span>
+    <span class="syntax-command">echo</span> <span class="syntax-string">&quot;Found file: <span class="syntax-variable">$filename</span>&quot;</span>
+
+    <span class="syntax-keyword">if</span> [ <span class="syntax-variable">$filename</span> <span class="syntax-number">==</span> <span class="syntax-string">&quot;source/secretinfo.md&quot;</span> ]
+    <span class="syntax-keyword">then</span>
+      <span class="syntax-command">echo</span> <span class="syntax-string">&quot;<span class="syntax-variable">$filename</span> is not being copied.&quot;</span>
+    <span class="syntax-keyword">else</span>
+      <span class="syntax-command">echo</span> <span class="syntax-string">&quot;<span class="syntax-variable">$filename</span> is being copied.&quot;</span>
+      <span class="syntax-command">cp</span> <span class="syntax-string">&quot;<span class="syntax-variable">$filename</span>&quot;</span> build/
+    <span class="syntax-keyword">fi</span>
+  <span class="syntax-keyword">done</span>
+
+  <span class="syntax-command">cd</span> build/
+
+  <span class="syntax-command">echo</span> <span class="syntax-string">&quot;Build version <span class="syntax-variable">$version</span> contains:&quot;</span>
+  <span class="syntax-command">ls</span>
+
+  <span class="syntax-command">cd</span> ..
+<span class="syntax-keyword">else</span>
+  <span class="syntax-command">echo</span> <span class="syntax-string">&quot;Please come back when you are ready&quot;</span>
+<span class="syntax-keyword">fi</span></code></pre></div>
+</section>
+<section class="record-section" id="section-5">
+<h2>Annotated Build Script</h2>
+<div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> Bash · annotated</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-bash"><span class="syntax-shebang">#!/bin/bash</span>
+<span class="syntax-comment"># Shebang：告诉系统使用 Bash 来执行这个脚本</span>
+
+<span class="syntax-comment"># 输出欢迎信息</span>
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;Welcome to the build script!&quot;</span>
+
+<span class="syntax-comment"># 使用 head 命令读取 changelog.md 的第一行</span>
+<span class="syntax-comment"># $(...)：执行命令，并把命令的输出保存下来</span>
+<span class="syntax-comment"># 所以 firstline 里保存的是 changelog.md 的第一行</span>
+firstline=<span class="syntax-variable">$(</span><span class="syntax-command">head</span> -n <span class="syntax-number">1</span> changelog.md)
+
+<span class="syntax-comment"># 把 firstline 按空格拆分成数组</span>
+<span class="syntax-comment"># -a：将输入保存到数组 splitfirstline 中</span>
+<span class="syntax-comment"># &lt;&lt;&lt;：把变量的内容作为输入传给 read</span>
+<span class="syntax-comment">#</span>
+<span class="syntax-comment"># 例如：</span>
+<span class="syntax-comment"># firstline=&quot;## 1.2.0&quot;</span>
+<span class="syntax-comment">#</span>
+<span class="syntax-comment"># 那么：</span>
+<span class="syntax-comment"># splitfirstline[0] = &quot;##&quot;</span>
+<span class="syntax-comment"># splitfirstline[1] = &quot;1.2.0&quot;</span>
+<span class="syntax-command">read</span> -a splitfirstline <span class="syntax-number">&lt;&lt;&lt;</span> <span class="syntax-variable">$firstline</span>
+
+<span class="syntax-comment"># 取数组中的第 2 个元素（下标为 1）</span>
+<span class="syntax-comment"># 得到版本号，例如：1.2.0</span>
+version=<span class="syntax-variable">${splitfirstline[1]}</span>
+
+<span class="syntax-comment"># 输出当前正在构建的版本</span>
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;You are building version <span class="syntax-variable">$version</span>.&quot;</span>
+
+<span class="syntax-comment"># 询问用户是否确认这个版本</span>
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;Is this the correct version?&quot;</span>
+<span class="syntax-command">echo</span> <span class="syntax-string">&quot;Enter 1 to continue, or 0 to exit.&quot;</span>
+
+<span class="syntax-comment"># 读取用户输入，并保存到 versioncontinue</span>
+<span class="syntax-command">read</span> versioncontinue
+
+<span class="syntax-comment"># 判断用户输入是否等于 1</span>
+<span class="syntax-comment"># -eq = equal，表示数字相等</span>
+<span class="syntax-keyword">if</span> [ <span class="syntax-variable">$versioncontinue</span> <span class="syntax-number">-eq</span> <span class="syntax-number">1</span> ]
+<span class="syntax-keyword">then</span>
+  <span class="syntax-command">echo</span> <span class="syntax-string">&quot;OK&quot;</span>
+
+  <span class="syntax-comment"># 遍历 source/ 目录中的所有文件</span>
+  <span class="syntax-comment"># 每次循环时，filename 就代表当前找到的文件</span>
+  <span class="syntax-keyword">for</span> filename <span class="syntax-keyword">in</span> source/*
+  <span class="syntax-keyword">do</span>
+
+    <span class="syntax-comment"># 输出当前找到的文件</span>
+    <span class="syntax-command">echo</span> <span class="syntax-string">&quot;Found file: <span class="syntax-variable">$filename</span>&quot;</span>
+
+    <span class="syntax-comment"># 判断当前文件是不是 secretinfo.md</span>
+    <span class="syntax-keyword">if</span> [ <span class="syntax-variable">$filename</span> <span class="syntax-number">==</span> <span class="syntax-string">&quot;source/secretinfo.md&quot;</span> ]
+    <span class="syntax-keyword">then</span>
+
+      <span class="syntax-comment"># 如果是秘密文件，就不复制</span>
+      <span class="syntax-command">echo</span> <span class="syntax-string">&quot;<span class="syntax-variable">$filename</span> is not being copied.&quot;</span>
+
+    <span class="syntax-keyword">else</span>
+
+      <span class="syntax-comment"># 如果不是秘密文件，就复制到 build/ 目录</span>
+      <span class="syntax-command">echo</span> <span class="syntax-string">&quot;<span class="syntax-variable">$filename</span> is being copied.&quot;</span>
+      <span class="syntax-command">cp</span> <span class="syntax-string">&quot;<span class="syntax-variable">$filename</span>&quot;</span> build/
+
+    <span class="syntax-keyword">fi</span>
+
+  <span class="syntax-keyword">done</span>
+
+  <span class="syntax-comment"># 进入 build/ 目录</span>
+  <span class="syntax-command">cd</span> build/
+
+  <span class="syntax-comment"># 显示构建完成后的版本信息</span>
+  <span class="syntax-command">echo</span> <span class="syntax-string">&quot;Build version <span class="syntax-variable">$version</span> contains:&quot;</span>
+
+  <span class="syntax-comment"># 列出 build/ 目录中的文件</span>
+  <span class="syntax-command">ls</span>
+
+  <span class="syntax-comment"># 返回上一级目录</span>
+  <span class="syntax-command">cd</span> ..
+
+<span class="syntax-keyword">else</span>
+
+  <span class="syntax-comment"># 如果用户没有输入 1，就不进行构建</span>
+  <span class="syntax-command">echo</span> <span class="syntax-string">&quot;Please come back when you are ready&quot;</span>
+
+<span class="syntax-keyword">fi</span></code></pre></div>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="learn-the-command-line.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+                <a class="record-pagination-link next" href="analyze-data-with-sql.html">Next</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

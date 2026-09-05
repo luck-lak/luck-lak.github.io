@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyze Data with SQL learning record by Aokun Lei.">
+    <title>Analyze Data with SQL | Aokun Lei</title>
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="site-title" href="../../index.html">AOKUN</a>
+        <nav class="main-navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#current-focus">Current Focus</a>
+            <a href="../../learning-records.html" class="active">Learning Records</a>
+            <a href="../../blog/">Blog</a>
+        </nav>
+        <button class="theme-button" type="button">🌙</button>
+    </header>
+
+    <main class="record-page">
+        <article class="record-article">
+            <p class="record-kicker">Codecademy Record 13</p>
+            <h1>Analyze Data with SQL</h1>
+            <p class="record-source"><a href="https://www.codecademy.com/learn/paths/analyze-data-with-sql" target="_blank" rel="noopener noreferrer">Course page</a></p>
+            <nav class="record-toc"><p class="record-toc-title">On this page</p><ul><li><a href="#section-1">Notes</a></li><li><a href="#section-2">Chapter 1: Manipulation</a></li><li><a href="#section-3">Chapter 2: Query</a></li><li><a href="#section-4">Chapter 3: Aggregate Functions</a></li><li><a href="#section-5">Chapter 4: Multiple Tables</a></li><li><a href="#section-6">Chapter 5: Subqueries</a></li><li><a href="#section-7">SQLite Summary</a></li><li><a href="#section-8">SQL Window Functions Summary</a></li><li><a href="#section-9">问题自查清单</a></li></ul></nav>
+            <div class="record-content">
+<section class="record-section" id="section-1">
+<h2>Notes</h2>
+<p>课程属于codecademy的skillpath部分，但是应该有免费版的Learn SQL，可以在同平台找一下</p><p>Cheatsheet:<a href="https://www.codecademy.com/resources/cheatsheets/language/sql" target="_blank" rel="noopener noreferrer">SQL Cheatsheets | Codecademy</a></p><p>学习背景：最近想聚焦数据挖掘/机器学习/深度学习这些方向，了解一些基本数据处理技术	</p><p>一些本地体验：在VS code里面安了SQLite扩展，于是可以创建.db和.sql文件，将.sql文件关联上.db文件之后，就可以在.sql文件里面写SQL，然后通过命令行执行得到结果</p><p>关于课程：我不打算完全学完，只是基本了解语法以及用法，有一些用法没有深入了解，比如Window Function，还有课程提供的一些实践项目，分析真实数据之类的</p>
+</section>
+<section class="record-section" id="section-2">
+<h2>Chapter 1: Manipulation</h2>
+<h3>SQL Basics Summary</h3><p>Congratulations! We’ve learned six commands commonly used to manage data stored in a relational database and how to set constraints on such data. What can we generalize so far?</p><h3>SQL</h3><p>SQL is a programming language designed to manipulate and manage data stored in relational databases.</p><ul><li>A relational database is a database that organizes information into one or more tables.</li><li>A table is a collection of data organized into rows and columns.</li></ul><p>A statement is a string of characters that the database recognizes as a valid command.</p><h3>SQL Commands</h3><ul><li>CREATE TABLE creates a new table.</li><li>INSERT INTO adds a new row to a table.</li><li>SELECT queries data from a table.</li><li>ALTER TABLE changes an existing table.</li><li>UPDATE edits a row in a table.</li><li>DELETE FROM deletes rows from a table.</li></ul><h3>Constraints</h3><p>Constraints add information about how a column can be used.</p>
+</section>
+<section class="record-section" id="section-3">
+<h2>Chapter 2: Query</h2>
+<h3>SQL Querying and Filtering Summary</h3><p>Congratulations!</p><p>We just learned how to query data from a database using SQL. We also learned how to filter queries to make the information more specific and useful.</p><h3>Querying and Filtering Commands</h3><ul><li>SELECT is the clause we use every time we want to query information from a database.</li><li>AS renames a column or table.</li><li>DISTINCT returns unique values.</li><li>WHERE filters the results of a query based on specified conditions.</li><li>LIKE and BETWEEN are special operators used for filtering data.</li><li>AND and OR combine multiple conditions.</li><li>ORDER BY sorts the query result.</li><li>LIMIT specifies the maximum number of rows that the query will return.</li><li>CASE creates different outputs based on different conditions.</li></ul><h3>Key Idea</h3><h3>SQL queries can be made more useful by combining:</h3><p>SELECT + filtering conditions + sorting + limiting results</p><p>This allows us to retrieve only the data we actually need.</p>
+</section>
+<section class="record-section" id="section-4">
+<h2>Chapter 3: Aggregate Functions</h2>
+<h3>SQL Aggregate Functions Summary</h3><p>Congratulations!</p><p>You just learned how to use aggregate functions to perform calculations on your data.</p><h3>Aggregate Functions</h3><p>Aggregate functions combine multiple rows together to form a single value of more meaningful information.</p><ul><li>COUNT() counts the number of rows.</li><li>SUM() calculates the sum of the values in a column.</li><li>MAX() returns the largest value.</li><li>MIN() returns the smallest value.</li><li>AVG() calculates the average of the values in a column.</li><li>ROUND() rounds values to a specified number of decimal places.</li></ul><h3>Grouping Data</h3><ul><li>GROUP BY is used with aggregate functions to combine data from one or more columns into groups.</li><li>HAVING filters the results of a query based on an aggregate property.</li></ul><h3>Key Idea</h3><p>Aggregate functions summarize data, while GROUP BY lets us calculate summaries for different groups.</p><p>HAVING is used to filter those groups based on aggregate results.</p>
+</section>
+<section class="record-section" id="section-5">
+<h2>Chapter 4: Multiple Tables</h2>
+<h3>SQL Relationships and Joins Summary</h3><p>In this lesson, we learned about relationships between tables in relational databases and how to query information from multiple tables using SQL.</p><h3>Table Relationships</h3><ul><li>A primary key is a column that serves as a unique identifier for the rows in a table.</li><li>A foreign key is a column that contains the primary key of another table.</li></ul><p>Primary keys and foreign keys are used to create relationships between tables.</p><h3>SQL Joins</h3><ul><li>JOIN combines rows from different tables when the join condition is true.</li><li>LEFT JOIN returns every row from the left table. If there is no matching row in the right table, NULL values are used for the right table’s columns.</li><li>CROSS JOIN combines every row of one table with every row of another table.</li></ul><h3>Combining Query Results</h3><ul><li>UNION stacks one dataset on top of another.</li><li>WITH allows us to define one or more temporary result sets that can be used in the final query.</li></ul><h3>Key Idea</h3><p>Relational databases connect tables through keys.</p><p>JOIN combines related columns horizontally, while UNION combines compatible query results vertically.</p><p>WITH helps break complex queries into smaller, easier-to-read parts.</p>
+</section>
+<section class="record-section" id="section-6">
+<h2>Chapter 5: Subqueries</h2>
+<h3>SQL Subqueries Summary</h3><p>Congratulations on taking another step in the SQL journey.</p><p>In this lesson, we learned how to use subqueries in SQL.</p><h3>Subqueries</h3><p>A subquery is a query nested inside another SQL statement.</p><p>Subqueries can be useful when we want to use the result of one query as part of another query.</p><h3>Using Subqueries</h3><h3>Subqueries can be used with:</h3><ul><li>SELECT</li><li>INSERT</li><li>UPDATE</li><li>DELETE</li></ul><p>They can also be combined with comparison operators.</p><h3>Common Subquery Operators</h3><ul><li>IN checks whether a value exists in the result of a subquery.</li><li>NOT IN checks whether a value does not exist in the result of a subquery.</li><li>EXISTS checks whether a subquery returns any rows.</li><li>NOT EXISTS checks whether a subquery returns no rows.</li></ul><h3>Key Idea</h3><p>A subquery allows one SQL query to depend on the result of another query.</p><p>This can make complex filtering and data manipulation easier to express.</p>
+</section>
+<section class="record-section" id="section-7">
+<h2>SQLite Summary</h2>
+<p>完整文章：<a href="https://www.codecademy.com/paths/analyze-data-with-sql/tracks/analyze-data-sql-go-off-platform/modules/analyze-data-sql-learn-off-platform/articles/what-is-sqlite" target="_blank" rel="noopener noreferrer">codecademy.com/paths/analyze-data-with-sql/tracks/analyze-data-sql-go-off-platform/modules/analyze-data-sql-learn-off-platform/articles/what-is-sqlite</a></p><h3>What is SQLite?</h3><p>SQLite is a database engine that allows users to interact with a relational database.</p><p>Unlike many other database systems, an SQLite database is stored in a single file.</p><h3>This makes SQLite highly portable:</h3><ul><li>Copying a database is as simple as copying a file.</li><li>Sharing a database can be as simple as sending the database file.</li><li>SQLite does not require a separate database server.</li></ul><h3>Key Features</h3><ul><li>Lightweight and easy to set up.</li><li>Stores the entire database in a single file.</li><li>Does not require a separate server process.</li><li>Works well for local applications, development, and testing.</li><li>Supports standard relational database concepts and SQL.</li></ul><h3>Drawbacks</h3><p>SQLite also has some limitations.</p><h3>Concurrent Writing</h3><p>SQLite is not ideal when many users need to modify the database at the same time.</p><p>Only limited concurrent writing is supported, so larger multi-user systems usually use server-based databases instead.</p><h3>Security</h3><p>Because the database is stored as a local file, developers need to manage access to that file carefully when storing private data.</p><h3>Fewer Advanced Features</h3><p>SQLite does not provide all of the advanced functionality available in larger database systems.</p><h3>Flexible Data Types</h3><p>SQLite uses a more flexible type system than many other relational databases.</p><h3>For example:</h3><div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> SQL</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-sql"><span class="syntax-keyword">CREATE</span> <span class="syntax-keyword">TABLE</span> celebs (
+    id <span class="syntax-keyword">INTEGER</span>,
+    name <span class="syntax-keyword">TEXT</span>,
+    age <span class="syntax-keyword">INTEGER</span>
+);</code></pre></div><p>The schema indicates the expected data types, but SQLite may still allow values of other types to be stored in these columns.</p><p>Therefore, it is important to keep the data consistent even when SQLite itself is permissive.</p><h3>Common Use Cases</h3><h3>SQLite is commonly used for:</h3><ul><li>Learning and practicing SQL</li><li>Local application databases</li><li>Development and testing</li><li>Small projects</li><li>Desktop applications</li><li>Mobile applications</li><li>Applications where the database and application are stored on the same device</li></ul><h3>Basic Usage</h3><h3>A database can be opened or created from the terminal with:</h3><div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> Shell</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-shell">sqlite3 newdb.sqlite</code></pre></div><h3>This opens the SQLite command-line interface:</h3><div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> SQLite prompt</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-output">sqlite&gt;</code></pre></div><h3>To exit:</h3><div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> SQLite</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-sql">.exit</code></pre></div><h3>Key Idea</h3><p>SQLite is a lightweight relational database engine that stores an entire database in a single file.</p><h3>Its biggest advantages are:</h3><p>simple + portable + serverless</p><p>This makes SQLite especially useful for learning SQL, local development, testing, and small applications.</p>
+</section>
+<section class="record-section" id="section-8">
+<h2>SQL Window Functions Summary</h2>
+<h3>What is a Window Function?</h3><p>A Window Function performs calculations across a group of related rows while still keeping each original row.</p><p>This is the main difference from GROUP BY.</p><h3>Window Function vs GROUP BY</h3><h3>GROUP BY:</h3><ul><li>Groups multiple rows together.</li><li>Usually reduces several rows into one result row.</li></ul><h3>Window Function:</h3><ul><li>Performs calculations over related rows.</li><li>Keeps every original row in the result.</li></ul><h3>Basic Syntax</h3><div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> SQL</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-sql">function() <span class="syntax-keyword">OVER</span> (
+    <span class="syntax-keyword">PARTITION</span> <span class="syntax-keyword">BY</span> ...
+    <span class="syntax-keyword">ORDER</span> <span class="syntax-keyword">BY</span> ...
+)</code></pre></div><p>The OVER() clause turns a function into a window function.</p><h3>PARTITION BY</h3><p>PARTITION BY divides rows into groups for the window calculation.</p><p>It is similar to GROUP BY, but it does not remove the original rows.</p><h3>Example:</h3><div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> SQL</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-sql">AVG(salary) <span class="syntax-keyword">OVER</span> (
+    <span class="syntax-keyword">PARTITION</span> <span class="syntax-keyword">BY</span> dept
+)</code></pre></div><p>This calculates the average salary for each department while keeping every employee row.</p><h3>ORDER BY</h3><p>ORDER BY inside OVER() defines the order of rows within the window.</p><h3>It is commonly used for:</h3><ul><li>Ranking</li><li>Numbering rows</li><li>Running totals</li></ul><h3>Example:</h3><div class="record-code-block"><div class="record-code-header"><span class="record-code-language"><span aria-hidden="true">&lt;/&gt;</span> SQL</span><button class="code-copy-button" type="button">Copy</button></div><pre><code class="language-sql">RANK() <span class="syntax-keyword">OVER</span> (
+    <span class="syntax-keyword">PARTITION</span> <span class="syntax-keyword">BY</span> dept
+    <span class="syntax-keyword">ORDER</span> <span class="syntax-keyword">BY</span> salary <span class="syntax-keyword">DESC</span>
+)</code></pre></div><p>This ranks employees by salary within each department.</p><h3>Common Window Functions</h3><ul><li>AVG() OVER(...) calculates a window average.</li><li>SUM() OVER(...) calculates a window sum.</li><li>COUNT() OVER(...) calculates a window count.</li><li>RANK() OVER(...) assigns rankings.</li><li>ROW_NUMBER() OVER(...) assigns a unique number to each row.</li></ul><h3>Key Idea</h3><p>Window Functions are useful when we want to calculate statistics or rankings without losing the original rows.</p><h3>A simple way to remember:</h3><p>GROUP BY<br>→ group and reduce rows</p><p>Window Function<br>→ group and calculate, but keep rows</p>
+</section>
+<section class="record-section" id="section-9">
+<h2>问题自查清单</h2>
+<p><a href="https://www.codecademy.com/paths/analyze-data-with-sql/tracks/sql-interview-prep/modules/sql-interview-prep/articles/sql-common-interview-questions" target="_blank" rel="noopener noreferrer">codecademy.com/paths/analyze-data-with-sql/tracks/sql-interview-prep/modules/sql-interview-prep/articles/sql-common-interview-questions</a></p>
+</section>
+            </div>
+            <nav class="record-pagination">
+                <a class="record-pagination-link previous" href="learn-bash-scripting.html">Previous</a>
+                <a class="record-pagination-link index" href="../../learning/codecademy.html">All Codecademy records</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 AOKUN LEI</p>
+    </footer>
+</body>
+</html>

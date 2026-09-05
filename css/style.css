@@ -895,6 +895,71 @@ body.dark-mode .learning-purpose p {
     font-family: Consolas, "Courier New", monospace;
 }
 
+.record-code-block {
+    margin: 22px 0;
+
+    background-color: #f6f8fa;
+    border: 1px solid #d0d0d0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.record-code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    padding: 11px 16px;
+    border-bottom: 1px solid #e0e0e0;
+
+    font-family: Inter, Arial, sans-serif;
+    font-size: 13px;
+}
+
+.record-code-language {
+    font-weight: 600;
+}
+
+.record-code-language span {
+    margin-right: 7px;
+    color: #555555;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.code-copy-button {
+    padding: 4px 9px;
+
+    color: #444444;
+    background: transparent;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+
+    font: inherit;
+    cursor: pointer;
+}
+
+.code-copy-button:hover {
+    background-color: #eceff2;
+}
+
+.record-code-block pre {
+    margin: 0;
+    padding: 18px 20px 20px;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.syntax-shebang { color: #0757a6; }
+.syntax-comment { color: #4f7f58; }
+.syntax-string { color: #27833b; }
+.syntax-variable { color: #6842c2; }
+.syntax-number { color: #b65318; }
+.syntax-keyword { color: #b73569; }
+.syntax-command { color: #bd4b1f; }
+
 .record-content ul {
     margin: 0 0 14px;
     padding-left: 22px;
@@ -973,6 +1038,41 @@ body.dark-mode .record-content pre {
     background-color: #2a2a2a;
     border-color: #555555;
 }
+
+body.dark-mode .record-code-block {
+    background-color: #252525;
+    border-color: #555555;
+}
+
+body.dark-mode .record-code-header {
+    border-bottom-color: #444444;
+}
+
+body.dark-mode .record-code-language span,
+body.dark-mode .code-copy-button {
+    color: #c8c8c8;
+}
+
+body.dark-mode .code-copy-button {
+    border-color: #666666;
+}
+
+body.dark-mode .code-copy-button:hover {
+    background-color: #333333;
+}
+
+body.dark-mode .record-code-block pre {
+    background: transparent;
+    border: 0;
+}
+
+body.dark-mode .syntax-shebang { color: #75b7ff; }
+body.dark-mode .syntax-comment { color: #86b98f; }
+body.dark-mode .syntax-string { color: #8bcf92; }
+body.dark-mode .syntax-variable { color: #bca3ff; }
+body.dark-mode .syntax-number { color: #f2a365; }
+body.dark-mode .syntax-keyword { color: #ff8fba; }
+body.dark-mode .syntax-command { color: #ff9b72; }
 
 /* ===== 窄屏布局 =====
    导航在 1050px 以下另起一行，sticky 页眉会自动占据实际高度。
