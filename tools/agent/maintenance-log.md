@@ -50,3 +50,12 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Decisions: Scoped the treatment to an explicit page modifier so other records do not change. Added `CODECADEMY_NOTES_DIR` as an optional runtime override after the canonical checkout exposed that source notes are not always its sibling; no machine path is versioned.
 - Verification: Confirmed a deterministic rebuild, nine working TOC targets, unchanged styling scope on other records, clean diffs, and Playwright renders at desktop and 390px mobile widths in light and dark modes with no horizontal overflow.
 - Publication: Committed and pushed to `main` as part of this task; live deployment verified after the push.
+
+### 2026-09-05 — Extend chapter cards to other long Codecademy records
+
+- Request: Find other long Codecademy records with real chapter structure and give them the same clearer separation as the SQL record, without touching DeepLearning.AI.
+- Outcome: Enabled the existing chapter-card treatment for Learn HTML, Learn CSS, Intermediate CSS, and Fundamentals of Operating Systems.
+- Areas: Codecademy record configuration and the four generated detail pages; no CSS or JavaScript changes.
+- Decisions: Selected the four records at the clear upper length tier, each with seven to nine reliable top-level sections. Kept shorter two-to-five-section records unchanged rather than styling every course mechanically.
+- Verification: Confirmed the exact five-page scope including SQL, deterministic regeneration, clean diffs, and desktop plus 390px mobile renders for all four pages in light and dark modes with no horizontal overflow.
+- Publication: Committed and pushed to `main` as part of this task; representative live pages verified after the push.

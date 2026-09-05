@@ -95,18 +95,21 @@ RECORDS = [
         "title": "Learn HTML",
         "slug": "learn-html",
         "kind": "chapters",
+        "page_class": "record-page--chapter-cards",
     },
     {
         "file": "frontend/Learn CSS.docx",
         "title": "Learn CSS",
         "slug": "learn-css",
         "kind": "chapters",
+        "page_class": "record-page--chapter-cards",
     },
     {
         "file": "frontend/CSS intermidiate.docx",
         "title": "Intermediate CSS",
         "slug": "intermediate-css",
         "kind": "chapters",
+        "page_class": "record-page--chapter-cards",
     },
     {
         "file": "frontend/Building Interactive JavaScript Websites.docx",
@@ -137,6 +140,7 @@ RECORDS = [
         "title": "Fundamentals of Operating Systems",
         "slug": "fundamentals-of-operating-systems",
         "kind": "chapters",
+        "page_class": "record-page--chapter-cards",
     },
     {
         "file": "cloud computing .docx",

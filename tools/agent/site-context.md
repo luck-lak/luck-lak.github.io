@@ -49,6 +49,8 @@ Shared assets serve several page families. Scope new selectors and behavior to a
 
 Substantial component sections need a short comment that states their purpose, with a visible boundary from neighboring components. Comments should explain intent or coupling, not narrate every declaration. Keep keyboard access, reduced-motion behavior, mobile layout, light/dark themes, and copy-button states in mind when the affected component uses them.
 
+Long Codecademy records with reliable top-level sections can opt into the shared `record-page--chapter-cards` treatment through the record's `page_class` configuration. Use content length and real section structure as judgment signals; do not apply it automatically to every record whose generator kind happens to be `chapters`.
+
 ## Verification and publishing
 
 Choose checks in proportion to the change. Useful checks include:
