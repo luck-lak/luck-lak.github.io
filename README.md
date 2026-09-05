@@ -96,6 +96,13 @@ python tools/build_codecademy_records.py
 python tools/build_learning_records.py
 ```
 
+如果网站仓库与 Codecademy 笔记目录不在同一级，可在运行生成器的终端中设置 `CODECADEMY_NOTES_DIR`，无需修改或硬编码脚本路径：
+
+```powershell
+$env:CODECADEMY_NOTES_DIR = "<Codecademy 笔记目录>"
+python tools/build_codecademy_records.py
+```
+
 DeepLearning.AI 的封面在 `assets/records/thumbnails/`，按记录编号命名；特殊扩展名在脚本的 `RECORD_COVER_EXTENSIONS` 中配置。此平台提供原始 DOCX 下载；Codecademy 页面不提供 DOCX 下载。
 
 `inspect_docx.py` 和 `list_record_links.py` 是检查用的小工具，不参与网页运行。

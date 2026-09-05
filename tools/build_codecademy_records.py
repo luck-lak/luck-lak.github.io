@@ -3,6 +3,7 @@ from __future__ import annotations
 from html import escape
 from io import BytesIO
 from pathlib import Path
+import os
 import re
 
 from docx import Document
@@ -15,7 +16,7 @@ from PIL import Image, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIR = ROOT.parent / "codecademy"
+SOURCE_DIR = Path(os.environ.get("CODECADEMY_NOTES_DIR", ROOT.parent / "codecademy")).expanduser().resolve()
 RECORDS_OUTPUT_DIR = ROOT / "records" / "codecademy"
 ASSETS_DIR = ROOT / "assets" / "records" / "codecademy"
 THUMBNAILS_DIR = ROOT / "assets" / "records" / "thumbnails" / "codecademy"
@@ -186,6 +187,7 @@ RECORDS = [
         "title": "Analyze Data with SQL",
         "slug": "analyze-data-with-sql",
         "kind": "chapters",
+        "page_class": "record-page--chapter-cards",
         "demote_heading_1": True,
         "promote_headings": ["SQLite Summary", "SQL Window Functions Summary"],
         "section_markers": {"问题自查清单：": "问题自查清单"},
@@ -718,6 +720,9 @@ def render_record_page(record: dict, number: int, previous: dict | None, next_re
     if source_url:
         url = escape(source_url, quote=True)
         source_html = f'<p class="record-source"><a href="{url}" target="_blank" rel="noopener noreferrer">Course page</a></p>'
+    page_class = "record-page"
+    if record.get("page_class"):
+        page_class += f' {escape(record["page_class"], quote=True)}'
 
     return f'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -733,7 +738,7 @@ def render_record_page(record: dict, number: int, previous: dict | None, next_re
 <body>
     {page_header("../../")}
 
-    <main class="record-page">
+    <main class="{page_class}">
         <article class="record-article">
             <p class="record-kicker">Codecademy Record {number:02d}</p>
             <h1>{escape(record["title"])}</h1>

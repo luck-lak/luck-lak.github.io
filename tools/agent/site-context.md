@@ -29,7 +29,7 @@ The site deliberately uses plain HTML, CSS, and a small amount of JavaScript. Je
 
 `learning-records.html` is a manually maintained hub. Platform list and detail pages are generated:
 
-- Codecademy: `tools/build_codecademy_records.py`; read its configuration for the current source directory, record registry, templates, and output paths.
+- Codecademy: `tools/build_codecademy_records.py`; read its configuration for the current source directory, record registry, templates, and output paths. It defaults to a sibling `codecademy/` directory and accepts `CODECADEMY_NOTES_DIR` when the checkout lives elsewhere; keep the actual machine path out of versioned files.
 - DeepLearning.AI: `tools/build_learning_records.py`; read the script and its registry for current inputs, covers, and outputs.
 
 Do not directly edit generated detail or platform HTML when the generator owns the same markup; regeneration will overwrite it. Update the original note, generator data, or generator template, then rebuild. Platform totals in the hub may require a separate manual update; verify against current generated records rather than copying an old number.

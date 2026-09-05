@@ -41,3 +41,12 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Decisions: Used qualitative rotation signals instead of a fixed entry count; unresolved follow-ups remain hot regardless of age, while archived entries remain intact and are not read by default.
 - Verification: Validated the updated skill, confirmed archived entries were preserved, checked routing language across all agent entry files, and inspected the repository diff.
 - Publication: Committed and pushed to `main` as part of this task; all agent-memory files remain excluded from the published site through the existing `tools` exclusion.
+
+### 2026-09-05 — Separate SQL chapters visually
+
+- Request: Make the chapters in the Analyze Data with SQL record easier to distinguish from one another.
+- Outcome: Gave that long-form record opt-in chapter cards with a light surface, border, left accent, shadow, and stronger target state after a table-of-contents jump; added coordinated mobile and dark-mode styles.
+- Areas: Codecademy generator and SQL output page, `css/style.css`, generator path documentation.
+- Decisions: Scoped the treatment to an explicit page modifier so other records do not change. Added `CODECADEMY_NOTES_DIR` as an optional runtime override after the canonical checkout exposed that source notes are not always its sibling; no machine path is versioned.
+- Verification: Confirmed a deterministic rebuild, nine working TOC targets, unchanged styling scope on other records, clean diffs, and Playwright renders at desktop and 390px mobile widths in light and dark modes with no horizontal overflow.
+- Publication: Committed and pushed to `main` as part of this task; live deployment verified after the push.

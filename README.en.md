@@ -96,6 +96,13 @@ python tools/build_codecademy_records.py
 python tools/build_learning_records.py
 ```
 
+If the website checkout and Codecademy notes are not siblings, set `CODECADEMY_NOTES_DIR` in the terminal that runs the generator instead of hard-coding a machine-specific path:
+
+```powershell
+$env:CODECADEMY_NOTES_DIR = "<path to Codecademy notes>"
+python tools/build_codecademy_records.py
+```
+
 DeepLearning.AI covers live under `assets/records/thumbnails/`, named by record number; special extensions are configured in `RECORD_COVER_EXTENSIONS`. This platform offers the original DOCX download; Codecademy pages do not.
 
 `inspect_docx.py` and `list_record_links.py` are inspection helpers and do not run as part of the site.

@@ -853,6 +853,35 @@ body.dark-mode .learning-purpose p {
     font-size: 24px;
 }
 
+/* --- Long-form record chapters: base card treatment ---
+   Opt-in modifier for dense notes whose top-level sections need stronger separation. */
+.record-page--chapter-cards {
+    box-sizing: border-box;
+    max-width: min(1080px, 100vw);
+}
+
+.record-page--chapter-cards .record-section {
+    padding: 26px 28px 30px;
+
+    background-color: #fbfbfb;
+    border: 1px solid #dedede;
+    border-left: 4px solid #777777;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+    scroll-margin-top: 24px;
+}
+
+.record-page--chapter-cards .record-section:target {
+    border-left-color: #111111;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.record-page--chapter-cards .record-section h2 {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+}
+/* --- Long-form record chapters: base card treatment ends --- */
+
 .record-content table {
     width: 100%;
     margin: 20px 0;
@@ -989,6 +1018,11 @@ body.dark-mode .learning-purpose p {
     .record-content {
         overflow-wrap: break-word;
     }
+
+    .record-page--chapter-cards .record-section {
+        padding: 22px 20px 24px;
+        border-left-width: 3px;
+    }
 }
 
 /* Dark mode for the new components */
@@ -1033,6 +1067,19 @@ body.dark-mode .record-toc-title {
 
 body.dark-mode .record-section h2 {
     border-bottom-color: #444444;
+}
+
+/* Long-form record chapters: dark palette only; structure stays in the base block. */
+body.dark-mode .record-page--chapter-cards .record-section {
+    background-color: #222222;
+    border-color: #444444;
+    border-left-color: #888888;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .record-page--chapter-cards .record-section:target {
+    border-left-color: #dddddd;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
 body.dark-mode .record-content th,
