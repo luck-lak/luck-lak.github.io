@@ -2,7 +2,10 @@
 # Pages without front matter (index.html, learning/, records/, ...) are copied
 # through the GitHub Pages build unchanged; only blog pages and posts are processed.
 permalink: /blog/:title/
+
+# Maintenance tools and agent-only context belong in the repository, not the site.
 exclude:
   - tools
+  - AGENTS.md
   - README.md
   - README.en.md
