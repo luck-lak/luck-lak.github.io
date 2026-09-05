@@ -1,6 +1,6 @@
-# Agent maintenance log
+# Current agent maintenance log
 
-This append-only journal lets different agents understand what prior maintenance tasks actually changed. It complements `site-context.md`; it is not a substitute for checking current repository state.
+This is the hot journal for recent personal-site work and unresolved follow-ups. It complements `site-context.md`; it is not a substitute for checking current repository state. Older completed work lives in `history/YYYY.md` and is searched only when relevant.
 
 ## Entry format
 
@@ -18,26 +18,11 @@ Append new entries at the bottom, newest last. Keep each entry concise and use o
 - Follow-up: Remaining risk or useful next step; omit when none.
 ```
 
-Do not include secrets, full command histories, large diffs, or cheap-to-derive snapshots. Keep history intact; add a dated correction if an older entry becomes misleading.
+Do not include secrets, full command histories, large diffs, or cheap-to-derive snapshots. Keep unresolved follow-ups here even when they are old.
 
-## History
+When this file is no longer a quick orientation aid, move completed entries intact to their matching yearly archive. Useful signals include several obsolete maintenance phases or lessons that have already been promoted to `site-context.md`; there is deliberately no fixed entry limit. Do not load archives by default or silently discard their contents.
 
-### 2026-09-05 — Publish Bash and SQL learning records
-
-- Request: Convert two new Codecademy DOCX notes into site records, improve code presentation, and add a simple SQL page table of contents.
-- Outcome: Added the Bash and SQL records. A Bash code screenshot became selectable syntax-highlighted code with its annotations reorganized, and the SQL record gained a nine-item jump menu.
-- Areas: Codecademy generator, platform navigation, record assets and pages, shared code/TOC styling and behavior.
-- Decisions: Preserved the author's text and image order while moving reliably reconstructed code into semantic HTML.
-- Verification: Rebuilt records, checked diffs and links, tested responsive/light-dark presentation and copy behavior, and confirmed the GitHub Pages deployment and live pages.
-- Publication: Pushed to `main` in commit `1601f16`.
-
-### 2026-09-05 — Clarify code component boundaries
-
-- Request: Make the new CSS and JavaScript comments clear and visibly separated from other component code.
-- Outcome: Refined the shared code-viewer and table-of-contents section comments and boundaries without changing behavior.
-- Areas: `css/style.css`, `js/main.js`.
-- Verification: Checked the diff and syntax-sensitive behavior; no functional regression was introduced.
-- Publication: Pushed to `main` in commit `28de03d`.
+## Current history
 
 ### 2026-09-05 — Add shared maintenance memory
 
@@ -47,3 +32,12 @@ Do not include secrets, full command histories, large diffs, or cheap-to-derive 
 - Decisions: Kept volatile state out of the skill; embedded promotion and pruning rules in the primary skill instead of creating a second meta-skill. Repository context remains usable by agents without skill support.
 - Verification: Validated the skill structure, checked all documented repository paths, and performed a cold-start routing audit from the new entry files.
 - Publication: Included in the site repository and pushed to `main` as part of this task; the agent-only files are excluded from the published site.
+
+### 2026-09-05 — Add hot and cold log layers
+
+- Request: Prevent long-term maintenance history from consuming context or letting obsolete decisions distort current work.
+- Outcome: Split agent history into a small current log and opt-in yearly archives, with relevance-based rotation and search rules.
+- Areas: `$luck-lak-site-maintenance`, `AGENTS.md`, `tools/agent/site-context.md`, `tools/agent/maintenance-log.md`, `tools/agent/history/`.
+- Decisions: Used qualitative rotation signals instead of a fixed entry count; unresolved follow-ups remain hot regardless of age, while archived entries remain intact and are not read by default.
+- Verification: Validated the updated skill, confirmed archived entries were preserved, checked routing language across all agent entry files, and inspected the repository diff.
+- Publication: Committed and pushed to `main` as part of this task; all agent-memory files remain excluded from the published site through the existing `tools` exclusion.

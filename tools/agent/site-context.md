@@ -69,6 +69,14 @@ Publishing normally means committing and pushing the canonical repository's inte
 - Keep CSS/JavaScript comments clear and component boundaries easy to scan.
 - Treat this document as an information map, not a mandatory step-by-step workflow.
 
+## Shared memory model
+
+- `site-context.md` contains compact knowledge that is still true and useful across tasks.
+- `maintenance-log.md` is the hot log for recent work and unresolved follow-ups; it is the only task history read by default.
+- `history/YYYY.md` files are cold, append-only archives. Search them by component, filename, or task keyword only when earlier reasoning could affect the current task; do not load every archive for general orientation.
+
+Rotate completed entries into their matching yearly archive when the hot log stops being quick to scan, spans several old maintenance phases, or contains work whose durable lessons are already represented here. This is a judgment call rather than a fixed entry or byte limit. Keep unresolved follow-ups hot regardless of age, preserve archived entries intact, and add dated corrections instead of rewriting history.
+
 ## Keeping this document useful
 
 Add only facts likely to remain useful across multiple tasks: architecture, ownership boundaries, durable preferences, and expensive-to-rediscover pitfalls. Do not store record counts, latest commit hashes, current branches, absolute machine paths, or transient work-in-progress here. Those belong in Git/current files or the historical maintenance log.
