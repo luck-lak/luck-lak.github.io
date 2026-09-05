@@ -1,4 +1,5 @@
-// 全站只用这一段脚本切换主题，页面布局交给 CSS。
+// ===== 1. 全站主题切换 =====
+// 只管理主题状态和按钮文字；页面布局与配色仍由 CSS 负责。
 const themeButton = document.querySelector(".theme-button");
 
 // 记住用户上次选择的主题，刷新后自动恢复
@@ -32,7 +33,8 @@ themeButton.addEventListener("click", function () {
     }
 });
 
-// 笔记中的代码块可直接复制；不支持 Clipboard API 时使用兼容方案。
+// ===== 2. 学习笔记代码复制 =====
+// 只绑定带 .code-copy-button 的代码卡片，不影响普通正文或其他按钮。
 document.querySelectorAll(".code-copy-button").forEach(function (button) {
     button.addEventListener("click", async function () {
         const code = button.closest(".record-code-block").querySelector("code").textContent;
@@ -41,6 +43,7 @@ document.querySelectorAll(".code-copy-button").forEach(function (button) {
             if (navigator.clipboard && window.isSecureContext) {
                 await navigator.clipboard.writeText(code);
             } else {
+                // 兼容非安全的本地预览环境和不支持 Clipboard API 的旧浏览器。
                 const textArea = document.createElement("textarea");
                 textArea.value = code;
                 textArea.setAttribute("readonly", "");
@@ -53,10 +56,12 @@ document.querySelectorAll(".code-copy-button").forEach(function (button) {
             }
 
             button.textContent = "Copied";
+            // 短暂显示结果，随后恢复按钮原文，方便再次复制。
             window.setTimeout(function () {
                 button.textContent = "Copy";
             }, 1600);
         } catch (error) {
+            // 复制失败时只更新按钮状态，不打断页面的其他交互。
             button.textContent = "Copy failed";
             window.setTimeout(function () {
                 button.textContent = "Copy";
