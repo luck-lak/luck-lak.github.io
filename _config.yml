@@ -5,4 +5,4 @@ permalink: /blog/:title/
 exclude:
   - tools
   - README.md
-  - 学习探索记录.docx
+  - README.en.md

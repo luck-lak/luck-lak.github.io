@@ -1,224 +1,141 @@
-# AOKUN's Portfolio Website
+# Aokun 的个人网站
 
-A simple personal portfolio site built with plain HTML, CSS, and JavaScript.
+[在线访问](https://luck-lak.github.io/) · [English](README.en.md)
 
-## Project Structure
+这里放着我的项目、课程记录和博客。我是南京大学智能科学与技术专业本科生，最近的学习重心从 Web 开发和广泛的技术探索，逐渐转向数据挖掘与机器学习。
 
-| Path | Purpose |
-|---|---|
-| `index.html` | Home page |
-| `learning-records.html` | Learning records hub; intro statement, motivation and future direction, platform cards |
-| `learning/` | One list page per platform |
-| `records/` | One detail page per course or paper |
-| `_posts/`, `_layouts/`, `_includes/`, `blog/` | Jekyll source for the Blog section |
-| `css/style.css` | Site-wide and learning-record styles |
-| `js/main.js` | Small interactive behavior |
-| `tools/` | Note-to-page build scripts and small inspection helpers |
-| `assets/records/` | Record screenshots and navigation covers |
-| `学习探索记录.docx` | Complete DeepLearning.AI source notebook |
+网站使用 HTML、CSS 和少量 JavaScript；博客由 Jekyll 生成，部署在 GitHub Pages。保持结构简单，是为了让我能看懂代码，也能自己继续维护。
 
-## Adding New Content
+## 从哪里开始改
 
-For small updates, such as adding a new section or changing text:
+| 想修改的内容 | 对应文件 |
+| --- | --- |
+| 自我介绍、当前方向、项目、学习轨迹、联系方式 | `index.html` |
+| 学习记录总入口、未来 Notebook 入口 | `learning-records.html` |
+| 页面宽度、文字大小、深色模式、手机布局 | `css/style.css`（各区域有注释） |
+| 主题切换和记忆 | `js/main.js` |
+| 博客首页简介 | `blog/index.html` |
+| 博客文章 | `_posts/` |
+| 博客导航、页面框架 | `_includes/`、`_layouts/` |
+| 课程列表、课程详情 | 由 `tools/` 中的脚本生成，见下文 |
 
-1. Edit `index.html`.
-2. Add corresponding styles in `css/style.css` if needed.
-3. Add JavaScript in `js/main.js` only when interaction is required.
+网站正文以英文介绍为主，课程笔记中英文混合，博客主要用中文。README 以本文件为准：**先改中文版，再同步 `README.en.md`**。GitHub 默认展示本文件。
 
-When adding a new section, keep the structure consistent:
+## 本地预览
 
-```html
-<section class="section-name">
-    <h2>Section Title</h2>
-    <p>Content...</p>
-</section>
-```
-
-## Updating Projects
-
-Projects are kept in the `#projects` section of `index.html`. To add one, copy a
-`<article class="project-card">` block, then update the project name, GitHub link,
-and one-sentence description. The card layout is already defined in
-`css/style.css`, so no CSS changes are needed for a normal new project.
-
-```html
-<article class="project-card">
-    <h3><a href="https://github.com/your-name/your-project">Project Name</a></h3>
-    <p>A short description of what the project explores or does.</p>
-</article>
-```
-
-## Learning Records
-
-The records are organized by platform:
-
-- `learning/deeplearning-ai.html` → `records/01…15-*.html`
-- `learning/codecademy.html` → `records/codecademy/*.html`
-
-Each detail page is generated from source notes. Do not edit generated HTML
-for normal content updates; edit the source note or build script and rebuild.
-
-| Platform | Build script | Source | Covers |
-|---|---|---|---|
-| DeepLearning.AI | `tools/build_learning_records.py` | `学习探索记录.docx` | `assets/records/thumbnails/NN.jpg/svg` |
-| Codecademy | `tools/build_codecademy_records.py` | sibling `codecademy/` folder outside this repo | `assets/records/thumbnails/codecademy/NN.svg` |
-
-## Tools In Plain Words
-
-The build scripts are not part of the website itself. They convert source notes
-into the HTML pages under `records/`. You do not need to run them by hand; the
-assistant can update the matching script config, rebuild the pages, and check
-links when you say that a new record is ready.
-
-- Keep `build_learning_records.py` and `build_codecademy_records.py` while the
-  site uses generated record pages.
-- `inspect_docx.py` and `list_record_links.py` are one-off helpers for checking
-  DOCX content and links. They can be deleted when no longer needed, but it is
-  harmless to keep them.
-- Do not delete a build script unless you are intentionally moving that platform
-  back to hand-edited HTML.
-
-## Adding a Codecademy Record
-
-1. Put the new DOCX or Markdown file in the source `codecademy/` folder.
-2. Add one entry to `RECORDS` in `tools/build_codecademy_records.py`, giving it
-   a stable `title`, `slug`, and `kind`.
-3. Draw a matching SVG cover at
-   `assets/records/thumbnails/codecademy/NN.svg`.
-4. Run:
-
-   ```powershell
-   & '<python>python.exe' -X utf8 tools/build_codecademy_records.py
-   ```
-
-5. Check the new detail page, previous/next links, platform page, and hub count.
-6. Keep the original wording, screenshot order, and hyperlinks. Codecademy
-   pages should not display DOCX links.
-
-## Adding a New Platform
-
-Use the same pattern as the two existing platforms:
-
-1. Create `learning/<platform>.html` and `records/<platform>/`.
-2. Create `tools/build_<platform>_records.py`.
-3. Keep source files outside the site unless the user explicitly asks to
-   archive them in the repository.
-4. Put covers in `assets/records/thumbnails/<platform>/`.
-5. Add one platform card to `learning-records.html`.
-6. Update this README.
-
-## Adjusting Layout or Styles
-
-1. Make the change in `css/style.css`.
-2. If a structural change affects generated HTML, update the matching build
-   script and rebuild.
-3. Verify desktop, mobile, and dark mode.
-4. Keep generated pages consistent with the platform pages and hub.
-
-## Local Preview
-
-From the repository root:
+在网站根目录运行（需要已安装 Python）：
 
 ```powershell
-& '<python>python.exe' -m http.server 8000 --bind 127.0.0.1
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Then open `http://127.0.0.1:8000/`.
+打开 [本地首页](http://127.0.0.1:8000/)。如果电脑上的命令是 `py`，将 `python` 换成 `py`。
 
-## Agent Notes
+这个命令可以预览首页和学习记录，**不会构建 Jekyll 博客**。完整博客以 GitHub Pages 构建结果为准；配置了 Ruby/Jekyll 环境后也可以在本地构建。
 
-When updating learning records:
+## 更新首页
 
-- Use the matching build script instead of hand-copying a whole page.
-- Preserve the user's wording, screenshot order, and links.
-- Keep the `learning-records.html` reading statement and platform cards intact.
-- Keep the DOCX archive unchanged unless the user explicitly asks to update it.
-- Update this README and the relevant build-script config when structure or
-  conventions change.
+首页各部分都直接写在 `index.html` 中：
 
-## Blog (Jekyll)
+- `#about-me`：简短介绍。
+- `#current-focus`：当前在学什么，以及下一步的学习计划。
+- `#projects`：实际做过的项目。
+- `#technical-journey`：简短的 Learning Journey。保留旧锚点名称，兼容已有链接。
+- `#learning-records`：课程记录和未来数据 Notebook 的入口。
+- `#contact-me`：联系方式。
 
-The Blog section is built with Jekyll and hosted on GitHub Pages. It is fully
-separate from Learning Records: Blog is for standalone writing (project
-retrospectives, notes, ideas), while Learning Records remains the
-platform-based course map. Pages without Jekyll front matter (all pre-existing
-pages) pass through the build unchanged, so the rest of the site is not touched.
+添加项目时，在 `.project-list` 中复制一个 `<article class="project-card">`，修改标题、真实仓库链接和介绍即可，通常不用改 CSS。
 
-### Blog file structure
+数据 Notebook 仓库尚未放出，入口标记为 **Planned**。有第一批内容后，再把说明替换为实际仓库链接，并更新学习记录总页和 GitHub 个人主页。
 
-| Path | Purpose |
-|---|---|
-| `_config.yml` | Jekyll settings: permalink style (`/blog/:title/`) and build exclusions (`tools/`, README, DOCX archive) |
-| `_posts/` | All blog posts as Markdown files |
-| `_layouts/default.html` | Shared page shell for blog pages (header, nav, theme button, footer) |
-| `_layouts/post.html` | Layout for a single post (date, title, content, back link) |
-| `_includes/site-head.html` | Shared `<head>`: metadata, title, favicon, CSS, JavaScript, fonts |
-| `_includes/site-header.html` | Shared fixed navigation and theme button |
-| `_includes/site-footer.html` | Shared footer |
-| `blog/index.html` | Blog list page; carries the full site shell directly and renders posts newest first with Liquid |
-| `assets/images/blog/` | Post images, one subfolder per post |
-| `css/style.css` | Blog styles live in the `/* ===== Blog (Jekyll) ===== */` section at the end of the file |
-| `index.html`, `learning-records.html`, `learning/*.html` | Navigation entry points linking to `/blog/` |
+文案尽量写清楚做过什么、正在学什么、打算学什么。课程接触不等于项目经验，计划也不当作已经完成的成果。
 
-### Build path
+## 调整排版
 
-1. You push Markdown and layout files to `main`.
-2. GitHub Pages runs Jekyll on their server; no local build is required.
-3. `_posts/*.md` become `/blog/<slug>/` pages and `blog/index.html` becomes `/blog/`.
-4. Build status is visible in the repository's Actions tab.
+`css/style.css` 里可以直接搜索类名和分区注释：
 
-### Adding a new post
+| 样式 | 作用 |
+| --- | --- |
+| `.home-page` | 首页整体宽度，目前上限 1200px，包含两侧内边距 |
+| `#about-me`、`.personal-img` | 自我介绍和图片的两列布局 |
+| `.focus-grid`、`.notes-grid` | 学习方向和笔记入口 |
+| `.project-list` | 项目卡片网格 |
+| `.journey-list` | 学习轨迹列表 |
+| `.records-*`、`.record-*` | 课程列表和详情 |
+| `.blog-*`、`.post-*` | 博客列表和文章 |
+| `body.dark-mode` | 深色模式 |
+| `@media` | 窄屏布局与减少动画的设置 |
 
-1. Create `_posts/YYYY-MM-DD-post-slug.md`. The filename date must be the
-   publish date (future dates stay hidden until that date), and the slug
-   becomes the URL: `/blog/post-slug/`.
-2. Start the file with this front matter, then write Markdown below it:
+导航使用 `position: sticky`，会占据正常页面空间。调整导航时，不需要给正文猜一个固定的顶部高度。首页可以宽一些，长篇博客仍保留较窄的阅读宽度。
+
+修改后检查桌面 100% 缩放、手机宽度、深浅主题，以及导航跳转。
+
+## 维护学习记录
+
+`learning-records.html` 是手动维护的总入口；`learning/` 是按平台分类的列表页；`records/` 是课程或论文详情。
+
+| 平台 | 生成脚本 | 原始笔记 |
+| --- | --- | --- |
+| DeepLearning.AI | `tools/build_learning_records.py` | 根目录的 `学习探索记录.docx` |
+| Codecademy | `tools/build_codecademy_records.py` | 网站文件夹同级的 `codecademy/` |
+
+正常更新时，先改原始笔记或生成脚本，再生成页面。直接改生成的 HTML，下一次重建时会被覆盖。原始文字、截图顺序和链接应保留；网站导语与导航在生成模板中维护。
+
+Codecademy 的 `PLATFORM_INTRO` 是列表页导语，`PLATFORM_PREFACE` 保存原有的个人序言。新增课程时：
+
+1. 把笔记放到同级 `codecademy/` 中。
+2. 在脚本的 `RECORDS` 里添加 `file`、`title`、`slug`、`kind`；不同笔记格式参照已有条目。
+3. 在 `assets/records/thumbnails/codecademy/` 添加对应编号的 SVG 封面。
+4. 运行脚本，再检查列表、详情、上一条/下一条链接。
+5. 手动更新 `learning-records.html` 中的平台记录数。
+
+```powershell
+python -m pip install python-docx Pillow
+python tools/build_codecademy_records.py
+# 更新 DeepLearning.AI 原始笔记时运行：
+python tools/build_learning_records.py
+```
+
+DeepLearning.AI 的封面在 `assets/records/thumbnails/`，按记录编号命名；特殊扩展名在脚本的 `RECORD_COVER_EXTENSIONS` 中配置。此平台提供原始 DOCX 下载；Codecademy 页面不提供 DOCX 下载。
+
+`inspect_docx.py` 和 `list_record_links.py` 是检查用的小工具，不参与网页运行。
+
+## 写博客
+
+在 `_posts/` 新建 `YYYY-MM-DD-post-slug.md`：
 
 ```markdown
 ---
 layout: post
-title: "文章标题"
+title: "一次数据分析练习"
 lang: zh
-date: 2026-08-31 12:00:00 +0800
-description: "列表页显示的一句话简介"
+date: 2026-09-05 12:00:00 +0800
+description: "这次练习的问题、过程和收获。"
 ---
+
+正文从这里开始。
 ```
 
-To show a cover image on the Blog list page, also add `cover` and an optional
-`cover_alt`:
+发布后的地址是 `/blog/post-slug/`。未来日期的文章默认暂不展示。
+
+图片放在 `assets/images/blog/post-slug/`，正文中使用 `/assets/images/blog/post-slug/image.png`。可在文章头部加上 `cover` 和 `cover_alt` 来显示列表封面：
 
 ```yaml
 cover: "/assets/images/blog/post-slug/cover.jpg"
-cover_alt: "Cover image description"
+cover_alt: "图片内容说明"
 ```
 
-3. Put images in `assets/images/blog/<post-slug>/` and reference them with
-   `/assets/images/blog/<post-slug>/image.png` (absolute path from site root).
-4. Commit and push to `main`. The live site updates in a minute or two.
+博客导航来自 `_includes/site-header.html`。首页与学习记录使用普通 HTML，相关导航变更需要同步到页面或生成脚本。
 
-You can also add or edit posts directly on github.com: open the `_posts/`
-folder, use "Add file" → "Create new file" with the same naming rules, then
-commit to `main`.
+## 发布与两个仓库
 
-### Changing blog styles
+提交并推送到网站仓库的 `main` 后，GitHub Pages 会运行 Jekyll。到仓库 Actions 查看构建结果，再检查线上页面。静态 HTML 页面会原样复制；博客模板和文章会经过处理。
 
-- List page styles: the `.blog-*` classes in the Blog section of `css/style.css`.
-- Post page styles: the `.post-*` classes in the same section.
-- Page structure (head, nav, footer): `_layouts/default.html`.
-- Shared head, nav, and footer markup: `_includes/site-head.html`,
-  `_includes/site-header.html`, and `_includes/site-footer.html`. The Blog list
-  page includes them directly because it intentionally uses `layout: null` in
-  this hybrid plain-HTML/Jekyll site.
-- Post structure (date, title, content wrapper, back link): `_layouts/post.html`.
-- Dark mode rules for both pages sit in the same CSS section; look for
-  `body.dark-mode .blog-*` and `body.dark-mode .post-*`.
+`_config.yml` 排除生成工具与两份 README，但保留页面实际链接到的 DOCX 下载文件。
 
-### Blog notes
+| 仓库 | 用途 |
+| --- | --- |
+| [luck-lak.github.io](https://github.com/luck-lak/luck-lak.github.io) | 网站源码；本 README 说明如何维护网站 |
+| [luck-lak](https://github.com/luck-lak/luck-lak) | GitHub 个人主页 README；介绍个人近况和项目 |
 
-- `description` is shown on the list page; without it, only the title and date show.
-- `cover` is optional. If it is set, the Blog list card shows the image above
-  the date, title, and description. If not set, the card remains text-only.
-- `lang` (`zh` or `en`) sets the post page's `<html lang>` value.
-- A midday time with `+0800` keeps the displayed date stable when GitHub builds in UTC.
-- Learning Records detail pages keep their minimal nav (Home + Learning Records)
-  by design; Blog is reachable from the hub pages.
+学习方向变化时，检查首页、学习记录导语和个人主页 README 是否一致。两份网站 README 的维护说明也应同步更新。

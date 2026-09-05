@@ -23,10 +23,20 @@ PLATFORM_PAGE = ROOT / "learning" / "codecademy.html"
 
 PLATFORM_INTRO = (
     "Notes from Codecademy courses on web development and computer science "
-    "fundamentals. Like my other records, these keep the original wording and "
-    "screenshots from my notebook, so they work best as a map of what each "
-    "course covers."
+    "fundamentals, with chapter summaries, screenshots, and personal reflections."
 )
+
+# 保留平台页原有的个人序言；重新生成页面时不会丢失。
+PLATFORM_PREFACE = '''
+        <section class="platform-preface">
+            <h2>Codecademy Platform Preface</h2>
+            <p>Learn HTML是我在codecademy平台接触的第一门课，应该是我想学习搭建网站的时候AI推荐的学习资源，这个平台和我原来习惯的视频学习方式很不同，刚开始也只是想着没事像闯关一样玩一下，然后逐渐发现乐趣。</p>
+            <p>虽然现在我感觉我的网页开发水平也只是入门，但在当时当我发现我可以自己写HTML并在网页显示的时候，是很惊喜的。</p>
+            <p>通过这门课，我解锁了codecademy这个平台，感觉这个平台对于快速学习一些技术是挺有帮助的。</p>
+            <p>这个平台的记录一般是我复制每个章节最后的review整合到一起，原意是便于自己回忆，但是其实感觉我想回忆相关知识倒也不会看这些，因为codecademy对于大部分课程都有cheatsheet可以用来回顾。</p>
+            <p>当前的记录方式其实不是很利于读者阅读，我把这些笔记留在这里主要是做个标记，读者也可以大致浏览知道每门课的内容，但是我不是很建议单纯使用这些笔记来学习，我认为这可能会毁了你的学习体验。后续挺多节课的记录方式都基本都是这样，但对于新笔记我会采取新的方式(按顺序应该在Learn the Command Line课程后面)，应该是在开头写自己的总结和收获，希望更利于读者阅读与学习。</p>
+        </section>
+'''
 
 # One entry per course. "kind" chooses how the document is split:
 #   chapters   - split on 第X章章节总结（Topic） markers
@@ -420,8 +430,9 @@ def page_header(relative_root: str, active: str = "Learning Records") -> str:
         <nav class="main-navigation">
             <a href="{relative_root}index.html">Home</a>
             <a href="{relative_root}index.html#projects">Projects</a>
-            <a href="{relative_root}index.html#technical-journey">Technical Journey</a>
+            <a href="{relative_root}index.html#current-focus">Current Focus</a>
             <a href="{relative_root}learning-records.html" class="active">{active}</a>
+            <a href="{relative_root}blog/">Blog</a>
         </nav>
         <button class="theme-button" type="button">🌙</button>
     </header>'''
@@ -512,6 +523,8 @@ def render_platform_page(records: list[dict]) -> str:
             <p>{PLATFORM_INTRO}</p>
             <p class="platform-backlink"><a href="../learning-records.html">← All learning records</a></p>
         </section>
+
+        {PLATFORM_PREFACE}
 
         <section class="record-grid">
             {"".join(cards)}

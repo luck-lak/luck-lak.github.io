@@ -235,7 +235,7 @@ def render_index_page(records: list[dict]) -> str:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aokun Lei's learning records from DeepLearning.AI courses and paper notes.">
-    <title>Learning Records | Aokun Lei</title>
+    <title>DeepLearning.AI Records | Aokun Lei</title>
     <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/main.js" defer></script>
@@ -246,8 +246,9 @@ def render_index_page(records: list[dict]) -> str:
         <nav class="main-navigation">
             <a href="../index.html">Home</a>
             <a href="../index.html#projects">Projects</a>
-            <a href="../index.html#technical-journey">Technical Journey</a>
-            <a href="./learning-records.html" class="active">Learning Records</a>
+            <a href="../index.html#current-focus">Current Focus</a>
+            <a href="../learning-records.html" class="active">Learning Records</a>
+            <a href="../blog/">Blog</a>
         </nav>
         <button class="theme-button" type="button">🌙</button>
     </header>
@@ -256,7 +257,7 @@ def render_index_page(records: list[dict]) -> str:
         <section class="records-intro">
             <p class="records-platform">Platform: DeepLearning.AI</p>
             <h1>DeepLearning.AI Records</h1>
-            <p>Notes from DeepLearning.AI short courses and paper reading. Each record keeps the original wording and screenshots from my DOCX notebook, so the records read best as a map of what each course covers.</p>
+            <p>Notes from DeepLearning.AI short courses and papers on LLMs, agents, and related AI topics. They include course summaries, screenshots, and my reflections at the time.</p>
             <a class="download-link" href="../学习探索记录.docx" download>Download the original DOCX</a>
             <p class="platform-backlink"><a href="../learning-records.html">← All learning records</a></p>
         </section>

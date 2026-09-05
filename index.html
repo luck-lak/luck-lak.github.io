@@ -1,183 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Aokun Lei's projects, technical journey, and learning records.">
+    <meta name="description" content="Aokun Lei, an undergraduate at Nanjing University. Learning data mining and machine learning, with projects, course notes, and a personal blog.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Aokun Lei | Portfolio</title>
+    <title>Aokun Lei | Learning & Projects</title>
     <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-    <script src="./js/main.js" defer></script>
-
-    <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="./js/main.js" defer></script>
 </head>
-
 <body>
     <header>
-        <h1>AOKUN</h1>
-        <nav class="main-navigation">
-            <a href="#about-me">About Me</a>
+        <a class="site-title" href="./index.html">AOKUN</a>
+        <nav class="main-navigation" aria-label="Main navigation">
+            <a href="#about-me">About</a>
+            <a href="#current-focus">Current Focus</a>
             <a href="#projects">Projects</a>
-            <a href="#technical-journey">Technical Journey</a>
-            <a href="#learning-records">Learning Records</a>
+            <a href="./learning-records.html">Learning Records</a>
             <a href="/blog/">Blog</a>
-            <a href="#contact-me">Contact Me</a>
+            <a href="#contact-me">Contact</a>
         </nav>
-
-        <button class="theme-button" type="button">
-            🌙
-        </button>
+        <button class="theme-button" type="button" aria-label="Switch to dark mode">🌙</button>
     </header>
 
-    <main>
-
+    <main class="home-page">
         <section id="about-me">
             <div class="about-me-content">
-                <h2>About Me</h2>
-
-                <p>
-                    Hi! I am AoKun, an undergraduate student at Nanjing University,
-                    majoring in Intelligent Science and Technology.
-                </p>
-
-                <p>
-                    My journey in computer science is driven by curiosity.
-                    I am fascinated by how ideas can be transformed into
-                    real systems through programming, algorithms, and engineering.
-                </p>
-
-                <p>
-                    Recently, I have been exploring topics including artificial
-                    intelligence, large language models, web development, and
-                    software engineering. I believe that the best way to learn
-                    technology is by building things and continuously improving.
-                </p>
-
-                <p>
-                    This website serves as my personal space to document my
-                    projects, learning records, and interesting discoveries.
-                </p>
+                <p class="section-kicker">About me</p>
+                <h1>Hi, I'm Aokun.</h1>
+                <p class="about-lead">I'm an undergraduate at Nanjing University, studying Intelligent Science and Technology.</p>
+                <p>Over the past few months, I've been learning web development and building small projects. I'm now spending more time on data mining and machine learning, bringing together what I learn in class and what I can try in code.</p>
+                <p>This is where I keep my projects, study notes, and occasional writing.</p>
+                <div class="intro-links">
+                    <a href="https://github.com/luck-lak">GitHub ↗</a>
+                    <a href="./learning-records.html">Learning records →</a>
+                </div>
             </div>
+            <img class="personal-img" src="./assets/images/personal-img-with-logo.png" alt="Portrait of Aokun Lei">
+        </section>
 
-            <img class="personal-img" src="assets/images/personal-img-with-logo.png" alt="Portrait of Aokun Lei">
+        <section id="current-focus">
+            <p class="section-kicker">What I'm learning now</p>
+            <h2>Data, statistics & machine learning</h2>
+            <p class="section-intro">I'd like to spend longer with one subject and follow the questions that come up along the way. This semester, data mining gives me a way to connect probability, statistics, algorithms, and programming.</p>
+            <div class="focus-grid">
+                <article>
+                    <h3>Working with data</h3>
+                    <p>I'm practicing SQL with SQLite and learning data analysis and visualization in Python. I want to get comfortable cleaning a dataset, asking questions, and checking what the results actually say.</p>
+                </article>
+                <article>
+                    <h3>Building ML foundations</h3>
+                    <p>My next steps are regression, classification, clustering, and model evaluation, with small experiments alongside the theory. I plan to build on that foundation with PyTorch and deep learning.</p>
+                </article>
+            </div>
+            <p class="focus-note">I still follow LLMs and AI systems, and keep building my software engineering skills as I work on projects.</p>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
-            <p class="projects-intro">
-                I am still exploring what I enjoy building most. These projects are
-                mainly local experiments and learning work for now; I am continuing
-                to develop the skills and experience needed for larger, more
-                impactful projects.
-            </p>
-
+            <p class="section-intro">A few things I've built while learning programming, algorithms, and web development.</p>
             <div class="project-list">
                 <article class="project-card">
-                    <h3><a href="https://github.com/luck-lak/Synera--Synergy-Auto-Arena">Synera: Synergy Auto-Arena</a></h3>
-                    <p>An experimental project for exploring collaboration, strategy, and automated arena-style workflows.</p>
+                    <p class="project-kind">C++ · Qt · Course project</p>
+                    <h3><a href="https://github.com/luck-lak/Synera--Synergy-Auto-Arena">Synera: Synergy Auto-Arena ↗</a></h3>
+                    <p>A single-player auto-battler with team building, unit placement, and automatic combat. The project brings game rules, interface design, and a playable game loop together.</p>
                 </article>
-
                 <article class="project-card">
-                    <h3><a href="https://github.com/luck-lak/gomoku-minimax-ai">Gomoku Minimax AI</a></h3>
-                    <p>A Gomoku-playing AI that uses the Minimax algorithm to explore game decision-making.</p>
+                    <p class="project-kind">Game search · Course project</p>
+                    <h3><a href="https://github.com/luck-lak/gomoku-minimax-ai">Gomoku Minimax AI ↗</a></h3>
+                    <p>A Gomoku agent using Minimax, Alpha–Beta pruning, and pattern-based evaluation to choose moves. An exercise in turning a search algorithm into game decisions.</p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kind">HTML · CSS · JavaScript</p>
+                    <h3><a href="https://github.com/luck-lak/luck-lak.github.io">This website ↗</a></h3>
+                    <p>My place to practice page layout, JavaScript interactions, Git, and deployment. The course records are generated from my notes, and the blog uses Jekyll.</p>
                 </article>
             </div>
         </section>
 
-
+        <!-- 保留原来的锚点，其他页面及已有书签仍可跳到这里。 -->
         <section id="technical-journey">
-            <h2>Technical Journey</h2>
-
-            <p>
-                I am still exploring different areas of computer science and gradually
-                building my technical toolkit through coursework, personal learning,
-                and projects.
-            </p>
-
-            <article class="programming">
-                <h3>Programming</h3>
-                <p>
-                    <b><em>Python, JavaScript, C, C++</em></b>
-                </p>
-                <p>
-                    Python is currently the language I use most often, especially for
-                    AI-related projects and experiments. I am also learning JavaScript
-                    to better understand web development and interactive applications.
-                </p>
-            </article>
-            <article class="artificial-intelligence">
-                <h3>Artificial Intelligence</h3>
-                <p>
-                    <b><em>Machine Learning, Deep Learning, LLMs, AI Agents, Diffusion Models</em></b>
-                </p>
-                <p>
-                    AI is one of the areas I spend the most time exploring. My recent work
-                    has involved LLM-based planning, AI agents, evaluation, training,
-                    inference optimization, and diffusion models.
-                </p>
-            </article>
-            <article class="web-development">
-                <h3>Web Development</h3>
-                <p>
-                    <b><em>HTML, CSS, JavaScript, Node.js, GitHub Pages</em></b>
-                </p>
-                <p>
-                    I recently started learning web development and built this website as
-                    part of that journey. I am currently strengthening the front-end basics
-                    and exploring Node.js to understand how the server side works.
-                </p>
-            </article>
-            <article class="development-tools">
-                <h3>Development Tools</h3>
-                <p>
-                    <b><em>GitHub, VS Code, Command Line, Conda, Jupyter</em></b>
-                </p>
-                <p>
-                    These are the tools I reach for in everyday coursework and side
-                    projects, from writing code and managing environments to keeping
-                    my work under version control.
-                </p>
-            </article>
-            <article>
-                <h3>Currently Exploring</h3>
-                <p>
-                    Software Engineering, Front-end Development, AI Engineering,
-                    and better ways to turn ideas into real projects.
-                </p>
-            </article>
-            <p>
-                This list is not meant to represent mastery. It is a snapshot of the
-                technologies and areas I am working with right now, and I hope to keep
-                updating it as I learn more.
-            </p>
+            <h2>Learning Journey</h2>
+            <ol class="journey-list">
+                <li><h3>Exploring through building</h3><p>Web pages and small demos introduced me to HTML, CSS, JavaScript, Node.js, Git, and the command line. Along the way, I learned to set up environments, read documentation, and debug.</p></li>
+                <li><h3>Finding a focus</h3><p>I'm now connecting my coursework through data mining and machine learning, using Python and SQL to put ideas into practice.</p></li>
+                <li><h3>Keeping a record</h3><p>I want each useful experiment to leave something I can revisit: a notebook, a small project, or a note explaining what I learned.</p></li>
+            </ol>
         </section>
 
         <section id="learning-records">
-            <h2>Learning Records</h2>
-            <p>
-                I keep notes for the courses and papers that actually changed how I think.
-                They are now split into separate pages, with the original DOCX still available
-                as the complete archive.
-            </p>
-            <a href="./learning-records.html">Browse learning records</a>
+            <h2>Notes & experiments</h2>
+            <div class="notes-grid">
+                <div>
+                    <h3>Learning Records</h3>
+                    <p>Course notes, screenshots, and reflections from DeepLearning.AI and Codecademy, in Chinese and English.</p>
+                    <a href="./learning-records.html">Browse the records →</a>
+                </div>
+                <div>
+                    <h3>Data notebooks <span class="status-label">Planned</span></h3>
+                    <p>I'd like to collect data analysis, statistics, and ML experiments in a dedicated repository. I'll link it here once the first notebooks are ready.</p>
+                </div>
+            </div>
+            <p class="blog-invitation">I also write about learning, ideas, and everyday life on my <a href="/blog/">blog</a>, mostly in Chinese.</p>
         </section>
 
         <section id="contact-me">
-            <h2>Contact Me</h2>
-            <p>
-                Email: whiterobertgmuwh5395@gmail.com | 2916901094@qq.com
-            </p>
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:whiterobertgmuwh5395@gmail.com">whiterobertgmuwh5395@gmail.com</a>
+                <a href="mailto:2916901094@qq.com">2916901094@qq.com</a>
+            </div>
         </section>
-
     </main>
-
-    <footer>
-        <p>
-            © 2026 AOKUN LEI
-        </p>
-    </footer>
+    <footer><p>© 2026 AOKUN LEI</p></footer>
 </body>
-
 </html>
