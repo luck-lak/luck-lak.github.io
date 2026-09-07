@@ -1,0 +1,49 @@
+/* ===== 长篇笔记章节卡片 =====
+   仅在 record-page--chapter-cards 页面启用；覆盖 records.css 的默认章节外观。
+   深色模式和响应式规则随所属组件维护；由 style.css 按顺序加载。 */
+
+.record-page--chapter-cards {
+    box-sizing: border-box;
+    max-width: min(1080px, 100vw);
+}
+
+.record-page--chapter-cards .record-section {
+    padding: 26px 28px 30px;
+
+    background-color: #fbfbfb;
+    border: 1px solid #dedede;
+    border-left: 4px solid #777777;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+    scroll-margin-top: 24px;
+}
+
+.record-page--chapter-cards .record-section:target {
+    border-left-color: #111111;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.record-page--chapter-cards .record-section h2 {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+}
+
+@media (max-width: 768px) {
+    .record-page--chapter-cards .record-section {
+        padding: 22px 20px 24px;
+        border-left-width: 3px;
+    }
+}
+
+/* Long-form record chapters: dark palette only; structure stays in the base block. */
+body.dark-mode .record-page--chapter-cards .record-section {
+    background-color: #222222;
+    border-color: #444444;
+    border-left-color: #888888;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .record-page--chapter-cards .record-section:target {
+    border-left-color: #dddddd;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}

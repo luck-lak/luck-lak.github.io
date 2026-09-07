@@ -12,7 +12,7 @@ The site uses HTML, CSS, and a little JavaScript. Jekyll builds the blog, and Gi
 | --- | --- |
 | About, current focus, projects, learning journey, contact | `index.html` |
 | Learning records hub and future notebook entry | `learning-records.html` |
-| Width, typography, dark mode, mobile layout | `css/style.css` (with section comments) |
+| Width, typography, dark mode, mobile layout | Modules in `css/`, loaded through `css/style.css` |
 | Theme switching and persistence | `js/main.js` |
 | Blog introduction | `blog/index.html` |
 | Blog posts | `_posts/` |
@@ -52,19 +52,24 @@ Describe completed work, current learning, and plans accurately. Course exposure
 
 ## Adjust the layout
 
-Search for class names and section comments in `css/style.css`:
+Pages continue to link only `css/style.css`. It imports the modules below in order and contains no style rules. No build tool is required.
 
-| Selector | Purpose |
+| File (under `css/`) | Responsibility |
 | --- | --- |
-| `.home-page` | Homepage width, currently capped at 1200px including side padding |
-| `#about-me`, `.personal-img` | Introduction and portrait columns |
-| `.focus-grid`, `.notes-grid` | Current focus and notebook entries |
-| `.project-list` | Project grid |
-| `.journey-list` | Learning journey list |
-| `.records-*`, `.record-*` | Course lists and details |
-| `.blog-*`, `.post-*` | Blog list and posts |
-| `body.dark-mode` | Dark theme |
-| `@media` | Narrow layouts and reduced motion |
+| `base.css` | Base typography, header, navigation, theme button, footer |
+| `home.css` | Homepage introduction, focus, projects, journey, contact |
+| `learning.css` | Learning hub, platform lists, course cards, downloads |
+| `records.css` | Record layout, contents menu, prose, images, tables, pagination |
+| `chapter-cards.css` | Long-record chapter cards and anchor target emphasis |
+| `code-blocks.css` | Code cards, copy buttons, syntax colors |
+| `accessibility.css` | Keyboard focus and reduced-motion preferences |
+| `blog.css` | Blog list, covers, post content |
+
+Change existing features in their owning module, keeping their dark-mode and mobile rules alongside them. Global focus and reduced-motion rules live in `accessibility.css`.
+
+Create a new module when a feature has a distinct responsibility, a reusable component merits its own home, or a module begins to mix unrelated concerns. Register it in `style.css` and this table. Use responsibility and maintenance cost rather than a fixed line limit; avoid tiny one-off files or appending rules to the entry point.
+
+Import order affects the cascade: defaults precede page and component styles; chapter and code cards must follow `records.css`. Compare both themes and narrow layouts when changing order or moving rules. All pages currently share one entry point, adding a few cacheable requests on first load. Future per-page loading would need coordinated changes to static HTML, generators, and the Jekyll head include.
 
 The navigation uses `position: sticky` and occupies normal document space. There is no need to guess a fixed top offset for the main content when navigation changes. The homepage can be wider while long blog posts keep a narrower reading measure.
 

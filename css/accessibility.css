@@ -1,0 +1,18 @@
+/* ===== 全站无障碍 =====
+   负责键盘焦点和减少动画偏好；保留原有覆盖顺序，在博客模块之前加载。
+   深色模式和响应式规则随所属组件维护；由 style.css 按顺序加载。 */
+
+/* 键盘用户能看清焦点；系统选择减少动画时，关闭平滑滚动和卡片移动。 */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    .record-card, .platform-card, .blog-item { transition: none; }
+
+    .record-card:hover, .platform-card:hover, .blog-item:hover { transform: none; }
+}

@@ -16,7 +16,7 @@ The site deliberately uses plain HTML, CSS, and a small amount of JavaScript. Je
 | Learning hub | `learning-records.html` |
 | Platform lists | `learning/` |
 | Course and paper pages | `records/` |
-| Shared site styling | `css/style.css` |
+| Shared site styling | `css/style.css` imports the functional modules in `css/`; see the ownership map in `README.md` |
 | Shared browser behavior | `js/main.js` |
 | Blog posts | `_posts/` |
 | Blog layout and shared header | `_layouts/`, `_includes/` |
@@ -44,6 +44,10 @@ Preserve original writing, bilingual tone, meaningful image order, and source li
 - Rebuilding a platform can update shared navigation, pagination, and many detail pages. Inspect the full diff rather than assuming only the new record changed.
 
 ## CSS and JavaScript conventions
+
+`css/style.css` is an import-only entry point shared by static pages, generators, and Jekyll. Module ownership: `base.css` for foundations/navigation, `home.css` for the homepage, `learning.css` for lists/hub, `records.css` for record content, `chapter-cards.css` and `code-blocks.css` for record components, `accessibility.css` for global focus/motion preferences, and `blog.css` for Jekyll pages.
+
+Edit a feature in its owning module, including its dark and responsive variants. Create another module only when responsibility or reuse justifies it, then register its import and update the README map. Do not use fixed line-count thresholds or append styling to the entry file. Preserve cascade dependencies: record components follow `records.css`; moving rules between modules warrants before/after comparison across page families, widths, and themes.
 
 Shared assets serve several page families. Scope new selectors and behavior to a component or page class so a record-page improvement does not leak into the home page or blog.
 

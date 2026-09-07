@@ -1,0 +1,323 @@
+/* ===== 学习入口与课程列表 =====
+   负责平台卡片、课程网格、平台序言和下载入口。
+   深色模式和响应式规则随所属组件维护；由 style.css 按顺序加载。 */
+
+.records-index-page {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+    text-align: left;
+}
+
+.records-index-page section {
+    padding: 0;
+}
+
+.records-intro {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.records-intro h1 {
+    margin: 0 0 12px;
+}
+
+.records-platform {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 8px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.records-intro p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* 比 .records-intro p 更具体，确保第二段有可见的段落间距。 */
+.records-intro .records-hub-note,
+.records-intro .platform-backlink {
+    margin-top: 16px;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 16px;
+
+    border: 1px solid black;
+    border-radius: 6px;
+
+    color: black;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    background-color: #f2f2f2;
+}
+
+/* ===== 课程列表卡片 ===== */
+.record-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.record-card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    color: black;
+    text-decoration: none;
+
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.record-card:hover {
+    border-color: #8a8a8a;
+    transform: translateY(-2px);
+}
+
+.record-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+.record-card-text {
+    padding: 14px 16px 18px;
+}
+
+.record-card-number {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.record-card h2 {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* ===== 课程卡片与下载入口：深色模式 ===== */
+body.dark-mode .download-link {
+    border-color: white;
+    color: white;
+}
+
+body.dark-mode .download-link:hover {
+    background-color: #333333;
+}
+
+body.dark-mode .record-card {
+    background-color: #1f1f1f;
+    border-color: #555555;
+    color: white;
+}
+
+body.dark-mode .record-card:hover {
+    border-color: #888888;
+}
+
+body.dark-mode .record-card-number,
+body.dark-mode .records-platform {
+    color: #aaaaaa;
+}
+
+body.dark-mode .records-platform {
+    border-color: #555555;
+}
+
+@media (max-width: 768px) {
+    .records-index-page {
+        max-width: 100%;
+        padding: 32px 20px 48px;
+    }
+
+    .record-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== 学习总入口的平台卡片 ===== */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.platform-card {
+    padding: 22px 24px;
+
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+
+    color: black;
+    text-decoration: none;
+    text-align: left;
+
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.platform-card:hover {
+    border-color: #8a8a8a;
+    transform: translateY(-2px);
+}
+
+.platform-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.platform-card-name {
+    margin: 0;
+    font-size: 20px;
+}
+
+.platform-card-count {
+    padding: 4px 8px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.platform-card p {
+    margin: 12px 0 0;
+
+    line-height: 1.6;
+    color: #555555;
+}
+
+.records-hub-note {
+    margin-top: 14px;
+
+    color: #555555;
+}
+
+/* ===== 学习目的与平台返回链接 ===== */
+.learning-purpose {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+
+    margin-bottom: 42px;
+    text-align: left;
+}
+
+.learning-purpose h2 {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+}
+
+.learning-purpose p {
+    margin: 0;
+
+    line-height: 1.65;
+    color: #555555;
+}
+
+body.dark-mode .learning-purpose p {
+    color: #aaaaaa;
+}
+
+.platform-backlink {
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.platform-backlink a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.platform-backlink a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-purpose {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+
+body.dark-mode .platform-card {
+    background-color: #1f1f1f;
+    border-color: #555555;
+    color: white;
+}
+
+body.dark-mode .platform-card:hover {
+    border-color: #888888;
+}
+
+body.dark-mode .platform-card p {
+    color: #aaaaaa;
+}
+
+body.dark-mode .platform-card-count {
+    border-color: #555555;
+    color: #aaaaaa;
+}
+
+body.dark-mode .records-hub-note {
+    color: #aaaaaa;
+}
+
+body.dark-mode .platform-backlink a {
+    color: #aaaaaa;
+}
+
+/* Platform preface on the Codecademy records page */
+.platform-preface {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.platform-preface h2 {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+}
+
+.platform-preface p {
+    margin: 0 0 14px;
+
+    line-height: 1.7;
+}
+
+.platform-preface p:last-child {
+    margin-bottom: 0;
+}

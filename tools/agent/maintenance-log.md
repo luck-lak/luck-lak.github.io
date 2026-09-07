@@ -59,3 +59,11 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Decisions: Selected the four records at the clear upper length tier, each with seven to nine reliable top-level sections. Kept shorter two-to-five-section records unchanged rather than styling every course mechanically.
 - Verification: Confirmed the exact five-page scope including SQL, deterministic regeneration, clean diffs, and desktop plus 390px mobile renders for all four pages in light and dark modes with no horizontal overflow.
 - Publication: Committed and pushed to `main` as part of this task; representative live pages verified after the push.
+
+### 2026-09-07 — Split site CSS by responsibility
+
+- Request: Replace the oversized stylesheet with smaller, clearly owned modules while preserving the site's appearance, and document how future style changes should be organized.
+- Outcome: Kept `css/style.css` as an import-only entry point and extracted base/navigation, homepage, learning lists, record content, chapter cards, code cards, accessibility, and blog modules. Dark and mobile variants live with their features; global focus/motion rules have their own module.
+- Decisions: Preserved selectors and declarations, separated previously shared homepage/learning rules by owner, and retained a common entry URL for static pages, generators, and Jekyll. Future module creation depends on responsibility/reuse rather than line counts; README guides and current agent context contain the ownership map.
+- Verification: Compared computed styles on every body element across nine representative pages, three viewport widths, and both themes (54 scenarios), including rendered blog pages and both record platforms; zero differences after resolving a cross-module mobile rule. CSS requests loaded successfully, screenshots were inspected, and whitespace checks passed.
+- Publication: Included in the direct commit for this task; repository synchronization and Pages delivery are checked after committing.

@@ -1,0 +1,290 @@
+/* ===== 学习笔记正文 =====
+   负责阅读容器、目录、标题、图表、普通代码和上下篇导航。
+   深色模式和响应式规则随所属组件维护；由 style.css 按顺序加载。 */
+
+.record-page {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+    text-align: left;
+}
+
+.record-page {
+    max-width: 1080px;
+}
+
+.record-article {
+    max-width: 1000px;
+}
+
+.record-article section {
+    padding: 0;
+}
+
+.record-kicker {
+    margin: 0 0 8px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.record-article h1 {
+    margin: 0 0 28px;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.record-content {
+    line-height: 1.75;
+}
+
+.record-content p {
+    margin: 0 0 14px;
+}
+
+.record-content a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.record-content a:hover {
+    color: #555555;
+}
+
+.record-content h3 {
+    margin: 30px 0 12px;
+    font-size: 20px;
+}
+
+.record-figure {
+    margin: 24px 0;
+}
+
+.record-figure img {
+    display: block;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    height: auto;
+
+    background-color: white;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+}
+
+.record-pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    margin-top: 52px;
+    padding-top: 20px;
+    border-top: 1px solid #d0d0d0;
+}
+
+.record-pagination-link {
+    color: black;
+    text-decoration: none;
+}
+
+.record-pagination-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== 阅读容器、图片与分页：深色模式 ===== */
+body.dark-mode .record-kicker {
+    color: #aaaaaa;
+}
+
+body.dark-mode .record-figure img {
+    border-color: #555555;
+}
+
+body.dark-mode .record-content a:hover {
+    color: lightgray;
+}
+
+body.dark-mode .record-pagination {
+    border-top-color: #555555;
+}
+
+body.dark-mode .record-pagination-link {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .record-page {
+        max-width: 100%;
+        padding: 32px 20px 48px;
+    }
+
+    .record-article h1 {
+        font-size: 28px;
+    }
+
+    .record-pagination {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0 0;
+    }
+}
+
+/* ===== 来源链接、跳转目录与章节 ===== */
+.record-source {
+    margin: -14px 0 28px;
+}
+
+.record-source a {
+    color: #555555;
+}
+
+.record-toc {
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0 0 36px;
+    padding: 16px 20px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.record-toc-title {
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.record-toc ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    min-width: 0;
+}
+
+.record-toc a {
+    color: inherit;
+    text-decoration: none;
+
+    font-size: 15px;
+}
+
+.record-toc a:hover {
+    text-decoration: underline;
+}
+
+.record-section {
+    margin-bottom: 44px;
+}
+
+.record-section:last-child {
+    margin-bottom: 0;
+}
+
+.record-section h2 {
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #e4e4e4;
+
+    font-size: 24px;
+}
+
+/* ===== 正文表格与普通代码（卡片变体见 code-blocks.css） ===== */
+.record-content table {
+    width: 100%;
+    margin: 20px 0;
+
+    border-collapse: collapse;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.record-content th,
+.record-content td {
+    padding: 8px 12px;
+
+    border: 1px solid #d0d0d0;
+
+    text-align: left;
+    vertical-align: top;
+}
+
+.record-content th {
+    background-color: #f5f5f5;
+}
+
+.record-content pre {
+    margin: 20px 0;
+    padding: 14px 16px;
+
+    background-color: #f6f8fa;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+
+    overflow-x: auto;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.record-content code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.record-content ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+
+    text-align: left;
+}
+
+.record-content li {
+    margin: 0 0 8px;
+}
+
+@media (max-width: 768px) {
+    .record-content {
+        overflow-wrap: break-word;
+    }
+}
+
+/* ===== 目录与正文元素：深色模式 ===== */
+body.dark-mode .record-toc {
+    border-color: #555555;
+}
+
+body.dark-mode .record-toc-title {
+    color: #aaaaaa;
+}
+
+body.dark-mode .record-section h2 {
+    border-bottom-color: #444444;
+}
+
+body.dark-mode .record-content th,
+body.dark-mode .record-content td {
+    border-color: #555555;
+}
+
+body.dark-mode .record-content th {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .record-content pre {
+    background-color: #2a2a2a;
+    border-color: #555555;
+}

@@ -1,0 +1,231 @@
+/* ===== 全站基础与导航 =====
+   负责基础排版、页眉、导航、主题按钮和页脚；焦点与减少动画见 accessibility.css。
+   深色模式和响应式规则随所属组件维护；由 style.css 按顺序加载。 */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 100px; /* 锚点滚动时，为顶部导航留出空间 */
+    scroll-behavior: smooth;  /* 点击导航链接时平滑滚动 */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
+    font-family: Inter, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: center;
+
+    background-color: white; /* 白色背景 */
+    color: #252525;          /* 正文使用柔和的深灰色 */
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+
+    padding-top: 0;
+}
+
+footer {
+    margin-top: auto;
+    padding: 24px 0;
+
+    font-size: 14px;
+    color: #666666;
+}
+
+section {
+    padding: 0;
+    text-align: left;
+}
+
+/* ===== 页眉、导航与主题按钮 ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    background-color: white;
+    padding: 0 max(24px, calc((100% - 1200px) / 2));
+    gap: 12px 24px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+header h1 {
+    margin: 0;
+    margin-left: 0;
+    padding: 16px 0;
+}
+
+.site-title {
+    margin-left: 0;
+    padding: 16px 0;
+
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-title:visited {
+    color: black;
+}
+
+.site-title:hover {
+    color: gray;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 15px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: black;
+}
+
+nav a:hover {
+    color: gray;
+}
+
+nav a:active {
+    color: black;
+}
+
+.theme-button {
+    width: 40px;
+    height: 40px;
+
+    font-size: 20px;
+
+    background-color: #f5f5f5;
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;       /* 将按钮设为圆形 */
+
+    cursor: pointer;          /* 鼠标悬停时显示手型 */
+
+    flex-shrink: 0;
+}
+
+/* ===== 全站基础与导航：深色模式 ===== */
+body.dark-mode {
+    background-color: #1f1f1f; /* 接近黑色但不刺眼的背景 */
+    color: white;              /* 白色文字 */
+}
+
+body.dark-mode header {
+    background-color: #1f1f1f; /* 深灰黑色背景 */
+    border-color: #444444;
+}
+
+body.dark-mode nav a {
+    color: white; /* 导航链接显示为白色 */
+}
+
+body.dark-mode .theme-button {
+    background-color: #333333; /* 深灰色按钮背景 */
+    color: white;              /* 按钮图标显示为白色 */
+    border-color: gray;        /* 灰色边框 */
+}
+
+body.dark-mode .site-title,
+body.dark-mode .site-title:visited {
+    color: white;
+}
+
+body.dark-mode .site-title:hover,
+body.dark-mode nav a:active {
+    color: lightgray;
+}
+
+body.dark-mode nav a {
+    color: white; /* 深色模式下使用白色文字 */
+}
+
+body.dark-mode nav a:visited {
+    color: white; /* 点击后仍保持白色 */
+}
+
+body.dark-mode nav a:hover {
+    color: lightgray; /* 鼠标悬停时变为浅灰色 */
+}
+
+body.dark-mode footer {
+    color: #aaaaaa;
+}
+
+/* ===== 窄屏导航与锚点间距 ===== */
+@media (max-width: 1050px) {
+    header {
+        padding: 0 24px;
+        gap: 0 16px;
+    }
+
+    /* 网站标题放在第一行左侧 */
+    header h1 {
+        margin-left: 0;
+        font-size: 24px;
+    }
+
+    /* 主题按钮放在第一行右侧 */
+    .theme-button {
+        margin-right: 0;
+    }
+
+    /* 导航放到第二行 */
+    nav {
+        order: 3;
+        width: 100%;
+
+        justify-content: center;
+        gap: 10px 22px;
+
+        padding: 0 0 14px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    html {
+        scroll-padding-top: 145px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 8px 14px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    html {
+        scroll-padding-top: 170px;
+    }
+}

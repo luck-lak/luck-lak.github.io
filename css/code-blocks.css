@@ -1,0 +1,120 @@
+/* ===== 学习笔记代码卡片 =====
+   负责语言栏、复制按钮和语法颜色；覆盖 records.css 的普通 pre 样式。
+   深色模式和响应式规则随所属组件维护；由 style.css 按顺序加载。 */
+
+/* 外层卡片同时包住语言栏和代码正文；overflow 防止内容越过圆角。 */
+.record-code-block {
+    margin: 22px 0;
+
+    background-color: #f6f8fa;
+    border: 1px solid #d0d0d0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 标题栏左侧显示语言，右侧放复制按钮。 */
+.record-code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    padding: 11px 16px;
+    border-bottom: 1px solid #e0e0e0;
+
+    font-family: Inter, Arial, sans-serif;
+    font-size: 13px;
+}
+
+.record-code-language {
+    font-weight: 600;
+}
+
+.record-code-language span {
+    margin-right: 7px;
+    color: #555555;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.code-copy-button {
+    padding: 4px 9px;
+
+    color: #444444;
+    background: transparent;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+
+    font: inherit;
+    cursor: pointer;
+}
+
+.code-copy-button:hover {
+    background-color: #eceff2;
+}
+
+/* 沿用全站 pre 的等宽字体与横向滚动，只去掉内层的重复边框。 */
+.record-code-block pre {
+    margin: 0;
+    padding: 18px 20px 20px;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+/* 颜色类由生成后的 HTML 使用，不依赖浏览器端的第三方高亮库。 */
+.syntax-shebang { color: #0757a6; }
+
+.syntax-comment { color: #4f7f58; }
+
+.syntax-string { color: #27833b; }
+
+.syntax-variable { color: #6842c2; }
+
+.syntax-number { color: #b65318; }
+
+.syntax-keyword { color: #b73569; }
+
+.syntax-command { color: #bd4b1f; }
+
+/* ===== 代码卡片与语法颜色：深色模式 ===== */
+body.dark-mode .record-code-block {
+    background-color: #252525;
+    border-color: #555555;
+}
+
+body.dark-mode .record-code-header {
+    border-bottom-color: #444444;
+}
+
+body.dark-mode .record-code-language span,
+body.dark-mode .code-copy-button {
+    color: #c8c8c8;
+}
+
+body.dark-mode .code-copy-button {
+    border-color: #666666;
+}
+
+body.dark-mode .code-copy-button:hover {
+    background-color: #333333;
+}
+
+body.dark-mode .record-code-block pre {
+    background: transparent;
+    border: 0;
+}
+
+body.dark-mode .syntax-shebang { color: #75b7ff; }
+
+body.dark-mode .syntax-comment { color: #86b98f; }
+
+body.dark-mode .syntax-string { color: #8bcf92; }
+
+body.dark-mode .syntax-variable { color: #bca3ff; }
+
+body.dark-mode .syntax-number { color: #f2a365; }
+
+body.dark-mode .syntax-keyword { color: #ff8fba; }
+
+body.dark-mode .syntax-command { color: #ff9b72; }
