@@ -286,6 +286,16 @@
     font-size: inherit;
 }
 
+/* Display equations stay readable on narrow screens without widening the article. */
+.post-content .MathJax_Display,
+.post-content mjx-container[display="true"] {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 0;
+}
+
 .post-content table {
     width: 100%;
     margin: 20px 0;

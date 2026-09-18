@@ -84,3 +84,12 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Areas: `_posts/2026-09-18-association-rule-mining.md`.
 - Verification: Checked the focused diff, whitespace, and the deployed article after the GitHub Pages build.
 - Publication: Committed and pushed to `main`; live deployment verified after the push.
+
+### 2026-09-18 — Publish Feature Engineering notes
+
+- Request: Combine the author's Floral Notepaper notes into a Blog post in the specified topic order, add the supplied preface, preserve the original notes, and publish to GitHub.
+- Outcome: Added a long-form Feature Engineering article with a nine-part table of contents, structured diagrams and formulas, and the original Feature Importance image.
+- Areas: `_posts/2026-09-18-feature-engineering-notes.md`, `assets/images/blog/feature-engineering-gini-importance.png`, `_includes/site-head.html`, `css/blog.css`.
+- Decisions: Kept the source notes untouched; enabled MathJax only for posts that opt in through front matter and constrained display equations on narrow screens.
+- Verification: Checked exact preface text, section order, table-of-contents anchors, balanced code and math delimiters, image linkage and byte-for-byte image copying, repository whitespace, and the deployed article after the Pages build.
+- Publication: Committed and pushed to `main`; live deployment verified after the push.
