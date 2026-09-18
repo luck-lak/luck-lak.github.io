@@ -158,12 +158,17 @@
 /* Long-form post navigation: keeps dense notes easy to scan without
    competing with the article's section hierarchy. */
 .post-toc {
+    display: block;
+    box-sizing: border-box;
+    width: auto;
     margin: 0 0 36px;
     padding: 18px 20px 14px;
 
     background-color: #f7f7f7;
     border: 1px solid #dddddd;
     border-radius: 8px;
+
+    font-size: 15px;
 }
 
 .post-toc .post-toc-title {
@@ -187,6 +192,7 @@
 }
 
 .post-toc a {
+    font-size: inherit;
     text-decoration: none;
 }
 
@@ -436,6 +442,8 @@ body.dark-mode .post-backlink a {
 
     .post-toc {
         padding: 16px 18px 12px;
+
+        font-size: 14px;
     }
 
     .post-toc ol {
