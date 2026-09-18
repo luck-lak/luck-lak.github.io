@@ -288,6 +288,7 @@
 
 /* Display equations stay readable on narrow screens without widening the article. */
 .post-content .MathJax_Display,
+.post-content .MJXc-display,
 .post-content mjx-container[display="true"] {
     display: block;
     max-width: 100%;
