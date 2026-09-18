@@ -76,3 +76,11 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Decisions: Preserved the author's voice and technical scope while normalizing notation and section order. Added a compact two-column table of contents on desktop, one column on mobile, plus restrained lead styling with coordinated dark-mode colors.
 - Verification: Checked repository diffs and whitespace, heading-anchor coverage, the external lecture URL, responsive CSS fallbacks, and the GitHub Pages build plus representative live pages after pushing.
 - Publication: Committed and pushed to `main`; live deployment verified after the push.
+
+### 2026-09-18 — Clarify AI-added definitions in mining notes
+
+- Request: Add an author note before the opening concept table explaining that its formal definitions were supplemented by AI and may be easier to understand through an interactive explanation.
+- Outcome: Added the note directly below the first section heading, visually separated from the formal concept list as a quotation-style aside.
+- Areas: `_posts/2026-09-18-association-rule-mining.md`.
+- Verification: Checked the focused diff, whitespace, and the deployed article after the GitHub Pages build.
+- Publication: Committed and pushed to `main`; live deployment verified after the push.
