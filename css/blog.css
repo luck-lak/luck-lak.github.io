@@ -147,6 +147,53 @@
     margin: 0 0 16px;
 }
 
+.post-content .post-lead {
+    margin-bottom: 28px;
+
+    font-size: 17px;
+    line-height: 1.9;
+    color: #444444;
+}
+
+/* Long-form post navigation: keeps dense notes easy to scan without
+   competing with the article's section hierarchy. */
+.post-toc {
+    margin: 0 0 36px;
+    padding: 18px 20px 14px;
+
+    background-color: #f7f7f7;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.post-toc .post-toc-title {
+    margin: 0 0 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.post-toc ol {
+    columns: 2;
+    column-gap: 36px;
+    margin: 0;
+    padding-left: 22px;
+}
+
+.post-toc li {
+    break-inside: avoid;
+    margin-bottom: 6px;
+}
+
+.post-toc a {
+    text-decoration: none;
+}
+
+.post-toc a:hover {
+    text-decoration: underline;
+}
+
 .post-content h2 {
     margin: 40px 0 16px;
     padding-bottom: 10px;
@@ -319,6 +366,15 @@ body.dark-mode .post-content a:hover {
     color: lightgray;
 }
 
+body.dark-mode .post-content .post-lead {
+    color: #d0d0d0;
+}
+
+body.dark-mode .post-toc {
+    background-color: #242424;
+    border-color: #4a4a4a;
+}
+
 body.dark-mode .post-content h2 {
     border-bottom-color: #444444;
 }
@@ -372,5 +428,17 @@ body.dark-mode .post-backlink a {
 
     .post-title {
         font-size: 28px;
+    }
+
+    .post-content .post-lead {
+        font-size: 16px;
+    }
+
+    .post-toc {
+        padding: 16px 18px 12px;
+    }
+
+    .post-toc ol {
+        columns: 1;
     }
 }

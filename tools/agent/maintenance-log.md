@@ -67,3 +67,12 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Decisions: Preserved selectors and declarations, separated previously shared homepage/learning rules by owner, and retained a common entry URL for static pages, generators, and Jekyll. Future module creation depends on responsibility/reuse rather than line counts; README guides and current agent context contain the ownership map.
 - Verification: Compared computed styles on every body element across nine representative pages, three viewport widths, and both themes (54 scenarios), including rendered blog pages and both record platforms; zero differences after resolving a cross-module mobile rule. CSS requests loaded successfully, screenshots were inspected, and whitespace checks passed.
 - Publication: Included in the direct commit for this task; repository synchronization and Pages delivery are checked after committing.
+
+### 2026-09-18 — Publish association-rule mining notes
+
+- Request: Turn the author's classroom notes into a readable Blog post titled “数据挖掘：关系规则挖掘”, add the supplied preface, and publish without changing the source note in Floral Notepaper.
+- Outcome: Added a long-form post that follows the conceptual path from definitions and the two-stage framework through Apriori, FP-Growth, rule generation, and supporting derivations; linked the referenced fourth lecture in the NJUIS resource repository.
+- Areas: `_posts/2026-09-18-association-rule-mining.md`, `css/blog.css`.
+- Decisions: Preserved the author's voice and technical scope while normalizing notation and section order. Added a compact two-column table of contents on desktop, one column on mobile, plus restrained lead styling with coordinated dark-mode colors.
+- Verification: Checked repository diffs and whitespace, heading-anchor coverage, the external lecture URL, responsive CSS fallbacks, and the GitHub Pages build plus representative live pages after pushing.
+- Publication: Committed and pushed to `main`; live deployment verified after the push.
