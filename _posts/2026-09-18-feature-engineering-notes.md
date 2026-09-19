@@ -9,13 +9,16 @@ math: true
 
 <p class="post-lead">这是我学习Feature Engineering的一些笔记，但是主要是从算法方面学习，很多代码实现我刻意跳过了，目的是降低学习负担，同时避免过快感到无聊。学习渠道是Codecademy平台的Feature Engineering Skill Path。总体学习下来感觉收获还是挺多的，一方面完善了知识地图，对于这个领域了解更多了；另一方面也了解了很多算法。</p>
 
+## 前言
+主要是自己的笔记整合在一起，不太适合直接阅读学习，建议看个目录知道有什么，如果感兴趣再自行探索
+
 <nav class="post-toc" aria-label="文章目录">
   <p class="post-toc-title">目录</p>
   <ol>
-    <li><a href="#numerical-transformation">Numerical Transformation</a></li>
-    <li><a href="#categorical-transformation">Categorical Transformation</a></li>
-    <li><a href="#feature-selection-methods">Feature Selection Methods</a></li>
-    <li><a href="#wrapper-methods">Wrapper Methods</a></li>
+    <li><a href="#numerical-transformation">Transforming Date into Features--Numerical Transformation</a></li>
+    <li><a href="#categorical-transformation">Transforming Date into Features--Categorical Transformation</a></li>
+    <li><a href="#feature-selection-methods">Feature Selection Methods--Filter Methods</a></li>
+    <li><a href="#wrapper-methods">Feature Selection Methods--Wrapper Methods</a></li>
     <li><a href="#regularization">Regularization</a></li>
     <li><a href="#feature-importance">Feature Importance</a></li>
     <li><a href="#dimensionality-reduction">Dimensionality Reduction</a></li>
