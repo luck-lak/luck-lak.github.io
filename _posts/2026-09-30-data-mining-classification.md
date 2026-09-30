@@ -167,9 +167,9 @@ $$
 
 原笔记中的词频例子：
 
-![垃圾邮件训练集中共有 1000 个词，“免费”出现 30 次，因此 P(免费｜垃圾) = 30/1000 = 0.03。](/assets/images/blog/classification-word-frequency.png)
+[![垃圾邮件训练集中共有 1000 个词，“免费”出现 30 次，因此 P(免费｜垃圾) = 30/1000 = 0.03。](/assets/images/blog/classification-word-frequency.png)](/assets/images/blog/classification-word-frequency.png)
 
-*图：在“垃圾邮件”类别内看“免费”这个词的出现频率。*
+*图：在“垃圾邮件”类别内看“免费”这个词的出现频率。点击图片可查看原图。*
 
 拉普拉斯平滑将词表中的每个词都视作预先“虚拟出现过一次”：
 

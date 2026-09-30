@@ -100,5 +100,5 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Outcome: Added a structured post with a contents list, comparison table, readable Bayes and MAP equations, and the original word-frequency image.
 - Areas: `_posts/2026-09-30-data-mining-classification.md`, `assets/images/blog/classification-word-frequency.png`.
 - Decisions: Preserved the boundary between classroom material and later supplements; clarified the sample-frequency versus word-count estimators and identified the continuous-feature expression as a density.
-- Verification: Checked all contents links, balanced math delimiters, image linkage and byte-for-byte copying, and the repository diff.
+- Verification: Checked all contents links, balanced math delimiters, image linkage and byte-for-byte copying, and the repository diff. Inspected the live post at desktop and mobile widths in light and dark modes; formulas and image render, with no horizontal overflow.
 - Publication: Committed and pushed to `main`; live delivery checked after the Pages update.
