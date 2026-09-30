@@ -93,3 +93,12 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Decisions: Kept the source notes untouched; enabled MathJax only for posts that opt in through front matter and constrained display equations on narrow screens.
 - Verification: Checked exact preface text, section order, table-of-contents anchors, balanced code and math delimiters, image linkage and byte-for-byte image copying, repository whitespace, and the deployed article after the Pages build.
 - Publication: Committed and pushed to `main`; live deployment verified after the push.
+
+### 2026-09-30 — Publish data mining classification notes
+
+- Request: Format the author's classification and naive Bayes notes as a Blog post titled “数据挖掘 -- 分类”, including the original image, and publish it.
+- Outcome: Added a structured post with a contents list, comparison table, readable Bayes and MAP equations, and the original word-frequency image.
+- Areas: `_posts/2026-09-30-data-mining-classification.md`, `assets/images/blog/classification-word-frequency.png`.
+- Decisions: Preserved the boundary between classroom material and later supplements; clarified the sample-frequency versus word-count estimators and identified the continuous-feature expression as a density.
+- Verification: Checked all contents links, balanced math delimiters, image linkage and byte-for-byte copying, and the repository diff.
+- Publication: Committed and pushed to `main`; live delivery checked after the Pages update.
