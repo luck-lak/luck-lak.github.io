@@ -2,7 +2,7 @@
 
 [在线访问](https://luck-lak.github.io/) · [English](README.en.md)
 
-这里放着我的项目、课程记录和博客。我是南京大学智能科学与技术专业本科生，最近的学习重心从 Web 开发和广泛的技术探索，逐渐转向数据挖掘与机器学习。
+这里放着我的项目、课外探索记录和博客。我是南京大学智能科学与技术专业本科生，本学期在学概率论与数理统计、数据结构与算法、数据挖掘、深度学习平台和应用。
 
 网站使用 HTML、CSS 和少量 JavaScript；博客由 Jekyll 生成，部署在 GitHub Pages。保持结构简单，是为了让我能看懂代码，也能自己继续维护。
 
@@ -10,8 +10,8 @@
 
 | 想修改的内容 | 对应文件 |
 | --- | --- |
-| 自我介绍、当前方向、项目、学习轨迹、联系方式 | `index.html` |
-| 学习记录总入口、未来 Notebook 入口 | `learning-records.html` |
+| 自我介绍、当前学习、项目、笔记入口、联系方式 | `index.html` |
+| 课外发现与探索记录总入口 | `learning-records.html` |
 | 页面宽度、文字大小、深色模式、手机布局 | `css/` 功能模块，由 `css/style.css` 统一加载 |
 | 主题切换和记忆 | `js/main.js` |
 | 博客首页简介 | `blog/index.html` |
@@ -38,15 +38,12 @@ python -m http.server 8000 --bind 127.0.0.1
 首页各部分都直接写在 `index.html` 中：
 
 - `#about-me`：简短介绍。
-- `#current-focus`：当前在学什么，以及下一步的学习计划。
+- `#current-focus`：本学期课程，以及对 LLM 和 AI Agents 的关注。旧锚点 `#technical-journey` 也指向这里。
 - `#projects`：实际做过的项目。
-- `#technical-journey`：简短的 Learning Journey。保留旧锚点名称，兼容已有链接。
-- `#learning-records`：课程记录和未来数据 Notebook 的入口。
+- `#learning-records`：Learning Records 和 Blog 两个入口，分别记录课外发现与探索、学习与日常随笔。
 - `#contact-me`：联系方式。
 
 添加项目时，在 `.project-list` 中复制一个 `<article class="project-card">`，修改标题、真实仓库链接和介绍即可，通常不用改 CSS。
-
-数据 Notebook 仓库尚未放出，入口标记为 **Planned**。有第一批内容后，再把说明替换为实际仓库链接，并更新学习记录总页和 GitHub 个人主页。
 
 文案尽量写清楚做过什么、正在学什么、打算学什么。课程接触不等于项目经验，计划也不当作已经完成的成果。
 
@@ -57,7 +54,7 @@ python -m http.server 8000 --bind 127.0.0.1
 | 文件（位于 `css/`） | 职责 |
 | --- | --- |
 | `base.css` | 基础排版、页眉导航、主题按钮和页脚 |
-| `home.css` | 首页介绍、学习方向、项目、学习轨迹与联系区域 |
+| `home.css` | 首页介绍、当前学习、项目、笔记入口与联系区域 |
 | `learning.css` | 学习总入口、平台列表、课程卡片和下载入口 |
 | `records.css` | 笔记阅读布局、目录、正文、图片、表格和上下篇导航 |
 | `chapter-cards.css` | 长笔记的章节卡片及目录目标强调 |

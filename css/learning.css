@@ -42,8 +42,7 @@
     line-height: 1.7;
 }
 
-/* 比 .records-intro p 更具体，确保第二段有可见的段落间距。 */
-.records-intro .records-hub-note,
+/* 返回链接与列表页导语保持可见间距。 */
 .records-intro .platform-backlink {
     margin-top: 16px;
 }
@@ -214,39 +213,7 @@ body.dark-mode .records-platform {
     color: #555555;
 }
 
-.records-hub-note {
-    margin-top: 14px;
-
-    color: #555555;
-}
-
-/* ===== 学习目的与平台返回链接 ===== */
-.learning-purpose {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 36px;
-
-    margin-bottom: 42px;
-    text-align: left;
-}
-
-.learning-purpose h2 {
-    margin: 0 0 10px;
-
-    font-size: 18px;
-}
-
-.learning-purpose p {
-    margin: 0;
-
-    line-height: 1.65;
-    color: #555555;
-}
-
-body.dark-mode .learning-purpose p {
-    color: #aaaaaa;
-}
-
+/* ===== 平台返回链接 ===== */
 .platform-backlink {
     margin-top: 20px;
 
@@ -266,11 +233,6 @@ body.dark-mode .learning-purpose p {
     .platform-grid {
         grid-template-columns: 1fr;
     }
-
-    .learning-purpose {
-        grid-template-columns: 1fr;
-        gap: 22px;
-    }
 }
 
 body.dark-mode .platform-card {
@@ -289,10 +251,6 @@ body.dark-mode .platform-card p {
 
 body.dark-mode .platform-card-count {
     border-color: #555555;
-    color: #aaaaaa;
-}
-
-body.dark-mode .records-hub-note {
     color: #aaaaaa;
 }
 

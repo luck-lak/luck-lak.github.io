@@ -2,7 +2,7 @@
 
 [Visit the site](https://luck-lak.github.io/) · [中文版](README.md)
 
-This is where I keep my projects, course records, and blog. I'm an undergraduate in Intelligent Science and Technology at Nanjing University. My focus is gradually moving from web development and broad technical exploration toward data mining and machine learning.
+This is where I keep my projects, extracurricular explorations, and blog. I'm an undergraduate in Intelligent Science and Technology at Nanjing University. This semester, I'm studying probability and statistics, data structures and algorithms, data mining, and deep learning platforms and applications.
 
 The site uses HTML, CSS, and a little JavaScript. Jekyll builds the blog, and GitHub Pages hosts the site. The structure stays simple so I can understand and maintain it myself.
 
@@ -10,8 +10,8 @@ The site uses HTML, CSS, and a little JavaScript. Jekyll builds the blog, and Gi
 
 | Content | File |
 | --- | --- |
-| About, current focus, projects, learning journey, contact | `index.html` |
-| Learning records hub and future notebook entry | `learning-records.html` |
+| About, current studies, projects, notes links, contact | `index.html` |
+| Hub for extracurricular discoveries and explorations | `learning-records.html` |
 | Width, typography, dark mode, mobile layout | Modules in `css/`, loaded through `css/style.css` |
 | Theme switching and persistence | `js/main.js` |
 | Blog introduction | `blog/index.html` |
@@ -38,15 +38,12 @@ This previews the homepage and learning records. **It does not build the Jekyll 
 Each section is written directly in `index.html`:
 
 - `#about-me`: a short introduction.
-- `#current-focus`: current studies and next steps.
+- `#current-focus`: this semester's courses and my interest in LLMs and AI Agents. The old `#technical-journey` anchor also points here.
 - `#projects`: projects I've actually built.
-- `#technical-journey`: the compact Learning Journey; the original anchor remains compatible with existing links.
-- `#learning-records`: course records and the future data notebook entry.
+- `#learning-records`: Learning Records for extracurricular discoveries and explorations, and Blog for study notes and everyday writing.
 - `#contact-me`: contact information.
 
 To add a project, copy an `<article class="project-card">` inside `.project-list` and update its title, real repository link, and description. CSS changes are usually unnecessary.
-
-The data notebook repository is not available yet, so its entry is marked **Planned**. Once the first notebooks are ready, replace the description with a real link and update the records hub and GitHub profile.
 
 Describe completed work, current learning, and plans accurately. Course exposure should not be presented as project experience, and plans should not be presented as completed work.
 
@@ -57,7 +54,7 @@ Pages continue to link only `css/style.css`. It imports the modules below in ord
 | File (under `css/`) | Responsibility |
 | --- | --- |
 | `base.css` | Base typography, header, navigation, theme button, footer |
-| `home.css` | Homepage introduction, focus, projects, journey, contact |
+| `home.css` | Homepage introduction, current studies, projects, notes links, contact |
 | `learning.css` | Learning hub, platform lists, course cards, downloads |
 | `records.css` | Record layout, contents menu, prose, images, tables, pagination |
 | `chapter-cards.css` | Long-record chapter cards and anchor target emphasis |

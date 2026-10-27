@@ -71,6 +71,7 @@ Publishing normally means committing and pushing the canonical repository's inte
 
 - Keep the implementation understandable and maintainable by the site owner.
 - Preserve the author's personal voice and distinguish course material from personal reflection.
+- Keep site introductions concise. Learning Records introduces discoveries and explorations beyond university coursework.
 - Prefer semantic HTML and selectable code over text embedded in images when conversion is reliable.
 - Keep CSS/JavaScript comments clear and component boundaries easy to scan.
 - Treat this document as an information map, not a mandatory step-by-step workflow.

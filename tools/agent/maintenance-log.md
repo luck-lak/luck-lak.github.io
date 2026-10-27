@@ -102,3 +102,13 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Decisions: Preserved the boundary between classroom material and later supplements; clarified the sample-frequency versus word-count estimators and identified the continuous-feature expression as a density.
 - Verification: Checked all contents links, balanced math delimiters, image linkage and byte-for-byte copying, and the repository diff. Inspected the live post at desktop and mobile widths in light and dark modes; formulas and image render, with no horizontal overflow.
 - Publication: Committed and pushed to `main`; live delivery checked after the Pages update.
+
+### 2026-10-27 — Simplify introductions for local review
+
+- Request: Use the author's latest GitHub profile README as the current reference, remove the discontinued data-notebook direction, introduce Learning Records as extracurricular discoveries and exploration, and keep the language concise. Prepare a local review version before publishing.
+- Outcome: Replaced speculative homepage plans with this semester's four subjects and a short LLM/AI agents interest statement; shortened About and project descriptions, credited the agent-assisted website build, removed the repeated Learning Journey, and kept its old anchor on Current Focus. Notes links now lead to Learning Records and Blog. The records hub opens with extracurricular exploration and goes straight to its two platforms.
+- Areas: `index.html`, `learning-records.html`, `css/home.css`, `css/learning.css`, both maintenance READMEs, and shared context.
+- Decisions: Removed the notebook roadmap from both public pages and maintenance guidance so later updates do not restore it. Removed unused styling for deleted sections; preserved course records and blog content.
+- Verification: Compared against the live profile README; checked 25 local links/assets/anchors and both platform counts. Rendered both changed pages at 1440px and 390px in light and dark themes; no overflow, missing images, browser errors, or local resource failures. Theme switching and persistence pass; screenshots inspected and `git diff --check` passes.
+- Publication: Local uncommitted review version only. No push, PR, or deployment. A local HTTP preview serves the homepage and learning pages; the Jekyll blog was not rebuilt for this change.
+- Follow-up: Await the author's review before publishing.

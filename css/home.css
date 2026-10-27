@@ -1,5 +1,5 @@
 /* ===== 首页 =====
-   负责个人介绍、学习方向、项目、学习轨迹及联系区域。
+   负责个人介绍、学习方向、项目、笔记入口及联系区域。
    深色模式和响应式规则随所属组件维护；由 style.css 按顺序加载。 */
 
 .home-page {
@@ -95,60 +95,12 @@
     margin-top: 24px;
 }
 
-/* 学习方向和笔记入口：两列足够，不使用复杂组件或交互。 */
-.focus-grid,
+/* 笔记入口：学习记录和博客并列展示。 */
 .notes-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 36px;
     margin-top: 26px;
-}
-
-.home-page .focus-note,
-.home-page .blog-invitation {
-    margin: 20px 0 0;
-    color: #555555;
-    font-size: 15px;
-}
-
-.status-label {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 6px;
-    padding: 2px 7px;
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 400;
-    color: #666666;
-}
-
-/* 学习轨迹：一个紧凑列表，不为每种语言或工具再建一个大板块。 */
-.journey-list {
-    margin: 0;
-    padding-left: 24px;
-}
-
-.journey-list li {
-    padding-left: 10px;
-    margin-bottom: 18px;
-}
-
-.journey-list li:last-child,
-.journey-list li p {
-    margin-bottom: 0;
-}
-
-.journey-list li::marker {
-    color: #777777;
-}
-
-.journey-list h3 {
-    margin-bottom: 4px;
-}
-
-.journey-list p {
-    max-width: 85ch;
 }
 
 /* 项目卡片：桌面三列，窄屏在后面的媒体查询中改为单列。 */
@@ -209,19 +161,12 @@ body.dark-mode .home-page > section {
 }
 
 body.dark-mode .section-kicker,
-body.dark-mode .project-card .project-kind,
-body.dark-mode .focus-note,
-body.dark-mode .blog-invitation,
-body.dark-mode .status-label {
+body.dark-mode .project-card .project-kind {
     color: #b8b8b8;
 }
 
 body.dark-mode .home-page a:hover {
     color: lightgray;
-}
-
-body.dark-mode .status-label {
-    border-color: #555555;
 }
 
 body.dark-mode #learning-records a {
@@ -266,7 +211,6 @@ body.dark-mode .project-card {
     }
 
     .project-list,
-    .focus-grid,
     .notes-grid {
         grid-template-columns: 1fr;
         gap: 22px;
