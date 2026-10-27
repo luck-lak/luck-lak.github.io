@@ -112,3 +112,11 @@ When this file is no longer a quick orientation aid, move completed entries inta
 - Verification: Compared against the live profile README; checked 25 local links/assets/anchors and both platform counts. Rendered both changed pages at 1440px and 390px in light and dark themes; no overflow, missing images, browser errors, or local resource failures. Theme switching and persistence pass; screenshots inspected and `git diff --check` passes.
 - Publication: Local uncommitted review version only. No push, PR, or deployment. A local HTTP preview serves the homepage and learning pages; the Jekyll blog was not rebuilt for this change.
 - Follow-up: Await the author's review before publishing.
+
+### 2026-10-27 — Publish approved simplification and remove temporary artifacts
+
+- Request: The author approved the local version, authorized publishing, and requested cleanup of this task's working residue after the push.
+- Outcome: Published the reviewed page and documentation changes to `main`. The previous entry's publication follow-up is complete.
+- Verification: GitHub Pages build and deployment succeeded for `6841c4c`; both live pages return HTTP 200, show the new introductions, and contain no notebook references. Local and remote content trees match.
+- Cleanup: Deleted this chat's ten temporary check-script, JSON, and screenshot files (1,085,997 bytes), removed their empty directory, stopped the identified Python preview process, and confirmed port 8765 is closed. No residual Playwright check process or associated temporary profile was found.
+- Publication: Published through the connected GitHub service after the local Git HTTPS credential failed. Kept the existing credential configuration intact; used an anonymous fetch to synchronize the public repository locally.
